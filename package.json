@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/ifiokjr/gatsby-plugin-next-seo/issues"
   },
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "main": "lib/index.js",
   "files": [
     "gatsby-browser.js",
@@ -38,6 +38,7 @@
     "is-logged-in": "npm whoami",
     "lint": "eslint -f friendly --ext=.tsx,.ts,.js .",
     "prepublishOnly": "run-s is-logged-in checks build",
+    "semantic-release": "semantic-release",
     "table-of-contents": "doctoc README.md && prettier --write README.md",
     "test": "jest",
     "pretest:e2e": "yarn e2e:build",
@@ -71,6 +72,8 @@
     "@babel/preset-react": "^7.7.4",
     "@babel/preset-typescript": "^7.7.7",
     "@cypress/schema-tools": "^4.7.1",
+    "@semantic-release/changelog": "^3.0.6",
+    "@semantic-release/git": "^7.0.18",
     "@testing-library/react": "^9.4.0",
     "@types/expect-puppeteer": "^3.3.3",
     "@types/jest": "^24.0.25",
@@ -119,6 +122,7 @@
     "react-helmet-async": "^1.0.4",
     "release": "^6.1.0",
     "rimraf": "^2.6.3",
+    "semantic-release": "^15.14.0",
     "signal-exit": "^3.0.2",
     "typescript": "^3.7.4"
   },
@@ -130,7 +134,8 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "yarn table-of-contents && git add README.md && lint-staged"
+      "pre-commit": "yarn table-of-contents && git add README.md && lint-staged",
+      "pre-push": "yarn checks"
     }
   },
   "lint-staged": {
@@ -170,6 +175,24 @@
           "printWidth": 90
         }
       }
+    ]
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json",
+            "CHANGELOG.md"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
     ]
   },
   "resolutions": {

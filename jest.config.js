@@ -10,6 +10,7 @@ module.exports = {
     '<rootDir>/node_modules/',
     '<rootDir>/cypress/',
     '<rootDir>/e2e/',
+    '<rootDir>/example/',
     '<rootDir>/lib/',
   ],
   testEnvironment: 'jsdom',
