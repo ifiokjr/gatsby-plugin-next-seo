@@ -1,6 +1,6 @@
 # gatsby-plugin-next-seo
 
-![GitHub Actions Build Status](https://github.com/ifiokjr/gatsby-plugin-next-seo/workflows/Node%20CI/badge.svg) [![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors)
+![GitHub Actions Build Status](https://github.com/ifiokjr/gatsby-plugin-next-seo/workflows/Node%20CI/badge.svg) [![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 Gatsby Plugin SEO makes managing SEO easier in your Gatsby JS project. It fully supports server-side rendering (SSR) with site wide configuration available via the `gatsby-config.js` plugin options. SEO options can also be tweaked at any moment by importing the main `GatsbySeo` component and passing in the desired props.
 
