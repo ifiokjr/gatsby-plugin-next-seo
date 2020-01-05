@@ -7,7 +7,6 @@ env:
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
 
     strategy:
@@ -16,12 +15,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: setup node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: audit dependencies
+        run: yarn audit
       - name: install dependencies
         run: yarn --pure-lockfile
+      # - name: check yarn.lock is up to date
+      #   run: yarn integrity
       - name: lint files
         run: yarn lint
       - name: typecheck project
@@ -39,14 +42,12 @@ jobs:
           path: lib/
 
   release:
-    name: Release
     needs: [build]
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Setup Node.js
+      - uses: actions/checkout@v1
+      - name: setup node.js
         uses: actions/setup-node@v1
         with:
           node-version: 12
@@ -56,7 +57,7 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: build
-      - name: run semantic release
+      - name: release with semantic release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
