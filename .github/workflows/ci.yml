@@ -23,8 +23,6 @@ jobs:
         run: yarn audit
       - name: install dependencies
         run: yarn --pure-lockfile
-      # - name: check yarn.lock is up to date
-      #   run: yarn integrity
       - name: lint files
         run: yarn lint
       - name: typecheck project
@@ -37,6 +35,7 @@ jobs:
         run: yarn test:e2e
       - name: upload build artifact
         uses: actions/upload-artifact@v1
+        if: matrix.node-version == '12.x'
         with:
           name: build
           path: lib/
