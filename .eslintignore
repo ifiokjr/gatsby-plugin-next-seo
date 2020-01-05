@@ -1,0 +1,13 @@
+!.babelrc.js
+!**/.babelrc.js
+!.eslintrc.js
+!**/.eslintrc.js
+**/lib
+lib
+**/dist
+dist
+**/public
+public
+node_modules
+.out
+coverage

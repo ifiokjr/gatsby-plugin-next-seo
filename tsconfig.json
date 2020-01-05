@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["dom", "esnext"],
+    "jsx": "react",
+    "moduleResolution": "node",
+    "noImplicitReturns": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowUnreachableCode": false,
+    "experimentalDecorators": true,
+    "strict": true,
+    "alwaysStrict": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "preserveWatchOutput": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "outDir": "lib"
+  },
+  "include": ["src"],
+  "exclude": ["*.js"]
+}

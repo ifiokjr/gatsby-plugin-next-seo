@@ -1,0 +1,44 @@
+{
+  "private": true,
+  "name": "gatsby-starter-typescript-plus",
+  "description": "A starter kit for TypeScript-based Gatsby projects with sensible defaults.",
+  "license": "MIT",
+  "author": "Resi Respati <resir014@gmail.com>",
+  "version": "1.0.0",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "rimraf public",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "dev": "gatsby develop",
+    "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "serve": "gatsby serve",
+    "start": "npm run dev",
+    "test": "npm run type-check && npm run lint",
+    "type-check": "tsc"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
+    "classnames": "^2.2.6",
+    "gatsby": "^2.18.17",
+    "gatsby-link": "^2.2.27",
+    "gatsby-plugin-next-seo": "file:../package.tar.gz",
+    "gatsby-plugin-typescript": "^2.1.23",
+    "modern-normalize": "^0.6.0",
+    "polished": "^3.4.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet-async": "^1.0.4",
+    "typescript": "^3.7.4"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.3"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}

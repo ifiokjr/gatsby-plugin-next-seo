@@ -1,0 +1,180 @@
+{
+  "projectName": "gatsby-plugin-next-seo",
+  "projectOwner": "garmeeh",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "garmeeh",
+      "name": "Gary Meehan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13333582?v=4",
+      "profile": "https://www.garymeehan.ie/",
+      "contributions": [
+        "code",
+        "doc",
+        "example",
+        "test"
+      ]
+    },
+    {
+      "login": "JeromeFitz",
+      "name": "Jerome Fitzgerald",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3099369?v=4",
+      "profile": "https://www.jeromefitzgerald.com/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "erickeno",
+      "name": "erick B",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3820632?v=4",
+      "profile": "https://github.com/erickeno",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "econdie",
+      "name": "Erik Condie",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/15269328?v=4",
+      "profile": "https://www.erikcondie.com",
+      "contributions": [
+        "code",
+        "test",
+        "example",
+        "ideas"
+      ]
+    },
+    {
+      "login": "timReynolds",
+      "name": "Tim Reynolds",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/168870?v=4",
+      "profile": "http://timothyreynolds.co.uk",
+      "contributions": [
+        "code",
+        "test",
+        "example",
+        "doc"
+      ]
+    },
+    {
+      "login": "Ktchan825",
+      "name": "Ktchan825",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/20606631?v=4",
+      "profile": "https://github.com/Ktchan825",
+      "contributions": [
+        "test",
+        "code"
+      ]
+    },
+    {
+      "login": "ctxquentin",
+      "name": "ctxquentin",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/36331776?v=4",
+      "profile": "https://github.com/ctxquentin",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
+    },
+    {
+      "login": "bolonio",
+      "name": "Adrián Bolonio",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1288407?v=4",
+      "profile": "https://github.com/bolonio",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
+    },
+    {
+      "login": "erikhofer",
+      "name": "Erik Hofer",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/17194301?v=4",
+      "profile": "http://erikhofer.de",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "zetoke",
+      "name": "Dmitry Ermakov",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/301917?v=4",
+      "profile": "https://ermakov.io",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "duckranger",
+      "name": "Nimo Naamani",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2087890?v=4",
+      "profile": "https://github.com/duckranger",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "calvinvoo2",
+      "name": "Calvin Ng Tjioe",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/12223423?v=4",
+      "profile": "https://github.com/calvinvoo2",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "petertulala",
+      "name": "Peter Tulala",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/613623?v=4",
+      "profile": "https://github.com/petertulala",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "nik-john",
+      "name": "nikjohn",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1117182?v=4",
+      "profile": "https://github.com/nik-john",
+      "contributions": [
+        "doc",
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "0x54321",
+      "name": "0x54321",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/34850754?v=4",
+      "profile": "https://github.com/0x54321",
+      "contributions": [
+        "doc",
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "nateetorn",
+      "name": "Nateetorn L.",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/365585?v=4",
+      "profile": "https://github.com/nateetorn",
+      "contributions": [
+        "doc",
+        "code",
+        "test"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
+}

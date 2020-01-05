@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "**/*.ts",
+    "src/__mocks__",
+    "**/*.tsx",
+    "*.js",
+    ".eslintrc.js",
+    "babel.config.js",
+    "example/*.js",
+    "e2e/*.js"
+  ],
+  "exclude": ["**/dist/", "**/lib/", "**/public/"]
+}

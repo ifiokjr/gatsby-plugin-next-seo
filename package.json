@@ -1,0 +1,175 @@
+{
+  "name": "gatsby-plugin-next-seo",
+  "description": "SEO plugin for Gatsby projects",
+  "license": "MIT",
+  "author": "Ifiok Jr. <ifiokotung@gmail.com>",
+  "homepage": "https://github.com/ifiokjr/gatsby-plugin-next-seo#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ifiokjr/gatsby-plugin-next-seo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ifiokjr/gatsby-plugin-next-seo/issues"
+  },
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "files": [
+    "gatsby-browser.js",
+    "gatsby-ssr.js",
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "prebuild": "rimraf ./lib",
+    "build": "yarn build:types && yarn build:ts",
+    "build:test": "npm-run-all --sequential build e2e:build",
+    "build:ts": "babel src --out-dir lib --extensions \".ts,.tsx\"",
+    "build:types": "tsc --emitDeclarationOnly -p ./tsconfig.prod.json --declarationMap",
+    "build:watch": "yarn build:types -- --watch && yarn build:ts -- --watch",
+    "e2e:build": "run-s example:clean example:pack example:install example:build",
+    "e2e:start": "cd example && yarn gatsby serve",
+    "example:build": "cd example && yarn build --verbose",
+    "example:clean": "rm package.tar.gz && cd example && yarn clean && rimraf node_modules package-lock.json",
+    "example:install": "cd example && npm i",
+    "example:pack": "yarn pack --filename package.tar.gz",
+    "fix": "eslint --fix --ext=.tsx,.ts,.js .",
+    "format": "prettier --write \"{,!(node_modules|public|coverage|.cache)/**/}*.{js,jsx,ts,tsx,json}\"",
+    "lint": "eslint -f friendly --ext=.tsx,.ts,.js .",
+    "prepublishOnly": "yarn build",
+    "table-of-contents": "doctoc README.md && prettier --write README.md",
+    "test": "jest",
+    "pretest:e2e": "yarn e2e:build",
+    "test:e2e": "yarn test:e2e:quick",
+    "test:e2e:debug": "cross-env E2E_DEBUG=true yarn test:e2e",
+    "test:e2e:quick": "jest --verbose --runInBand --config e2e/jest.config.js",
+    "test:watch": "jest  --watch --verbose=false --coverage=false",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7",
+    "@types/react-helmet": "^5",
+    "type-fest": "^0.8"
+  },
+  "peerDependencies": {
+    "gatsby": "^2",
+    "react-helmet-async": "^1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
+    "@babel/plugin-proposal-optional-chaining": "^7.7.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+    "@babel/plugin-transform-react-jsx": "^7.7.7",
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "@babel/plugin-transform-typescript": "^7.7.4",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.7",
+    "@cypress/schema-tools": "^4.7.1",
+    "@testing-library/react": "^9.4.0",
+    "@types/expect-puppeteer": "^3.3.3",
+    "@types/jest": "^24.0.25",
+    "@types/jest-dev-server": "^4.2.0",
+    "@types/jest-environment-puppeteer": "^4.3.1",
+    "@types/node": "^13.1.2",
+    "@types/puppeteer": "^2.0.0",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "@typescript-eslint/eslint-plugin": "^2.14.0",
+    "@typescript-eslint/parser": "^2.14.0",
+    "babel-jest": "^24.9.0",
+    "cross-env": "^6.0.3",
+    "doctoc": "^1.4.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-formatter-friendly": "^7.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jest": "^23.1.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "eslint-plugin-simple-import-sort": "^5.0.0",
+    "eslint-plugin-unicorn": "^15.0.1",
+    "gatsby": "^2.18.17",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "jest-circus": "^24.9.0",
+    "jest-dev-server": "^4.4.0",
+    "jest-environment-puppeteer": "^4.4.0",
+    "jest-extended": "^0.11.2",
+    "jest-puppeteer": "^4.4.0",
+    "jest-watch-typeahead": "^0.4.2",
+    "lint-staged": "^9.5.0",
+    "npm-run-all": "^4.1.5",
+    "pptr-testing-library": "^0.4.0",
+    "prettier": "^1.19.1",
+    "prettier-package-json": "^2.1.3",
+    "puppeteer": "^2.0.0",
+    "puppeteer-firefox": "^0.5.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet-async": "^1.0.4",
+    "rimraf": "^2.6.3",
+    "signal-exit": "^3.0.2",
+    "typescript": "^3.7.4"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "seo",
+    "ssr"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn table-of-contents && git add README.md && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "package.json": [
+      "prettier-package-json --write",
+      "git add"
+    ],
+    "*.{json,yml,yaml,md,mdx}": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/.babelrc.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "useTabs": false,
+    "tabWidth": 2,
+    "jsxBracketSameLine": false,
+    "bracketSpacing": true,
+    "printWidth": 110,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "proseWrap": "preserve",
+    "endOfLine": "lf",
+    "jsxSingleQuote": true,
+    "overrides": [
+      {
+        "files": "*.js",
+        "options": {
+          "printWidth": 90
+        }
+      }
+    ]
+  },
+  "resolutions": {
+    "jsdom": "^15.2.1"
+  }
+}

@@ -1,0 +1,12 @@
+node_modules
+*.log
+.next
+.history
+dist
+cypress/videos
+coverage
+package-lock.json
+lib
+notes.md
+
+package.tar.gz
