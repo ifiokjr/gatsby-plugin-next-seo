@@ -1,6 +1,6 @@
 # gatsby-plugin-next-seo
 
-![GitHub Actions Build Status](https://github.com/ifiokjr/gatsby-plugin-next-seo/workflows/Node%20CI/badge.svg) [![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+![GitHub Actions Build Status](https://github.com/ifiokjr/gatsby-plugin-next-seo/workflows/Node%20CI/badge.svg) [![npm](https://img.shields.io/npm/dm/gatsby-plugin-next-seo.svg?&logo=npm)](https://www.npmjs.com/package/gatsby-plugin-next-seo) [![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 Gatsby Plugin SEO makes managing SEO easier in your Gatsby JS project. It fully supports server-side rendering (SSR) with site wide configuration available via the `gatsby-config.js` plugin options. SEO options can also be tweaked at any moment by importing the main `GatsbySeo` component and passing in the desired props.
 
@@ -74,7 +74,7 @@ yarn add gatsby-plugin-next-seo react-helmet-async
 
 ### Add Plugin to Gatsby Config
 
-`gatsby-config.js`
+Add the following configuration to your `gatsby-config.js` file.
 
 ```js
 module.exports {
@@ -167,13 +167,11 @@ Some tools may report this an error. See [Issue #14](https://github.com/garmeeh/
 
 To achieve this, you will need to add the properties to your `gatsby-config.js` file when setting up the plugin.
 
-Within this file you will need to import `DefaultSeo` from `gatsby-plugin-next-seo` and pass it props.
-
 Here is a typical example:
 
-`gatsby-config.js`
-
 ```js
+// gatsby-config.js
+
 module.exports {
   plugins: [
     {
