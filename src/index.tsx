@@ -10,4 +10,4 @@ export { default as SocialProfileJsonLd, SocialProfileJsonLdProps } from './json
 export { default as CorporateContactJsonLd, CorporateContactJsonLdProps } from './jsonld/corporate-contact';
 export { default as NewsArticleJsonLd, NewsArticleJsonLdProps } from './jsonld/news-article';
 
-export { DefaultSeoProps, GatsbySeoProps } from './types';
+export * from './types';

@@ -21,12 +21,14 @@ export interface OpenGraphVideoActors {
 
 export interface OpenGraph {
   /**
-   * The canonical URL of your object that will be used as its permanent ID in the graph.
+   * The canonical URL of your object that will be used as its permanent ID in
+   * the graph.
    */
   url?: string;
 
   /**
-   * The type of your object. Depending on the type you specify, other properties may also be required.
+   * The type of your object. Depending on the type you specify, other
+   * properties may also be required.
    */
   type?: string;
 
@@ -36,12 +38,14 @@ export interface OpenGraph {
   title?: string;
 
   /**
-   * The open graph description, this can be different than your meta description.
+   * The open graph description, this can be different than your meta
+   * description.
    */
   description?: string;
 
   /**
-   * An array of images (object) to be used by social media platforms, slack etc as a preview. If multiple supplied you can choose one when sharing.
+   * An array of images (object) to be used by social media platforms, slack etc
+   * as a preview. If multiple supplied you can choose one when sharing.
    */
   images?: readonly OpenGraphImages[];
 
@@ -49,18 +53,28 @@ export interface OpenGraph {
    * An array of videos.
    */
   videos?: readonly OpenGraphVideos[];
+
+  /**
+   * The default height for the image used.
+   */
   defaultImageHeight?: number;
+
+  /**
+   * The default width of the image used.
+   */
   defaultImageWidth?: number;
 
   /**
-   * The locale the open graph tags are marked up in. Of the format language_TERRITORY.
+   * The locale the open graph tags are marked up in. Of the format
+   * language_TERRITORY.
    *
    * @default 'en_US'
    */
   locale?: string;
 
   /**
-   * If your object is part of a larger web site, the name which should be displayed for the overall site.
+   * If your object is part of a larger web site, the name which should be
+   * displayed for the overall site.
    */
   site_name?: string;
 
@@ -108,9 +122,28 @@ export interface OpenGraphProfile {
 }
 
 export interface OpenGraphBook {
+  /**
+   * The list of author names for the book.
+   */
   authors?: readonly string[];
+
+  /**
+   * The International Standard Book Number which identifies the book.
+   *
+   * @remarks
+   *
+   * An ISBN is essentially a product identifier used by publishers, booksellers, libraries, internet retailers and other supply chain participants for ordering, listing, sales records and stock control purposes. The ISBN identifies the registrant as well as the specific title, edition and format.
+   */
   isbn?: string;
+
+  /**
+   * The books release date.
+   */
   releaseDate?: string;
+
+  /**
+   * Tags used to further describe the book.
+   */
   tags?: readonly string[];
 }
 
@@ -138,17 +171,18 @@ export type TwitterCardType = 'summary' | 'summary_large_image' | 'app' | 'playe
 
 export interface Twitter {
   /**
-   * @username for the content creator / author (outputs as `twitter:creator`).
+   * `@username` for the content creator / author (outputs as `twitter:creator`).
    */
   handle?: string;
 
   /**
-   * @username for the website used in the card footer.
+   * `@username` for the website used in the card footer.
    */
   site?: string;
 
   /**
-   * The card type, which will be one of `summary`, `summary_large_image`, `app`, or `player`.
+   * The card type, which will be one of `summary`, `summary_large_image`,
+   * `app`, or `player`.
    */
   cardType?: LiteralUnion<TwitterCardType, string>;
 }
@@ -202,8 +236,17 @@ export interface BaseSeoProps {
    *
    * @remarks
    *
-   * Setting this to `true` will set `noindex,follow` (to set `nofollow`, please refer to [`nofollow`](#noFollow)). This works on a page by page basis. This property works in tandem with the `nofollow` property and together they populate the `robots` and `googlebot` meta tags.
-   * **Note:** The `noindex` and the [`nofollow`](#noFollow) properties are a little different than all the others in the sense that setting them as a default does not work as expected. This is due to the fact Gatsby SEO already has a default of `index,follow` because `gatsby-plugin-next-seo` is a SEO plugin after all. So if you want to globally these properties, please see [dangerouslySetAllPagesToNoIndex](#dangerouslySetAllPagesToNoIndex) and [dangerouslySetAllPagesToNoFollow](#dangerouslySetAllPagesToNoFollow).
+   * Setting this to `true` will set `noindex,follow` (to set `nofollow`, please
+   * refer to [`nofollow`](#noFollow)). This works on a page by page basis. This
+   * property works in tandem with the `nofollow` property and together they
+   * populate the `robots` and `googlebot` meta tags. **Note:** The `noindex`
+   * and the [`nofollow`](#noFollow) properties are a little different than all
+   * the others in the sense that setting them as a default does not work as
+   * expected. This is due to the fact Gatsby SEO already has a default of
+   * `index,follow` because `gatsby-plugin-next-seo` is a SEO plugin after all.
+   * So if you want to globally these properties, please see
+   * [dangerouslySetAllPagesToNoIndex](#dangerouslySetAllPagesToNoIndex) and
+   * [dangerouslySetAllPagesToNoFollow](#dangerouslySetAllPagesToNoFollow).
    *
    * **Example No Index on a single page:**
    *
@@ -228,9 +271,18 @@ export interface BaseSeoProps {
    *
    * @remarks
    *
-   * Setting this to `true` will set `index,nofollow` (to set `noindex`, please refer to [`noindex`](#noIndex)). This works on a page by page basis. This property works in tandem with the `noindex` property and together they populate the `robots` and `googlebot` meta tags.
+   * Setting this to `true` will set `index,nofollow` (to set `noindex`, please
+   * refer to [`noindex`](#noIndex)). This works on a page by page basis. This
+   * property works in tandem with the `noindex` property and together they
+   * populate the `robots` and `googlebot` meta tags.
    *
-   * **Note:** The `noindex` and the [`nofollow`](#noFollow) properties are a little different than all the others in the sense that setting them as a default does not work as expected. This is due to the fact Gatsby SEO already has a default of `index,follow` because `gatsby-plugin-next-seo` is a SEO plugin after all. So if you want to globally these properties, please see [dangerouslySetAllPagesToNoIndex](#dangerouslySetAllPagesToNoIndex) and [dangerouslySetAllPagesToNoFollow](#dangerouslySetAllPagesToNoFollow).
+   * **Note:** The `noindex` and the [`nofollow`](#noFollow) properties are a
+   * little different than all the others in the sense that setting them as a
+   * default does not work as expected. This is due to the fact Gatsby SEO
+   * already has a default of `index,follow` because `gatsby-plugin-next-seo` is
+   * a SEO plugin after all. So if you want to globally these properties, please
+   * see [dangerouslySetAllPagesToNoIndex](#dangerouslySetAllPagesToNoIndex) and
+   * [dangerouslySetAllPagesToNoFollow](#dangerouslySetAllPagesToNoFollow).
    *
    * **Example No Follow on a single page:**
    *
@@ -260,7 +312,8 @@ export interface BaseSeoProps {
    *
    * @remarks
    *
-   * Add this on a page per page basis when you want to consolidate duplicate URLs.
+   * Add this on a page per page basis when you want to consolidate duplicate
+   * URLs.
    *
    * ```js
    * canonical = 'https://www.canonical.ie/';
@@ -273,7 +326,8 @@ export interface BaseSeoProps {
    *
    * @remarks
    *
-   * This link relation is used to indicate a relation between a desktop and a mobile website to search engines.
+   * This link relation is used to indicate a relation between a desktop and a
+   * mobile website to search engines.
    *
    * Example:
    *
@@ -294,7 +348,8 @@ export interface BaseSeoProps {
   mobileAlternate?: MobileAlternate;
 
   /**
-   * Set the language of the alternate urls. Excepts object: `{ hrefLang: string, href: string }`.
+   * Set the language of the alternate urls. Excepts object: `{ hrefLang:
+   * string, href: string }`.
    */
   languageAlternates?: readonly LanguageAlternate[];
 
@@ -304,7 +359,8 @@ export interface BaseSeoProps {
   openGraph?: OpenGraph;
 
   /**
-   * Used for Facebook Insights, you must add a facebook app ID to your page to for it.
+   * Used for Facebook Insights, you must add a facebook app ID to your page to
+   * for it.
    *
    * @remarks
    *
@@ -322,9 +378,12 @@ export interface BaseSeoProps {
    *
    * @remarks
    *
-   * Twitter will read the `og:title`, `og:image` and `og:description` tags for their card, this is why `gatsby-plugin-next-seo` omits `twitter:title`, `twitter:image` and `twitter:description` so not to duplicate.
+   * Twitter will read the `og:title`, `og:image` and `og:description` tags for
+   * their card, this is why `gatsby-plugin-next-seo` omits `twitter:title`,
+   * `twitter:image` and `twitter:description` so not to duplicate.
    *
-   * Some tools may report this an error. See [Issue #14](https://github.com/garmeeh/gatsby-plugin-next-seo/issues/14)
+   * Some tools may report this an error. See [Issue
+   * #14](https://github.com/garmeeh/gatsby-plugin-next-seo/issues/14)
    */
   twitter?: Twitter;
 
@@ -333,7 +392,8 @@ export interface BaseSeoProps {
    *
    * @remarks
    *
-   * This allows you to add any other meta tags that are not covered in the `config`.
+   * This allows you to add any other meta tags that are not covered in the
+   * `config`.
    *
    * `content` is required. Then either `name` or `property`. (Only one on each)
    *
@@ -386,18 +446,41 @@ export interface GatsbySeoProps extends BaseSeoProps, DeferSeoProps {}
 
 export interface DefaultSeoProps {
   /**
-   * It has the prefix of `dangerously` because it will `noindex` all pages. As this is an SEO plugin, that is kinda dangerous action. It is **not** bad to use this, just please be sure you want to `noindex` **EVERY** page. You can still override this at a page level if you have a use case to `index` a page. This can be done by setting `noindex: false`.
+   * It has the prefix of `dangerously` because it will `noindex` all pages. As
+   * this is an SEO plugin, that is kinda dangerous action. It is **not** bad to
+   * use this, just please be sure you want to `noindex` **EVERY** page. You can
+   * still override this at a page level if you have a use case to `index` a
+   * page. This can be done by setting `noindex: false`.
    */
   dangerouslySetAllPagesToNoIndex?: boolean;
 
   /**
-   * It has the prefix of `dangerously` because it will `nofollow` all pages. As this is an SEO plugin, that is kinda dangerous action. It is **not** bad to use this, just please be sure you want to `nofollow` **EVERY** page. You can still override this at a page level if you have a use case to `follow` a page. This can be done by setting `nofollow: false`.
+   * It has the prefix of `dangerously` because it will `nofollow` all pages. As
+   * this is an SEO plugin, that is kinda dangerous action. It is **not** bad to
+   * use this, just please be sure you want to `nofollow` **EVERY** page. You
+   * can still override this at a page level if you have a use case to `follow`
+   * a page. This can be done by setting `nofollow: false`.
    */
   dangerouslySetAllPagesToNoFollow?: boolean;
 
+  /**
+   * The default open graph image width.
+   */
   defaultOpenGraphImageWidth?: number;
+
+  /**
+   * The default open graph image height.
+   */
   defaultOpenGraphImageHeight?: number;
+
+  /**
+   * The default open graph video width.
+   */
   defaultOpenGraphVideoWidth?: number;
+
+  /**
+   * The default open graph video height.
+   */
   defaultOpenGraphVideoHeight?: number;
 }
 
