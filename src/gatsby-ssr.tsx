@@ -9,13 +9,22 @@ import { GatsbySeoPluginOptions } from './types';
 (HelmetProvider as any).canUseDOM = false;
 
 export const onRenderBody = ({ setHeadComponents, setHtmlAttributes, setBodyAttributes }: RenderBodyArgs) => {
-  const { helmet } = getFilledContext();
+  const filledContext = getFilledContext();
+
+  if (!filledContext) {
+    return;
+  }
+
+  const { helmet } = filledContext;
+
   if (setHtmlAttributes) {
     setHtmlAttributes(helmet.htmlAttributes.toComponent());
   }
+
   if (setBodyAttributes) {
     setBodyAttributes(helmet.bodyAttributes.toComponent());
   }
+
   setHeadComponents([
     helmet.title.toComponent(),
     helmet.link.toComponent(),
