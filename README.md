@@ -6,7 +6,7 @@ Gatsby Plugin SEO makes managing SEO easier in your Gatsby JS project. It fully 
 
 This codebase was initially forked from the brilliant [next-seo](https://github.com/garmeeh/next-seo) project and is now maintained separately.
 
-**Table of Contents**
+## Table of Contents
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -15,7 +15,8 @@ This codebase was initially forked from the brilliant [next-seo](https://github.
   - [Setup](#setup)
   - [Add Plugin to Gatsby Config](#add-plugin-to-gatsby-config)
   - [Add SEO to Page](#add-seo-to-page)
-  - [Default SEO Configuration](#default-seo-configuration)
+    - [A note on Twitter Tags](#a-note-on-twitter-tags)
+  - [Default SEO Configuration in Gatsby Config](#default-seo-configuration-in-gatsby-config)
   - [GatsbySeo Options](#gatsbyseo-options)
     - [Title Template](#title-template)
     - [No Index](#no-index)
@@ -29,13 +30,13 @@ This codebase was initially forked from the brilliant [next-seo](https://github.
     - [Additional Meta Tags](#additional-meta-tags)
 - [Open Graph](#open-graph)
   - [Open Graph Examples](#open-graph-examples)
-    - [Basic](#basic)
-    - [Video](#video)
-    - [Article](#article)
-    - [Book](#book)
-    - [Profile](#profile)
+    - [Basic Example](#basic-example)
+    - [Video Example](#video-example)
+    - [Article Example](#article-example)
+    - [Book Example](#book-example)
+    - [Profile Example](#profile-example)
 - [JSON-LD](#json-ld)
-  - [Article](#article-1)
+  - [Article](#article)
   - [Breadcrumb](#breadcrumb)
   - [Blog](#blog)
   - [Course](#course)
@@ -46,6 +47,8 @@ This codebase was initially forked from the brilliant [next-seo](https://github.
   - [Social Profile](#social-profile)
   - [News Article](#news-article)
 - [Contributors](#contributors)
+- [FAQ](#faq)
+  - [Why did you choose such a long name?](#why-did-you-choose-such-a-long-name)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -82,6 +85,8 @@ module.exports {
   ],
 }
 ```
+
+The plugin allows documented [GatsbySeoPluginOptions](https://github.com/ifiokjr/gatsby-plugin-next-seo/blob/master/src/types.ts#L406) to be set. See an example [below](#default-seo-configuration-in-gatsby-config).
 
 ### Add SEO to Page
 
@@ -150,13 +155,13 @@ const Layout: FC = ({ children }) => (
 export default Layout;
 ```
 
-**A note on Twitter Tags**
+#### A note on Twitter Tags
 
 Twitter will read the `og:title`, `og:image` and `og:description` tags for their card. `gatsby-plugin-next-seo` omits `twitter:title`, `twitter:image` and `twitter:description` to avoid duplication.
 
 Some tools may report this an error. See [Issue #14](https://github.com/garmeeh/next-seo/issues/14)
 
-### Default SEO Configuration
+### Default SEO Configuration in Gatsby Config
 
 `GatsbySeo` enables you to set the default SEO properties that will appear on all pages without needing to do include anything on them. You can also override these on a page by page basis if needed.
 
@@ -402,7 +407,7 @@ additionalMetaTags={[{
 
 ## Open Graph
 
-For the full specification please check out http://ogp.me/
+For the full specification please check out [the documentation](http://ogp.me/).
 
 Gatsby SEO currently supports:
 
@@ -414,7 +419,7 @@ Gatsby SEO currently supports:
 
 ### Open Graph Examples
 
-#### Basic
+#### Basic Example
 
 ```jsx
 import React from 'react';
@@ -449,7 +454,7 @@ export default () => (
 );
 ```
 
-#### Video
+#### Video Example
 
 Full info on [http://ogp.me/](http://ogp.me/#type_video)
 
@@ -502,7 +507,7 @@ export default () => (
 );
 ```
 
-#### Article
+#### Article Example
 
 ```jsx
 import React from 'react';
@@ -542,7 +547,7 @@ export default () => (
 );
 ```
 
-#### Book
+#### Book Example
 
 ```jsx
 import React from 'react';
@@ -580,7 +585,7 @@ export default () => (
 );
 ```
 
-#### Profile
+#### Profile Example
 
 ```jsx
 import React from 'react';
@@ -1079,3 +1084,9 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
+
+## FAQ
+
+### Why did you choose such a long name?
+
+Unfortunately the better options [gatsby-seo]() and gatsby-plugin-seo were already taken. As a result I've used **gatsby-plugin-next-seo** as a shout out to the original **next-seo** project from which this codebase has been forked.

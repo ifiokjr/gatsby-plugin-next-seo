@@ -136,13 +136,17 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "yarn table-of-contents && git add README.md && lint-staged",
+      "pre-commit": "lint-staged",
       "pre-push": "yarn checks"
     }
   },
   "lint-staged": {
     "**/*.{ts,tsx,js}": [
       "eslint --fix",
+      "git add"
+    ],
+    "README.md": [
+      "yarn table-of-contents",
       "git add"
     ],
     "package.json": [
@@ -182,9 +186,15 @@
   "release": {
     "plugins": [
       "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/release-notes-generator",
+        {
+          "preset": "conventionalcommits"
+        }
+      ],
       "@semantic-release/changelog",
       "@semantic-release/npm",
+      "@semantic-release/github",
       [
         "@semantic-release/git",
         {
