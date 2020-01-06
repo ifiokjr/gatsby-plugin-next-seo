@@ -1,3 +1,10 @@
+### [1.0.1](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.0.0...v1.0.1) (2020-01-06)
+
+
+### Bug Fixes
+
+* **types:** make sure all types are exported ([74d4ef4](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/74d4ef42c5c35199b965f56f03f04a32f6b057ca))
+
 # 1.0.0 (2020-01-05)
 
 ### Features
