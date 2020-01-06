@@ -40,7 +40,6 @@
     "integrity": "yarn check --integrity",
     "is-logged-in": "npm whoami",
     "lint": "eslint -f friendly --ext=.tsx,.ts,.js .",
-    "prepublishOnly": "run-s is-logged-in checks build",
     "semantic-release": "semantic-release",
     "table-of-contents": "doctoc README.md && prettier --write README.md",
     "test": "jest",
