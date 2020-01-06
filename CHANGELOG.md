@@ -1,3 +1,10 @@
+### [1.0.2](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.0.1...v1.0.2) (2020-01-06)
+
+
+### Bug Fixes
+
+* **package:** critical bug with develop command error ([37f1371](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/37f13719101d70115b2cf13058d199c6de55a891)), closes [#4](https://github.com/ifiokjr/gatsby-plugin-next-seo/issues/4)
+
 ### [1.0.1](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.0.0...v1.0.1) (2020-01-06)
 
 
