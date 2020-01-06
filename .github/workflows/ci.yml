@@ -50,9 +50,13 @@ jobs:
       - name: build project
         run: yarn build
 
-      - name: run integration tests
+      - name: run gatsby build integration tests
         run: yarn test:e2e
         if: matrix.node-version == '12.x'
+
+      - name: run gatsby develop integration tests
+        run: yarn test:e2e:develop
+        if: matrix.node-version == '10.x'
 
       - name: upload build artifact
         uses: actions/upload-artifact@v1

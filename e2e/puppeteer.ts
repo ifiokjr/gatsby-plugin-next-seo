@@ -6,6 +6,8 @@ import onExit from 'signal-exit';
 const { teardown: teardownPuppeteer } = require('jest-environment-puppeteer');
 const { setup: setupPuppeteer } = require('jest-environment-puppeteer');
 
+const { EXAMPLE_COMMAND = 'serve' } = process.env;
+
 let serverSetupPromise: Promise<void> | undefined;
 
 export const destroyServer = async (globalConfig?: Config.GlobalConfig) => {
@@ -17,7 +19,7 @@ export const destroyServer = async (globalConfig?: Config.GlobalConfig) => {
 export const setupServer = async (globalConfig: Config.GlobalConfig) => {
   await setup([
     {
-      command: 'yarn e2e:start',
+      command: `yarn example:${EXAMPLE_COMMAND}`,
       port: 9000,
       usedPortAction: 'kill',
       launchTimeout: 120000,

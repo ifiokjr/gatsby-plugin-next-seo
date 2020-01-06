@@ -25,19 +25,6 @@ export const props = async <GReturn>(
   return Promise.all(handles.map(handle => prop<GReturn>(handle, property)));
 };
 
-interface LaunchParams {
-  path?: string;
-  disableJavascript?: boolean;
-}
-
-export const launch = async ({ path = '', disableJavascript = false }: LaunchParams = {}) => {
-  if (disableJavascript) {
-    await page.setJavaScriptEnabled(false);
-  }
-  await page.goto(url(path));
-  return getDocument(page);
-};
-
 export interface TagAssertionBuilder {
   selector: string;
   prop: string;
@@ -66,7 +53,40 @@ export const assertTags = async (assertions: TagAssertionBuilder[], $document: E
   }
 };
 
-export const testIterator = [
+const { EXAMPLE_COMMAND = 'serve' } = process.env;
+
+export const clientOnly = EXAMPLE_COMMAND !== 'serve';
+
+const defaultIterator = [
   ['SSR', true],
   ['Client', false],
 ] as const;
+const clientIterator = [['Client', false]] as const;
+
+export const testIterator = clientOnly ? clientIterator : defaultIterator;
+
+declare global {
+  namespace NodeJS {
+    interface ProcessEnv {
+      EXAMPLE_COMMAND?: 'serve' | 'develop';
+    }
+  }
+}
+
+interface LaunchParams {
+  path?: string;
+  disableJavascript?: boolean;
+}
+
+export const launch = async ({ path = '', disableJavascript = false }: LaunchParams = {}) => {
+  if (disableJavascript) {
+    await page.setJavaScriptEnabled(false);
+  }
+  await page.goto(url(path), disableJavascript ? {} : { waitUntil: 'domcontentloaded' });
+
+  if (clientOnly) {
+    await page.waitFor(500); // gatsby develop takes a moment to warm up on first load
+  }
+
+  return getDocument(page);
+};
