@@ -43,7 +43,13 @@ const buildContactPoint = (contactPoint: ContactPoint[]) =>
     }`,
   );
 
-const CorporateContactJsonLd: FC<CorporateContactJsonLdProps> = ({
+/**
+ * @deprecated
+ *
+ * See the
+ * {@link https://developers.google.com/search/docs/data-types/corporate-contact | documentation}
+ * with the reason for deprecation.
+ */
   url,
   logo,
   contactPoint,

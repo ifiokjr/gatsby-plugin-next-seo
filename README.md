@@ -42,7 +42,7 @@ This codebase was initially forked from the brilliant [next-seo](https://github.
     - [Breadcrumb](#breadcrumb)
     - [Blog](#blog)
     - [Course](#course)
-    - [Corporate Contact](#corporate-contact)
+    - [Corporate Contact (Deprecated)](#corporate-contact-deprecated)
     - [Local Business](#local-business)
     - [Logo](#logo)
     - [Product](#product)
@@ -632,7 +632,7 @@ Below you will find a very basic page implementing each of the available JSON-LD
 - [Breadcrumb](#breadcrumb)
 - [Blog](#blog)
 - [Course](#course)
-- [Corporate Contact](#corporate-contact)
+- [Corporate Contact](#corporate-contact-deprecated)
 - [Local Business](#local-business)
 - [Product](#product)
 - [Social Profile](#social-profile)
@@ -757,7 +757,9 @@ export default () => (
 );
 ```
 
-### Corporate Contact
+### Corporate Contact (Deprecated)
+
+See the [documentation](https://developers.google.com/search/docs/data-types/corporate-contact) with the reason for deprecation.
 
 ```jsx
 import React from 'react';
