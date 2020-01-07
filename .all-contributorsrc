@@ -173,6 +173,16 @@
         "code",
         "test"
       ]
+    },
+    {
+      "login": "ifiokjr",
+      "name": "Ifiok Jr.",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1160934?v=4",
+      "profile": "https://ifiokjr.com",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
