@@ -1,3 +1,12 @@
+## [1.1.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.0.2...v1.1.0) (2020-01-07)
+
+
+### Features
+
+* **CorporateContactJsonLd:** deprecate component ([6b0ee87](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/6b0ee87c1e59d8316f7086ca2513211045fb3f0c))
+* **JSON-LD:** add override and BlogPost component ([8a6e344](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/8a6e34462d25e502d725e56f9f07797c4ac4e984))
+* **SocialProfileJsonLd:** deprecate component ([7fa9289](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/7fa92895b1f06038833e9c41aa40ee6f58ad314c))
+
 ### [1.0.2](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.0.1...v1.0.2) (2020-01-06)
 
 
