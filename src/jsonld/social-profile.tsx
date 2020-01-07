@@ -10,7 +10,13 @@ export interface SocialProfileJsonLdProps extends DeferSeoProps {
   sameAs: string[];
 }
 
-const SocialProfileJsonLd: FC<SocialProfileJsonLdProps> = ({
+/**
+ * @deprecated
+ *
+ * See the Google
+ * {@link https://developers.google.com/search/docs/data-types/social-profile | documentation}
+ * with the reason for deprecation.
+ */
   type,
   name,
   url,

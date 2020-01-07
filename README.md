@@ -46,7 +46,7 @@ This codebase was initially forked from the brilliant [next-seo](https://github.
     - [Local Business](#local-business)
     - [Logo](#logo)
     - [Product](#product)
-    - [Social Profile](#social-profile)
+    - [Social Profile (Deprecated)](#social-profile-deprecated)
     - [News Article](#news-article)
   - [Contributors](#contributors)
   - [FAQ](#faq)
@@ -635,7 +635,7 @@ Below you will find a very basic page implementing each of the available JSON-LD
 - [Corporate Contact](#corporate-contact-deprecated)
 - [Local Business](#local-business)
 - [Product](#product)
-- [Social Profile](#social-profile)
+- [Social Profile](#social-profile-deprecated)
 - [News Article](#news-article)
 
 ### Article
@@ -969,7 +969,9 @@ Valid values fro `offers.availability`:
 
 More info on the product data type can be found [here](https://developers.google.com/search/docs/data-types/product).
 
-### Social Profile
+### Social Profile (Deprecated)
+
+See the [documentation](https://developers.google.com/search/docs/data-types/social-profile) with the reason for deprecation.
 
 ```jsx
 import React from 'react';
