@@ -53,6 +53,7 @@
   "dependencies": {
     "@babel/runtime": "^7",
     "@types/react-helmet": "^5",
+    "schema-dts": "0.4.5",
     "type-fest": "^0.8"
   },
   "peerDependencies": {

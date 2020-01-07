@@ -47,12 +47,12 @@ export interface OpenGraph {
    * An array of images (object) to be used by social media platforms, slack etc
    * as a preview. If multiple supplied you can choose one when sharing.
    */
-  images?: readonly OpenGraphImages[];
+  images?: OpenGraphImages[];
 
   /**
    * An array of videos.
    */
-  videos?: readonly OpenGraphVideos[];
+  videos?: OpenGraphVideos[];
 
   /**
    * The default height for the image used.
@@ -125,7 +125,7 @@ export interface OpenGraphBook {
   /**
    * The list of author names for the book.
    */
-  authors?: readonly string[];
+  authors?: string[];
 
   /**
    * The International Standard Book Number which identifies the book.
@@ -144,7 +144,7 @@ export interface OpenGraphBook {
   /**
    * Tags used to further describe the book.
    */
-  tags?: readonly string[];
+  tags?: string[];
 }
 
 export interface OpenGraphArticle {
@@ -152,18 +152,18 @@ export interface OpenGraphArticle {
   modifiedTime?: string;
   expirationTime?: string;
 
-  authors?: readonly string[];
+  authors?: string[];
   section?: string;
-  tags?: readonly string[];
+  tags?: string[];
 }
 
 export interface OpenGraphVideo {
-  actors?: readonly OpenGraphVideoActors[];
-  directors?: readonly string[];
-  writers?: readonly string[];
+  actors?: OpenGraphVideoActors[];
+  directors?: string[];
+  writers?: string[];
   duration?: number;
   releaseDate?: string;
-  tags?: readonly string[];
+  tags?: string[];
   series?: string;
 }
 
@@ -351,7 +351,7 @@ export interface BaseSeoProps {
    * Set the language of the alternate urls. Excepts object: `{ hrefLang:
    * string, href: string }`.
    */
-  languageAlternates?: readonly LanguageAlternate[];
+  languageAlternates?: LanguageAlternate[];
 
   /**
    * The open graph configuration object.
@@ -425,12 +425,12 @@ export interface BaseSeoProps {
    * }]}
    * ```
    */
-  metaTags?: readonly MetaProps[];
+  metaTags?: MetaProps[];
 
   /**
    * Allows you to add a link tag that is not documented here.
    */
-  linkTags?: readonly LinkProps[];
+  linkTags?: LinkProps[];
 }
 
 export interface DeferSeoProps {

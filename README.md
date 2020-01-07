@@ -40,7 +40,7 @@ This codebase was initially forked from the brilliant [next-seo](https://github.
   - [JSON-LD](#json-ld)
     - [Article](#article)
     - [Breadcrumb](#breadcrumb)
-    - [Blog](#blog)
+    - [Blog Post](#blog-post)
     - [Course](#course)
     - [Corporate Contact (Deprecated)](#corporate-contact-deprecated)
     - [Local Business](#local-business)
@@ -626,11 +626,9 @@ Gatsby SEO has the ability to set JSON-LD a form of structured data. Structured 
 
 Google has excellent content on JSON-LD -> [HERE](https://developers.google.com/search/docs/data-types/article)
 
-Below you will find a very basic page implementing each of the available JSON-LD types:
-
-- [Article](#article-1)
+- [Article](#article)
 - [Breadcrumb](#breadcrumb)
-- [Blog](#blog)
+- [Blog Post](#blog-post)
 - [Course](#course)
 - [Corporate Contact](#corporate-contact-deprecated)
 - [Local Business](#local-business)
@@ -649,7 +647,7 @@ export default () => (
     <h1>Article JSON-LD</h1>
     <ArticleJsonLd
       url='https://example.com/article'
-      title='Article headline'
+      headline='Article headline'
       images={[
         'https://example.com/photos/1x1/photo.jpg',
         'https://example.com/photos/4x3/photo.jpg',
@@ -661,6 +659,9 @@ export default () => (
       publisherName='Gary Meehan'
       publisherLogo='https://www.example.com/photos/logo.jpg'
       description='This is a mighty good description of this article.'
+      overrides={{
+        '@type': 'BlogPosting', // set's this as a blog post.
+      }}
     />
   </>
 );
@@ -712,16 +713,18 @@ export default () => (
 | `itemListElements.name`     | The title of the breadcrumb displayed for the user.                                                      |
 | `itemListElements.item`     | The URL to the webpage that represents the breadcrumb.                                                   |
 
-### Blog
+### Blog Post
 
-```jsx
+A utility component which wraps the `<ArticleJsonLd />` component but is classified as a `BlogPosting`.
+
+```tsx
 import React from 'react';
-import { BlogJsonLd } from 'gatsby-plugin-next-seo';
-
+import { BlogPostJsonLd } from 'gatsby-plugin-next-seo';
+ *
 export default () => (
   <>
-    <h1>Blog JSON-LD</h1>
-    <BlogJsonLd
+    <h1>Blog Post JSON-LD</h1>
+    <BlogPostJsonLd
       url='https://example.com/blog'
       title='Blog headline'
       images={[

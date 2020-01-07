@@ -1,14 +1,13 @@
 import {
   ArticleJsonLd,
   BlogJsonLd,
+  BlogPostJsonLd,
   BreadcrumbJsonLd,
-  CorporateContactJsonLd,
   CourseJsonLd,
   LocalBusinessJsonLd,
   LogoJsonLd,
   NewsArticleJsonLd,
   ProductJsonLd,
-  SocialProfileJsonLd,
 } from 'gatsby-plugin-next-seo';
 import React from 'react';
 
@@ -60,12 +59,13 @@ const JsonLd = () => (
 
     <BlogJsonLd
       url='https://example.com/blog'
-      title='Blog headline'
+      headline='Blog headline'
       images={[
         'https://example.com/photos/1x1/photo.jpg',
         'https://example.com/photos/4x3/photo.jpg',
         'https://example.com/photos/16x9/photo.jpg',
       ]}
+      posts={[{ headline: 'Post 1' }, { headline: 'Post 2' }]}
       datePublished='2015-02-05T08:00:00+08:00'
       dateModified='2015-02-05T09:00:00+08:00'
       authorName='Jane Blogs'
@@ -130,57 +130,20 @@ const JsonLd = () => (
       ]}
       aggregateRating={{
         ratingValue: '4.4',
-        reviewCount: '89',
+        reviewCount: 89,
       }}
       offers={{
         price: '119.99',
         priceCurrency: 'USD',
         priceValidUntil: '2020-11-05',
-        itemCondition: 'http://schema.org/UsedCondition',
-        availability: 'http://schema.org/InStock',
+        itemCondition: 'UsedCondition',
+        availability: 'InStock',
         url: 'https://www.example.com/executive-anvil',
         seller: {
           name: 'Executive Objects',
         },
       }}
       mpn='925872'
-    />
-
-    <SocialProfileJsonLd
-      type='Person'
-      url='http://www.your-site.com'
-      name='your name'
-      sameAs={[
-        'http://www.facebook.com/your-profile',
-        'http://instagram.com/yourProfile',
-        'http://www.linkedin.com/in/yourprofile',
-        'http://plus.google.com/your_profile',
-      ]}
-    />
-    <CorporateContactJsonLd
-      url='http://www.your-company-site.com'
-      logo='http://www.example.com/logo.png'
-      contactPoint={[
-        {
-          telephone: '+1-401-555-1212',
-          contactType: 'customer service',
-          areaServed: 'US',
-          availableLanguage: ['English', 'Spanish', 'French'],
-        },
-        {
-          telephone: '+1-877-746-0909',
-          contactType: 'customer service',
-          contactOption: 'TollFree',
-          availableLanguage: 'English',
-        },
-        {
-          telephone: '+1-877-453-1304',
-          contactType: 'technical support',
-          contactOption: 'TollFree',
-          areaServed: ['US', 'CA'],
-          availableLanguage: ['English', 'French'],
-        },
-      ]}
     />
 
     <NewsArticleJsonLd
@@ -201,6 +164,20 @@ const JsonLd = () => (
       publisherLogo='https://www.example.com/photos/logo.jpg'
       description='This is a mighty good description of this news article.'
       body='This is article body of news article'
+    />
+
+    <BlogPostJsonLd
+      url='https://example.com/blog'
+      headline='Blog headline'
+      images={[
+        'https://example.com/photos/1x1/photo.jpg',
+        'https://example.com/photos/4x3/photo.jpg',
+        'https://example.com/photos/16x9/photo.jpg',
+      ]}
+      datePublished='2015-02-05T08:00:00+08:00'
+      dateModified='2015-02-05T09:00:00+08:00'
+      authorName='Jane Blogs'
+      description='This is a mighty good description of this blog.'
     />
 
     <Links />

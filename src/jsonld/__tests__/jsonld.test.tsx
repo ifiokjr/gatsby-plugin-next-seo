@@ -1,4 +1,5 @@
 import { assertSchema } from '@cypress/schema-tools';
+// import { prettyDOM } from '@testing-library/dom';
 import { render as testRender } from '@testing-library/react';
 import React, { ReactElement } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
@@ -6,14 +7,13 @@ import { HelmetProvider } from 'react-helmet-async';
 import {
   ArticleJsonLd,
   BlogJsonLd,
+  BlogPostJsonLd,
   BreadcrumbJsonLd,
-  CorporateContactJsonLd,
   CourseJsonLd,
   LocalBusinessJsonLd,
   LogoJsonLd,
   NewsArticleJsonLd,
   ProductJsonLd,
-  SocialProfileJsonLd,
 } from '../..';
 import schemas from '../../../e2e/schema';
 
@@ -21,9 +21,61 @@ const render = (ui: ReactElement) => testRender(ui, { wrapper: HelmetProvider })
 
 test('ArticleJsonLd', () => {
   render(
-    <ArticleJsonLd
-      url='https://example.com/article'
-      title='Article headline'
+    <>
+      <ArticleJsonLd
+        url='https://example.com/article'
+        headline='Article headline'
+        images={[
+          'https://example.com/photos/1x1/photo.jpg',
+          'https://example.com/photos/4x3/photo.jpg',
+          'https://example.com/photos/16x9/photo.jpg',
+        ]}
+        datePublished='2015-02-05T08:00:00+08:00'
+        dateModified='2015-02-05T09:00:00+08:00'
+        authorName='Jane Blogs'
+        publisherName='Gary Meehan'
+        publisherLogo='https://www.example.com/photos/logo.jpg'
+        description='This is a mighty good description of this article.'
+      />
+    </>,
+  );
+  const jsonLD = JSON.parse(document.querySelector('script')?.innerHTML ?? '{}');
+  assertSchema(schemas)('Article', '1.0.0')(jsonLD);
+  expect(document.documentElement).toMatchSnapshot();
+});
+
+test('NewsArticleJsonLd', () => {
+  render(
+    <NewsArticleJsonLd
+      url='https://example.com/newsarticle'
+      title='News Article headline'
+      images={[
+        'https://example.com/photos/1x1/photo.jpg',
+        'https://example.com/photos/4x3/photo.jpg',
+        'https://example.com/photos/16x9/photo.jpg',
+      ]}
+      section='politics'
+      keywords='prayuth, taksin, thai'
+      dateCreated='2015-02-05T08:00:00+08:00'
+      datePublished='2015-02-05T08:00:00+08:00'
+      dateModified='2015-02-05T09:00:00+08:00'
+      authorName='Jane Blogs'
+      publisherName='Gary Meehan'
+      publisherLogo='https://www.example.com/photos/logo.jpg'
+      description='This is a mighty good description of this news article.'
+      body='This is article body of news article'
+    />,
+  );
+  const jsonLD = JSON.parse(document.querySelector('script')?.innerHTML ?? '{}');
+  assertSchema(schemas)('NewsArticle', '1.0.0')(jsonLD);
+  expect(document.documentElement).toMatchSnapshot();
+});
+
+test('BlogPostJsonLd', () => {
+  render(
+    <BlogPostJsonLd
+      url='https://example.com/blog'
+      headline='Blog headline'
       images={[
         'https://example.com/photos/1x1/photo.jpg',
         'https://example.com/photos/4x3/photo.jpg',
@@ -32,13 +84,11 @@ test('ArticleJsonLd', () => {
       datePublished='2015-02-05T08:00:00+08:00'
       dateModified='2015-02-05T09:00:00+08:00'
       authorName='Jane Blogs'
-      publisherName='Gary Meehan'
-      publisherLogo='https://www.example.com/photos/logo.jpg'
-      description='This is a mighty good description of this article.'
+      description='This is a mighty good description of this blog.'
     />,
   );
   const jsonLD = JSON.parse(document.querySelector('script')?.innerHTML ?? '{}');
-  assertSchema(schemas)('Article', '1.0.0')(jsonLD);
+  assertSchema(schemas)('BlogPosting', '1.0.0')(jsonLD);
   expect(document.documentElement).toMatchSnapshot();
 });
 
@@ -46,12 +96,13 @@ test('BlogJsonLd', () => {
   render(
     <BlogJsonLd
       url='https://example.com/blog'
-      title='Blog headline'
+      headline='Blog headline'
       images={[
         'https://example.com/photos/1x1/photo.jpg',
         'https://example.com/photos/4x3/photo.jpg',
         'https://example.com/photos/16x9/photo.jpg',
       ]}
+      posts={[{ headline: 'Post 1' }, { headline: 'Post 2' }]}
       datePublished='2015-02-05T08:00:00+08:00'
       dateModified='2015-02-05T09:00:00+08:00'
       authorName='Jane Blogs'
@@ -98,7 +149,7 @@ test('BreadcrumbJsonLd', () => {
 test('CourseJsonLd', () => {
   render(
     <CourseJsonLd
-      courseName='Course Name'
+      name='Course Name'
       providerName='Course Provider'
       providerUrl='https//www.example.com/provider'
       description='Course description goes right here'
@@ -148,85 +199,6 @@ test('LogoJsonLd', () => {
   expect(document.documentElement).toMatchSnapshot();
 });
 
-test('SocialProfileJsonLd', () => {
-  render(
-    <SocialProfileJsonLd
-      type='Person'
-      url='http://www.your-site.com'
-      name='your name'
-      sameAs={[
-        'http://www.facebook.com/your-profile',
-        'http://instagram.com/yourProfile',
-        'http://www.linkedin.com/in/yourprofile',
-        'http://plus.google.com/your_profile',
-      ]}
-    />,
-  );
-  const jsonLD = JSON.parse(document.querySelector('script')?.innerHTML ?? '{}');
-  assertSchema(schemas)('Social Profile', '1.0.0')(jsonLD);
-  expect(document.documentElement).toMatchSnapshot();
-});
-
-test('CorporateContactJsonLd', () => {
-  render(
-    <CorporateContactJsonLd
-      url='http://www.your-company-site.com'
-      logo='http://www.example.com/logo.png'
-      contactPoint={[
-        {
-          telephone: '+1-401-555-1212',
-          contactType: 'customer service',
-          areaServed: 'US',
-          availableLanguage: ['English', 'Spanish', 'French'],
-        },
-        {
-          telephone: '+1-877-746-0909',
-          contactType: 'customer service',
-          contactOption: 'TollFree',
-          availableLanguage: 'English',
-        },
-        {
-          telephone: '+1-877-453-1304',
-          contactType: 'technical support',
-          contactOption: 'TollFree',
-          areaServed: ['US', 'CA'],
-          availableLanguage: ['English', 'French'],
-        },
-      ]}
-    />,
-  );
-  const jsonLD = JSON.parse(document.querySelector('script')?.innerHTML ?? '{}');
-  assertSchema(schemas)('Corporate Contact', '1.0.0')(jsonLD);
-  expect(document.documentElement).toMatchSnapshot();
-});
-
-test('NewsArticleJsonLd', () => {
-  render(
-    <NewsArticleJsonLd
-      url='https://example.com/newsarticle'
-      title='News Article headline'
-      images={[
-        'https://example.com/photos/1x1/photo.jpg',
-        'https://example.com/photos/4x3/photo.jpg',
-        'https://example.com/photos/16x9/photo.jpg',
-      ]}
-      section='politics'
-      keywords='prayuth, taksin, thai'
-      dateCreated='2015-02-05T08:00:00+08:00'
-      datePublished='2015-02-05T08:00:00+08:00'
-      dateModified='2015-02-05T09:00:00+08:00'
-      authorName='Jane Blogs'
-      publisherName='Gary Meehan'
-      publisherLogo='https://www.example.com/photos/logo.jpg'
-      description='This is a mighty good description of this news article.'
-      body='This is article body of news article'
-    />,
-  );
-  const jsonLD = JSON.parse(document.querySelector('script')?.innerHTML ?? '{}');
-  assertSchema(schemas)('NewsArticle', '1.0.0')(jsonLD);
-  expect(document.documentElement).toMatchSnapshot();
-});
-
 test('ProductJsonLd', () => {
   render(
     <ProductJsonLd
@@ -253,14 +225,14 @@ test('ProductJsonLd', () => {
       ]}
       aggregateRating={{
         ratingValue: '4.4',
-        reviewCount: '89',
+        reviewCount: 89,
       }}
       offers={{
         price: '119.99',
         priceCurrency: 'USD',
         priceValidUntil: '2020-11-05',
-        itemCondition: 'http://schema.org/UsedCondition',
-        availability: 'http://schema.org/InStock',
+        itemCondition: 'UsedCondition',
+        availability: 'InStock',
         url: 'https://www.example.com/executive-anvil',
         seller: {
           name: 'Executive Objects',

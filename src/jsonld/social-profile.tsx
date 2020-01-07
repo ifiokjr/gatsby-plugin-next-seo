@@ -17,6 +17,7 @@ export interface SocialProfileJsonLdProps extends DeferSeoProps {
  * {@link https://developers.google.com/search/docs/data-types/social-profile | documentation}
  * with the reason for deprecation.
  */
+export const SocialProfileJsonLd: FC<SocialProfileJsonLdProps> = ({
   type,
   name,
   url,
@@ -39,5 +40,3 @@ export interface SocialProfileJsonLdProps extends DeferSeoProps {
     </Helmet>
   );
 };
-
-export default SocialProfileJsonLd;

@@ -1,43 +1,72 @@
 import React, { FC } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Course, WithContext } from 'schema-dts';
 
 import { DeferSeoProps } from '../types';
+import { BaseJsonLd } from './base';
 
+/**
+ * The Course JSON LD Component props.
+ */
 export interface CourseJsonLdProps extends DeferSeoProps {
-  courseName: string;
+  /**
+   * @deprecated
+   *
+   * Use `name` instead.
+   */
+  courseName?: string;
+
+  /**
+   * The title of the course.
+   */
+  name?: string;
+
+  /**
+   * A description of the course. Display limit of 60 characters.
+   */
   description: string;
+
+  /**
+   * The name of the provider.
+   */
   providerName: string;
+
+  /**
+   * URL of a reference Web page that unambiguously indicates the item's
+   * identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or
+   * official website.
+   */
   providerUrl?: string;
+
+  /**
+   * An overrides object with custom properties for the provided schema type
+   * type.
+   */
+  overrides?: Course;
 }
 
-const CourseJsonLd: FC<CourseJsonLdProps> = ({
+export const CourseJsonLd: FC<CourseJsonLdProps> = ({
+  name,
   courseName,
   description,
   providerName,
   providerUrl,
+  overrides = {},
   defer = false,
 }) => {
-  const jsonld = `{
-    "@context": "http://schema.org",
-    "@type": "Course",
-    "name": "${courseName}",
-    "description": "${description}",
-    "provider": {
-      "@type": "Organization",
-      "name": "${providerName}"${
-    providerUrl
-      ? `,
-      "sameAs": "${providerUrl}"`
-      : ''
-  }
-    }
-  }`;
+  const json: WithContext<Course> = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: name ?? courseName,
+    description: description,
+    provider: providerName
+      ? {
+          '@type': 'Organization',
+          name: providerName,
+          sameAs: providerUrl,
+        }
+      : undefined,
+    ...overrides,
+  };
 
-  return (
-    <Helmet defer={defer}>
-      <script type='application/ld+json'>{jsonld}</script>
-    </Helmet>
-  );
+  return <BaseJsonLd defer={defer} {...json} />;
 };
-
-export default CourseJsonLd;

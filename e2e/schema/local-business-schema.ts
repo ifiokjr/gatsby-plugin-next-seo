@@ -1,6 +1,6 @@
 import { ObjectSchema, versionSchemas } from '@cypress/schema-tools';
 
-const socialProfile100: ObjectSchema = {
+const localBusiness100: ObjectSchema = {
   version: {
     major: 1,
     minor: 0,
@@ -99,7 +99,7 @@ const socialProfile100: ObjectSchema = {
       },
     },
     required: true,
-    additionalProperties: false,
+    additionalProperties: true,
   },
   example: {
     '@context': 'http://schema.org',
@@ -130,5 +130,5 @@ const socialProfile100: ObjectSchema = {
   },
 };
 
-const socialProfile = versionSchemas(socialProfile100);
-export default socialProfile;
+const localBusiness = versionSchemas(localBusiness100);
+export default localBusiness;

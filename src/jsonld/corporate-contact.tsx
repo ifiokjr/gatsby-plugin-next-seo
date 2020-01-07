@@ -50,6 +50,7 @@ const buildContactPoint = (contactPoint: ContactPoint[]) =>
  * {@link https://developers.google.com/search/docs/data-types/corporate-contact | documentation}
  * with the reason for deprecation.
  */
+export const CorporateContactJsonLd: FC<CorporateContactJsonLdProps> = ({
   url,
   logo,
   contactPoint,
@@ -69,5 +70,3 @@ const buildContactPoint = (contactPoint: ContactPoint[]) =>
     </Helmet>
   );
 };
-
-export default CorporateContactJsonLd;

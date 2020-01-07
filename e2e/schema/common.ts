@@ -49,7 +49,7 @@ export const aggregateRating100: ObjectSchema = {
         description: 'The rating for the content.',
       },
       reviewCount: {
-        type: 'string',
+        type: 'number',
         description: 'The count of total number of reviews.',
       },
     },

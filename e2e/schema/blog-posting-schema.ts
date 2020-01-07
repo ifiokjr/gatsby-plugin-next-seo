@@ -25,7 +25,7 @@ const mainEntity100: ObjectSchema = {
   },
   example: {
     '@type': 'WebPage',
-    '@id': 'https://example.com/blog',
+    '@id': 'https://example.com/blogPost',
   },
 };
 
@@ -58,7 +58,7 @@ const author100: ObjectSchema = {
   },
 };
 
-const blog100: ObjectSchema = {
+const logo100: ObjectSchema = {
   version: {
     major: 1,
     minor: 0,
@@ -66,8 +66,74 @@ const blog100: ObjectSchema = {
   },
   schema: {
     type: 'object',
-    title: 'Blog',
-    description: 'An example schema describing JSON-LD for type: Blog',
+    title: 'ImageObject',
+    description: 'Logo Object',
+    properties: {
+      '@type': {
+        type: 'string',
+        description: 'Describe type, should be ImageObject',
+      },
+      url: {
+        type: 'string',
+        description: 'URL to logo',
+      },
+    },
+    required: true,
+    additionalProperties: false,
+  },
+  example: {
+    '@type': 'ImageObject',
+    url: 'https://www.example.com/photos/logo.jpg',
+  },
+};
+
+const publisher100: ObjectSchema = {
+  version: {
+    major: 1,
+    minor: 0,
+    patch: 0,
+  },
+  schema: {
+    title: 'Organization',
+    type: 'object',
+    description: 'Publisher Object',
+    properties: {
+      '@type': {
+        type: 'string',
+        description: 'Publisher type',
+      },
+      name: {
+        type: 'string',
+        description: 'Publisher name',
+      },
+      logo: {
+        ...logo100.schema,
+        see: logo100,
+      },
+    },
+    required: true,
+    additionalProperties: false,
+  },
+  example: {
+    '@type': 'Organization',
+    name: 'Jane Bloggs',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://www.example.com/photos/logo.jpg',
+    },
+  },
+};
+
+const blogPost100: ObjectSchema = {
+  version: {
+    major: 1,
+    minor: 0,
+    patch: 0,
+  },
+  schema: {
+    type: 'object',
+    title: 'BlogPosting',
+    description: 'An example schema describing JSON-LD for type: BlogPosting',
     properties: {
       '@context': {
         type: 'string',
@@ -83,7 +149,7 @@ const blog100: ObjectSchema = {
       },
       headline: {
         type: 'string',
-        description: 'Title of the blog',
+        description: 'Title of the blogPost',
       },
       image: {
         type: 'array',
@@ -94,32 +160,36 @@ const blog100: ObjectSchema = {
       },
       datePublished: {
         type: 'string',
-        description: 'Publish date of the blog',
+        description: 'Publish date of the blogPost',
       },
       dateModified: {
         type: 'string',
-        description: 'Modified Date of the blog',
+        description: 'Modified Date of the blogPost',
       },
       author: {
         ...author100.schema,
         see: author100,
       },
+      publisher: {
+        ...publisher100.schema,
+        see: publisher100,
+      },
       description: {
         type: 'string',
-        description: 'The description of the Blog',
+        description: 'The description of the BlogPosting',
       },
     },
     required: true,
-    additionalProperties: true,
+    additionalProperties: false,
   },
   example: {
     '@context': 'http://schema.org',
-    '@type': 'Blog',
+    '@type': 'BlogPosting',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'https://example.com/blog',
+      '@id': 'https://example.com/blogPost',
     },
-    headline: 'Blog headline',
+    headline: 'BlogPosting headline',
     image: [
       'https://example.com/photos/1x1/photo.jpg',
       'https://example.com/photos/4x3/photo.jpg',
@@ -131,9 +201,17 @@ const blog100: ObjectSchema = {
       '@type': 'Person',
       name: 'Jane Blogs',
     },
-    description: 'This is a mighty good description of this blog.',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Jane Blogs',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.example.com/photos/logo.jpg',
+      },
+    },
+    description: 'This is a mighty good description of this blogPost.',
   },
 };
 
-const blogVersions = versionSchemas(blog100);
-export default blogVersions;
+const blogPostVersions = versionSchemas(blogPost100);
+export default blogPostVersions;
