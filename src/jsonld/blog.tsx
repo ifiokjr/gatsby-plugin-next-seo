@@ -2,12 +2,13 @@ import React, { FC } from 'react';
 import { Blog, WithContext } from 'schema-dts';
 
 import { DeferSeoProps } from '../types';
+import { Overrides } from '../utils/shared-types';
 import { JsonLd } from './jsonld';
 
 /**
  * The Blog JSON LD props.
  */
-export interface BlogJsonLdProps extends DeferSeoProps {
+export interface BlogJsonLdProps extends DeferSeoProps, Overrides<Blog> {
   /**
    * The canonical URL of the article page.
    */
@@ -119,12 +120,6 @@ export interface BlogJsonLdProps extends DeferSeoProps {
    * or the linking ISSN (ISSN-L) for, this serial publication.
    */
   issn?: string | string[];
-
-  /**
-   * An overrides object with custom properties for the provided blog schema
-   * type type.
-   */
-  overrides?: Blog;
 }
 
 interface BlogPost {

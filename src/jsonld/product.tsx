@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Offer as RawOffer, Product, Review as RawReview, WithContext } from 'schema-dts';
 
 import { DeferSeoProps } from '../types';
-import { AggregateRating } from '../utils/shared-types';
+import { AggregateRating, Overrides } from '../utils/shared-types';
 import { JsonLd } from './jsonld';
 
 interface ReviewRating {
@@ -113,7 +113,7 @@ interface Offers {
  *
  * @public
  */
-export interface ProductJsonLdProps extends DeferSeoProps {
+export interface ProductJsonLdProps extends DeferSeoProps, Overrides<Product> {
   /**
    * @deprecated
    *
@@ -282,12 +282,6 @@ export interface ProductJsonLdProps extends DeferSeoProps {
    * product or service, or the product to which the offer refers.
    */
   sku?: string | string[];
-
-  /**
-   * An overrides object with custom properties for the provided schema type
-   * type.
-   */
-  overrides?: Product;
 }
 
 /**

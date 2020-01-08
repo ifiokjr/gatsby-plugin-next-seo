@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { BreadcrumbList, ListItem, WithContext } from 'schema-dts';
 
 import { DeferSeoProps } from '../types';
+import { Overrides } from '../utils/shared-types';
 import { JsonLd } from './jsonld';
 
 export interface ItemListElements {
@@ -31,18 +32,12 @@ export interface ItemListElements {
   position: number;
 }
 
-export interface BreadcrumbJsonLdProps extends DeferSeoProps {
+export interface BreadcrumbJsonLdProps extends DeferSeoProps, Overrides<BreadcrumbList> {
   /**
    * An array of breadcrumbs listed in a specific order. Specify each breadcrumb
    * with a ListItem For example:
    */
   itemListElements: ItemListElements[];
-
-  /**
-   * An overrides object with custom properties for the provided schema type
-   * type.
-   */
-  overrides?: BreadcrumbList;
 }
 
 /**

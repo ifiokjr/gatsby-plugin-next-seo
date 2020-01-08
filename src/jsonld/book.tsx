@@ -11,6 +11,7 @@ import {
 import { Except } from 'type-fest';
 
 import { DeferSeoProps } from '../types';
+import { Overrides } from '../utils/shared-types';
 import { JsonLd } from './jsonld';
 
 export type BookFormatType = 'AudiobookFormat' | 'EBook' | 'GraphicNovel' | 'Hardcover' | 'Paperback';
@@ -84,7 +85,7 @@ interface WorkExample {
 /**
  * The Book JSON LD Component props.
  */
-export interface BookJsonLdProps extends DeferSeoProps {
+export interface BookJsonLdProps extends DeferSeoProps, Overrides<Book> {
   /**
    * The title of the book. If you provide multiple editions, use the title of the book edition.
    */
@@ -114,12 +115,6 @@ export interface BookJsonLdProps extends DeferSeoProps {
    * A reference page that unambiguously indicates the book's identity; for example, the URL of the book's Wikipedia page, Freebase page, or official website.
    */
   sameAs?: URL;
-
-  /**
-   * An overrides object with custom properties for the provided schema type
-   * type.
-   */
-  overrides?: Book;
 }
 
 /**

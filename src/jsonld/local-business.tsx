@@ -7,7 +7,7 @@ import {
 } from 'schema-dts';
 
 import { DeferSeoProps } from '../types';
-import { AggregateRating } from '../utils/shared-types';
+import { AggregateRating, Overrides } from '../utils/shared-types';
 import { JsonLd } from './jsonld';
 
 interface LocalBusinessAddress {
@@ -120,7 +120,7 @@ interface OpeningHoursSpecification {
   validThrough?: string;
 }
 
-export interface LocalBusinessJsonLdProps extends DeferSeoProps {
+export interface LocalBusinessJsonLdProps extends DeferSeoProps, Overrides<LocalBusiness> {
   /**
    * @deprecated
    *
@@ -317,12 +317,6 @@ export interface LocalBusinessJsonLdProps extends DeferSeoProps {
    * "$$$")
    */
   priceRange?: string;
-
-  /**
-   * An overrides object with custom properties for the provided schema type
-   * type.
-   */
-  overrides?: LocalBusiness;
 }
 
 const converter = {

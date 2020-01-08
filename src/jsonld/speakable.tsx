@@ -2,19 +2,13 @@ import React, { FC } from 'react';
 import { SpeakableSpecification, WithContext } from 'schema-dts';
 
 import { DeferSeoProps } from '../types';
-import { Speakable } from '../utils/shared-types';
+import { Overrides, Speakable } from '../utils/shared-types';
 import { JsonLd } from './jsonld';
 
 /**
  * The Speakable JSON LD Component props.
  */
-export interface SpeakableJsonLdProps extends DeferSeoProps, Speakable {
-  /**
-   * An overrides object with custom properties for the provided schema type
-   * type.
-   */
-  overrides?: SpeakableSpecification;
-}
+export interface SpeakableJsonLdProps extends DeferSeoProps, Speakable, Overrides<SpeakableSpecification> {}
 
 /**
  * The speakable schema.org property identifies sections within an article or

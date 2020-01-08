@@ -2,12 +2,13 @@ import React, { FC } from 'react';
 import { Course, WithContext } from 'schema-dts';
 
 import { DeferSeoProps } from '../types';
+import { Overrides } from '../utils/shared-types';
 import { JsonLd } from './jsonld';
 
 /**
  * The Course JSON LD Component props.
  */
-export interface CourseJsonLdProps extends DeferSeoProps {
+export interface CourseJsonLdProps extends DeferSeoProps, Overrides<Course> {
   /**
    * @deprecated
    *
@@ -36,12 +37,6 @@ export interface CourseJsonLdProps extends DeferSeoProps {
    * official website.
    */
   providerUrl?: string;
-
-  /**
-   * An overrides object with custom properties for the provided schema type
-   * type.
-   */
-  overrides?: Course;
 }
 
 export const CourseJsonLd: FC<CourseJsonLdProps> = ({

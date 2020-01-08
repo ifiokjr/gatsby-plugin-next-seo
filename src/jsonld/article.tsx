@@ -196,7 +196,9 @@ export const ArticleJsonLd: FC<ArticleJsonLdProps> = ({
   return <JsonLd defer={defer} json={json} />;
 };
 
-export interface BlogPostJsonLdProps extends Except<ArticleJsonLdProps, 'publisherName' | 'publisherLogo'> {
+export interface BlogPostJsonLdProps
+  extends Except<ArticleJsonLdProps, 'publisherName' | 'publisherLogo' | 'overrides'>,
+    Overrides<BlogPosting> {
   /**
    * The name of the publisher.
    */
@@ -206,11 +208,6 @@ export interface BlogPostJsonLdProps extends Except<ArticleJsonLdProps, 'publish
    * The url of the publisher logo.
    */
   publisherLogo?: string;
-  /**
-   * An overrides object with custom article properties for the provided article
-   * type.
-   */
-  overrides?: BlogPosting;
 }
 
 /**
@@ -263,13 +260,9 @@ export const BlogPostJsonLd: FC<BlogPostJsonLdProps> = ({
   );
 };
 
-export interface NewsArticleJsonLdProps extends ArticleJsonLdProps {
-  /**
-   * An overrides object with custom article properties for the provided article
-   * type.
-   */
-  overrides?: NewsArticle;
-
+export interface NewsArticleJsonLdProps
+  extends Except<ArticleJsonLdProps, 'overrides'>,
+    Overrides<NewsArticle> {
   /**
    * Articles may belong to one or more 'sections' in a magazine or newspaper,
    * such as Sports, Lifestyle, etc.

@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Organization, WithContext } from 'schema-dts';
 
 import { DeferSeoProps } from '../types';
+import { Overrides } from '../utils/shared-types';
 import { JsonLd } from './jsonld';
 
 /**
@@ -13,7 +14,7 @@ import { JsonLd } from './jsonld';
  * {@link https://developers.google.com/search/docs/data-types/logo#definitions | here}
  * for further documentation.
  */
-export interface LogoJsonLdProps extends DeferSeoProps {
+export interface LogoJsonLdProps extends DeferSeoProps, Overrides<Extract<Organization, object>> {
   /**
    * URL of a logo that is representative of the organization.
    *
@@ -31,12 +32,6 @@ export interface LogoJsonLdProps extends DeferSeoProps {
    * The URL of the website associated with the logo.
    */
   url: string;
-
-  /**
-   * An overrides object with custom properties for the provided schema type
-   * type.
-   */
-  overrides?: Extract<Organization, object>;
 }
 
 /**
