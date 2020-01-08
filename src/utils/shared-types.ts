@@ -1,3 +1,5 @@
+import { Thing } from 'schema-dts';
+
 export interface AggregateRating {
   /**
    * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
@@ -38,4 +40,33 @@ export interface AggregateRating {
    * The count of total number of reviews.
    */
   reviewCount?: number;
+}
+
+export interface Speakable {
+  /**
+   * Addresses content in the annotated pages (such as class attribute).
+   *
+   * @remarks
+   *
+   * Use either cssSelector or xPath; don't use both. For example:
+   *
+   * ```ts
+   * cssSelector: ["headline", "summary"]
+   * ```
+   */
+  cssSelector?: string[];
+
+  /**
+   * Addresses content using xPaths (assuming an XML view of the content).
+   *
+   * @remarks
+   *
+   * Use either
+   * cssSelector or xPath; don't use both. For example:
+   *
+   * ```ts
+   * xPath: '/html/head/title'
+   * ```
+   */
+  xpath?: string[];
 }

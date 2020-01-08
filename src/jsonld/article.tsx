@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
-import { Article, BlogPosting, NewsArticle, WithContext } from 'schema-dts';
+import { Article, BlogPosting, NewsArticle, SpeakableSpecification, WithContext } from 'schema-dts';
 import { Except } from 'type-fest';
 
 import { DeferSeoProps } from '../types';
+import { Overrides, Speakable } from '../utils/shared-types';
 import { JsonLd } from './jsonld';
 
 /**
@@ -10,7 +11,7 @@ import { JsonLd } from './jsonld';
  *
  * @public
  */
-export interface ArticleJsonLdProps extends DeferSeoProps {
+export interface ArticleJsonLdProps extends DeferSeoProps, Overrides<Article> {
   /**
    * The canonical URL of the article page.
    */
@@ -127,25 +128,9 @@ export interface ArticleJsonLdProps extends DeferSeoProps {
   body?: string;
 
   /**
-   * An overrides object with custom article properties for the provided article
-   * type.
-   *
-   * @remarks
-   *
-   * This is where you can override any provided attributes.
-   *
-   * To set the article type to a blog post pass in the following props.
-   *
-   * ```tsx
-   * const props: ArticleJsonLdProps = {
-   *   ...initialProps,
-   *   extra: {
-   *     '@type': 'BlogPosting', // Make this a blog post
-   *   }
-   * };
-   * ```
+   * Provide
    */
-  overrides?: Article;
+  speakable?: Speakable[];
 }
 
 /**
@@ -172,6 +157,7 @@ export const ArticleJsonLd: FC<ArticleJsonLdProps> = ({
   body,
   overrides,
   keywords,
+  speakable,
   defer = false,
 }) => {
   const json: WithContext<Article> = {
@@ -200,6 +186,9 @@ export const ArticleJsonLd: FC<ArticleJsonLdProps> = ({
     },
     description: description,
     articleBody: body,
+    speakable: speakable
+      ? speakable.map<SpeakableSpecification>(item => ({ '@type': 'SpeakableSpecification', ...item }))
+      : undefined,
     keywords: Array.isArray(keywords) ? keywords.join(', ') : keywords,
     ...overrides,
   };
