@@ -70,3 +70,30 @@ export interface Speakable {
    */
   xpath?: string[];
 }
+
+/**
+ * The shared overrides interface for making json ld components extensible.
+ */
+export interface Overrides<GThing extends Thing> {
+  /**
+   * An overrides object with custom properties for the provided generic
+   * `GThing` type.
+   *
+   * @remarks
+   *
+   * This is where you can override any provided attributes.
+   *
+   * For example, to extend an article type to a blog post you would need to
+   * pass in the following props.
+   *
+   * ```tsx
+   * const props: ArticleJsonLdProps = {
+   *   ...initialProps,
+   *   extra: {
+   *     '@type': 'BlogPosting', // Makes this a blog post
+   *   }
+   * };
+   * ```
+   */
+  overrides?: GThing;
+}
