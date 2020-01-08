@@ -9,7 +9,7 @@ The Blog JSON LD props.
 <b>Signature:</b>
 
 ```typescript
-export interface BlogJsonLdProps extends DeferSeoProps 
+export interface BlogJsonLdProps extends DeferSeoProps, Overrides<Blog> 
 ```
 
 ## Properties
@@ -25,7 +25,6 @@ export interface BlogJsonLdProps extends DeferSeoProps
 |  [images](./gatsby-plugin-next-seo.blogjsonldprops.images.md) | <code>string[]</code> | The images URLs that is representative of the article or AMP story. |
 |  [issn](./gatsby-plugin-next-seo.blogjsonldprops.issn.md) | <code>string &#124; string[]</code> | The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication. |
 |  [keywords](./gatsby-plugin-next-seo.blogjsonldprops.keywords.md) | <code>string[]</code> | Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas. |
-|  [overrides](./gatsby-plugin-next-seo.blogjsonldprops.overrides.md) | <code>Blog</code> | An overrides object with custom properties for the provided blog schema type type. |
 |  [posts](./gatsby-plugin-next-seo.blogjsonldprops.posts.md) | <code>BlogPost[]</code> | A posting that is part of this blog. |
 |  [publisherLogo](./gatsby-plugin-next-seo.blogjsonldprops.publisherlogo.md) | <code>string</code> | The url of the publisher logo. |
 |  [publisherName](./gatsby-plugin-next-seo.blogjsonldprops.publishername.md) | <code>string</code> | The name of the publisher. |

@@ -9,7 +9,7 @@ Component props for the Product JSON LD.
 <b>Signature:</b>
 
 ```typescript
-export interface ProductJsonLdProps extends DeferSeoProps 
+export interface ProductJsonLdProps extends DeferSeoProps, Overrides<Product> 
 ```
 
 ## Properties
@@ -29,7 +29,6 @@ export interface ProductJsonLdProps extends DeferSeoProps
 |  [name](./gatsby-plugin-next-seo.productjsonldprops.name.md) | <code>string</code> | The name of the product. |
 |  [offers](./gatsby-plugin-next-seo.productjsonldprops.offers.md) | <code>Offers</code> | An offer to sell the product. Includes a nested Offer or AggregateOffer. |
 |  [offersType](./gatsby-plugin-next-seo.productjsonldprops.offerstype.md) | <code>'Offer' &#124; 'AggregateOffer'</code> |  |
-|  [overrides](./gatsby-plugin-next-seo.productjsonldprops.overrides.md) | <code>Product</code> | An overrides object with custom properties for the provided schema type type. |
 |  [productName](./gatsby-plugin-next-seo.productjsonldprops.productname.md) | <code>string</code> |  |
 |  [reviews](./gatsby-plugin-next-seo.productjsonldprops.reviews.md) | <code>Review[]</code> | A nested Review of the product. |
 |  [sku](./gatsby-plugin-next-seo.productjsonldprops.sku.md) | <code>string &#124; string[]</code> | The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers. |

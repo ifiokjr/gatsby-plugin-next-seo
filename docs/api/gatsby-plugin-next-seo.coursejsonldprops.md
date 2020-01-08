@@ -9,7 +9,7 @@ The Course JSON LD Component props.
 <b>Signature:</b>
 
 ```typescript
-export interface CourseJsonLdProps extends DeferSeoProps 
+export interface CourseJsonLdProps extends DeferSeoProps, Overrides<Course> 
 ```
 
 ## Properties
@@ -19,7 +19,6 @@ export interface CourseJsonLdProps extends DeferSeoProps
 |  [courseName](./gatsby-plugin-next-seo.coursejsonldprops.coursename.md) | <code>string</code> |  |
 |  [description](./gatsby-plugin-next-seo.coursejsonldprops.description.md) | <code>string</code> | A description of the course. Display limit of 60 characters. |
 |  [name](./gatsby-plugin-next-seo.coursejsonldprops.name.md) | <code>string</code> | The title of the course. |
-|  [overrides](./gatsby-plugin-next-seo.coursejsonldprops.overrides.md) | <code>Course</code> | An overrides object with custom properties for the provided schema type type. |
 |  [providerName](./gatsby-plugin-next-seo.coursejsonldprops.providername.md) | <code>string</code> | The name of the provider. |
 |  [providerUrl](./gatsby-plugin-next-seo.coursejsonldprops.providerurl.md) | <code>string</code> | URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website. |
 

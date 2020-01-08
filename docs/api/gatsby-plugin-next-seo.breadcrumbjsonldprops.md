@@ -7,7 +7,7 @@
 <b>Signature:</b>
 
 ```typescript
-export interface BreadcrumbJsonLdProps extends DeferSeoProps 
+export interface BreadcrumbJsonLdProps extends DeferSeoProps, Overrides<BreadcrumbList> 
 ```
 
 ## Properties
@@ -15,5 +15,4 @@ export interface BreadcrumbJsonLdProps extends DeferSeoProps
 |  Property | Type | Description |
 |  --- | --- | --- |
 |  [itemListElements](./gatsby-plugin-next-seo.breadcrumbjsonldprops.itemlistelements.md) | <code>ItemListElements[]</code> | An array of breadcrumbs listed in a specific order. Specify each breadcrumb with a ListItem For example: |
-|  [overrides](./gatsby-plugin-next-seo.breadcrumbjsonldprops.overrides.md) | <code>BreadcrumbList</code> | An overrides object with custom properties for the provided schema type type. |
 

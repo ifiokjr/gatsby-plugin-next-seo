@@ -13,6 +13,7 @@
 |  [BaseSeoProps](./gatsby-plugin-next-seo.baseseoprops.md) |  |
 |  [BlogJsonLdProps](./gatsby-plugin-next-seo.blogjsonldprops.md) | The Blog JSON LD props. |
 |  [BlogPostJsonLdProps](./gatsby-plugin-next-seo.blogpostjsonldprops.md) |  |
+|  [BookJsonLdProps](./gatsby-plugin-next-seo.bookjsonldprops.md) | The Book JSON LD Component props. |
 |  [BreadcrumbJsonLdProps](./gatsby-plugin-next-seo.breadcrumbjsonldprops.md) |  |
 |  [ContactPoint](./gatsby-plugin-next-seo.contactpoint.md) |  |
 |  [CorporateContactJsonLdProps](./gatsby-plugin-next-seo.corporatecontactjsonldprops.md) |  |
@@ -35,6 +36,7 @@
 |  [OpenGraphVideoActors](./gatsby-plugin-next-seo.opengraphvideoactors.md) |  |
 |  [OpenGraphVideos](./gatsby-plugin-next-seo.opengraphvideos.md) |  |
 |  [ProductJsonLdProps](./gatsby-plugin-next-seo.productjsonldprops.md) | Component props for the Product JSON LD. |
+|  [SpeakableJsonLdProps](./gatsby-plugin-next-seo.speakablejsonldprops.md) | The Speakable JSON LD Component props. |
 |  [Twitter](./gatsby-plugin-next-seo.twitter.md) |  |
 
 ## Variables
@@ -45,6 +47,7 @@
 |  [BaseSeo](./gatsby-plugin-next-seo.baseseo.md) | This is the BaseSeo component which also takes in the default seo props. |
 |  [BlogJsonLd](./gatsby-plugin-next-seo.blogjsonld.md) |  |
 |  [BlogPostJsonLd](./gatsby-plugin-next-seo.blogpostjsonld.md) | A utility component which wraps the <code>&lt;ArticleJsonLd /&gt;</code> component but is classified as a <code>BlogPosting</code>. |
+|  [BookJsonLd](./gatsby-plugin-next-seo.bookjsonld.md) | The <code>Book</code> component makes search engines an entry point for discovering your books and authors. Users can then buy the books that they find directly from Search results. |
 |  [BreadcrumbJsonLd](./gatsby-plugin-next-seo.breadcrumbjsonld.md) | A breadcrumb trail on a page indicates the page's position in the site hierarchy. A user can navigate all the way up in the site hierarchy, one level at a time, by starting from the last breadcrumb in the breadcrumb trail. |
 |  [CorporateContactJsonLd](./gatsby-plugin-next-seo.corporatecontactjsonld.md) |  |
 |  [CourseJsonLd](./gatsby-plugin-next-seo.coursejsonld.md) |  |
@@ -54,11 +57,13 @@
 |  [LogoJsonLd](./gatsby-plugin-next-seo.logojsonld.md) | Specify the image Google Search uses for your organization's logo in Search results and in the Knowledge Graph. |
 |  [NewsArticleJsonLd](./gatsby-plugin-next-seo.newsarticlejsonld.md) | A utility component which wraps the <code>&lt;ArticleJsonLd /&gt;</code> component but is classified as a <code>NewsArticle</code>. |
 |  [ProductJsonLd](./gatsby-plugin-next-seo.productjsonld.md) | Add markup to your product pages so Google can provide detailed product information in rich Search results — including Google Images. |
+|  [SpeakableJsonLd](./gatsby-plugin-next-seo.speakablejsonld.md) | <b><i>(BETA)</i></b> The speakable schema.org property identifies sections within an article or webpage that are best suited for audio playback using text-to-speech (TTS). |
 
 ## Type Aliases
 
 |  Type Alias | Description |
 |  --- | --- |
+|  [BookFormatType](./gatsby-plugin-next-seo.bookformattype.md) |  |
 |  [LocalBusinessType](./gatsby-plugin-next-seo.localbusinesstype.md) |  |
 |  [TwitterCardType](./gatsby-plugin-next-seo.twittercardtype.md) |  |
 

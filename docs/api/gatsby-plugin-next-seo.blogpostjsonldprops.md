@@ -7,14 +7,13 @@
 <b>Signature:</b>
 
 ```typescript
-export interface BlogPostJsonLdProps extends Except<ArticleJsonLdProps, 'publisherName' | 'publisherLogo'> 
+export interface BlogPostJsonLdProps extends Except<ArticleJsonLdProps, 'publisherName' | 'publisherLogo' | 'overrides'>, Overrides<BlogPosting> 
 ```
 
 ## Properties
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [overrides](./gatsby-plugin-next-seo.blogpostjsonldprops.overrides.md) | <code>BlogPosting</code> | An overrides object with custom article properties for the provided article type. |
 |  [publisherLogo](./gatsby-plugin-next-seo.blogpostjsonldprops.publisherlogo.md) | <code>string</code> | The url of the publisher logo. |
 |  [publisherName](./gatsby-plugin-next-seo.blogpostjsonldprops.publishername.md) | <code>string</code> | The name of the publisher. |
 

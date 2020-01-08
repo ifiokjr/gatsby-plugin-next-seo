@@ -7,7 +7,7 @@
 <b>Signature:</b>
 
 ```typescript
-export interface LocalBusinessJsonLdProps extends DeferSeoProps 
+export interface LocalBusinessJsonLdProps extends DeferSeoProps, Overrides<LocalBusiness> 
 ```
 
 ## Properties
@@ -21,7 +21,6 @@ export interface LocalBusinessJsonLdProps extends DeferSeoProps
 |  [images](./gatsby-plugin-next-seo.localbusinessjsonldprops.images.md) | <code>string[]</code> | One or more images of the <code>LocalBusiness</code>. |
 |  [name](./gatsby-plugin-next-seo.localbusinessjsonldprops.name.md) | <code>string</code> | The name of the business. |
 |  [openingHours](./gatsby-plugin-next-seo.localbusinessjsonldprops.openinghours.md) | <code>OpeningHoursSpecification &#124; OpeningHoursSpecification[]</code> | The opening hours of a certain place. |
-|  [overrides](./gatsby-plugin-next-seo.localbusinessjsonldprops.overrides.md) | <code>LocalBusiness</code> | An overrides object with custom properties for the provided schema type type. |
 |  [priceRange](./gatsby-plugin-next-seo.localbusinessjsonldprops.pricerange.md) | <code>string</code> | The relative price range of a business, commonly specified by either a numerical range. |
 |  [rating](./gatsby-plugin-next-seo.localbusinessjsonldprops.rating.md) | <code>AggregateRating</code> | The average rating of the local business based on multiple ratings or reviews. |
 |  [telephone](./gatsby-plugin-next-seo.localbusinessjsonldprops.telephone.md) | <code>string</code> | A business phone number meant to be the primary contact method for customers. Be sure to include the country code and area code in the phone number. |

@@ -7,8 +7,10 @@
 import { Article } from 'schema-dts';
 import { Blog } from 'schema-dts';
 import { BlogPosting } from 'schema-dts';
+import { Book } from 'schema-dts';
 import { BreadcrumbList } from 'schema-dts';
 import { Course } from 'schema-dts';
+import { Date as Date_2 } from 'schema-dts';
 import { Except } from 'type-fest';
 import { FC } from 'react';
 import { LiteralUnion } from 'type-fest';
@@ -16,7 +18,11 @@ import { LocalBusiness as LocalBusiness_2 } from 'schema-dts';
 import { NewsArticle } from 'schema-dts';
 import { Organization } from 'schema-dts';
 import { Product } from 'schema-dts';
+import { ReadAction } from 'schema-dts';
+import { SpeakableSpecification } from 'schema-dts';
+import { Text } from 'schema-dts';
 import { Thing } from 'schema-dts';
+import { URL } from 'schema-dts';
 import { WithContext } from 'schema-dts';
 
 // @internal
@@ -29,8 +35,10 @@ export interface AllSeoProps extends DefaultSeoProps, GatsbySeoProps {
 // @public
 export const ArticleJsonLd: FC<ArticleJsonLdProps>;
 
+// Warning: (ae-forgotten-export) The symbol "Overrides" needs to be exported by the entry point index.d.ts
+//
 // @public
-export interface ArticleJsonLdProps extends DeferSeoProps {
+export interface ArticleJsonLdProps extends DeferSeoProps, Overrides<Article> {
     authorName: string;
     authorType?: 'Person' | 'Organization';
     body?: string;
@@ -41,9 +49,10 @@ export interface ArticleJsonLdProps extends DeferSeoProps {
     headline?: string | string[];
     images: string[];
     keywords?: string | string[];
-    overrides?: Article;
     publisherLogo: string;
     publisherName: string;
+    // Warning: (ae-forgotten-export) The symbol "Speakable" needs to be exported by the entry point index.d.ts
+    speakable?: Speakable[];
     // @deprecated (undocumented)
     title?: string;
     url: string;
@@ -79,7 +88,7 @@ export interface BaseSeoProps {
 export const BlogJsonLd: FC<BlogJsonLdProps>;
 
 // @public
-export interface BlogJsonLdProps extends DeferSeoProps {
+export interface BlogJsonLdProps extends DeferSeoProps, Overrides<Blog> {
     authorName?: string;
     authorType?: 'Person' | 'Organization';
     dateModified?: string;
@@ -89,7 +98,6 @@ export interface BlogJsonLdProps extends DeferSeoProps {
     images?: string[];
     issn?: string | string[];
     keywords?: string[];
-    overrides?: Blog;
     // Warning: (ae-forgotten-export) The symbol "BlogPost" needs to be exported by the entry point index.d.ts
     posts?: BlogPost[];
     publisherLogo?: string;
@@ -103,8 +111,7 @@ export interface BlogJsonLdProps extends DeferSeoProps {
 export const BlogPostJsonLd: FC<BlogPostJsonLdProps>;
 
 // @public (undocumented)
-export interface BlogPostJsonLdProps extends Except<ArticleJsonLdProps, 'publisherName' | 'publisherLogo'> {
-    overrides?: BlogPosting;
+export interface BlogPostJsonLdProps extends Except<ArticleJsonLdProps, 'publisherName' | 'publisherLogo' | 'overrides'>, Overrides<BlogPosting> {
     publisherLogo?: string;
     publisherName?: string;
 }
@@ -114,13 +121,30 @@ export interface BlogPostJsonLdProps extends Except<ArticleJsonLdProps, 'publish
 // @internal (undocumented)
 export type BodyProps = JSX.IntrinsicElements['body'] & OtherElementAttributes;
 
+// @public (undocumented)
+export type BookFormatType = 'AudiobookFormat' | 'EBook' | 'GraphicNovel' | 'Hardcover' | 'Paperback';
+
+// @public
+export const BookJsonLd: FC<BookJsonLdProps>;
+
+// @public
+export interface BookJsonLdProps extends DeferSeoProps, Overrides<Book> {
+    // Warning: (ae-forgotten-export) The symbol "Person" needs to be exported by the entry point index.d.ts
+    author: Person;
+    id?: URL;
+    name: string;
+    sameAs?: URL;
+    url: string;
+    // Warning: (ae-forgotten-export) The symbol "WorkExample" needs to be exported by the entry point index.d.ts
+    workExample: WorkExample[];
+}
+
 // @public
 export const BreadcrumbJsonLd: FC<BreadcrumbJsonLdProps>;
 
 // @public (undocumented)
-export interface BreadcrumbJsonLdProps extends DeferSeoProps {
+export interface BreadcrumbJsonLdProps extends DeferSeoProps, Overrides<BreadcrumbList> {
     itemListElements: ItemListElements[];
-    overrides?: BreadcrumbList;
 }
 
 // @public (undocumented)
@@ -154,12 +178,11 @@ export interface CorporateContactJsonLdProps extends DeferSeoProps {
 export const CourseJsonLd: FC<CourseJsonLdProps>;
 
 // @public
-export interface CourseJsonLdProps extends DeferSeoProps {
+export interface CourseJsonLdProps extends DeferSeoProps, Overrides<Course> {
     // @deprecated (undocumented)
     courseName?: string;
     description: string;
     name?: string;
-    overrides?: Course;
     providerName: string;
     providerUrl?: string;
 }
@@ -218,8 +241,10 @@ export type LinkProps = JSX.IntrinsicElements['link'];
 // @public
 export const LocalBusinessJsonLd: FC<LocalBusinessJsonLdProps>;
 
+// Warning: (ae-forgotten-export) The symbol "LocalBusiness" needs to be exported by the entry point index.d.ts
+//
 // @public (undocumented)
-export interface LocalBusinessJsonLdProps extends DeferSeoProps {
+export interface LocalBusinessJsonLdProps extends DeferSeoProps, Overrides<LocalBusiness> {
     // Warning: (ae-forgotten-export) The symbol "LocalBusinessAddress" needs to be exported by the entry point index.d.ts
     address: LocalBusinessAddress;
     description: string;
@@ -230,8 +255,6 @@ export interface LocalBusinessJsonLdProps extends DeferSeoProps {
     name: string;
     // Warning: (ae-forgotten-export) The symbol "OpeningHoursSpecification" needs to be exported by the entry point index.d.ts
     openingHours?: OpeningHoursSpecification | OpeningHoursSpecification[];
-    // Warning: (ae-forgotten-export) The symbol "LocalBusiness" needs to be exported by the entry point index.d.ts
-    overrides?: LocalBusiness;
     priceRange?: string;
     // Warning: (ae-forgotten-export) The symbol "AggregateRating" needs to be exported by the entry point index.d.ts
     rating?: AggregateRating;
@@ -248,9 +271,8 @@ export type LocalBusinessType = LocalBusiness['@type'];
 export const LogoJsonLd: FC<LogoJsonLdProps>;
 
 // @public
-export interface LogoJsonLdProps extends DeferSeoProps {
+export interface LogoJsonLdProps extends DeferSeoProps, Overrides<Extract<Organization, object>> {
     logo: string;
-    overrides?: Extract<Organization, object>;
     url: string;
 }
 
@@ -263,8 +285,7 @@ export type MetaProps = JSX.IntrinsicElements['meta'];
 export const NewsArticleJsonLd: FC<NewsArticleJsonLdProps>;
 
 // @public (undocumented)
-export interface NewsArticleJsonLdProps extends ArticleJsonLdProps {
-    overrides?: NewsArticle;
+export interface NewsArticleJsonLdProps extends Except<ArticleJsonLdProps, 'overrides'>, Overrides<NewsArticle> {
     section?: string | string[];
 }
 
@@ -385,7 +406,7 @@ export interface OtherElementAttributes {
 export const ProductJsonLd: FC<ProductJsonLdProps>;
 
 // @public
-export interface ProductJsonLdProps extends DeferSeoProps {
+export interface ProductJsonLdProps extends DeferSeoProps, Overrides<Product> {
     aggregateRating?: AggregateRating;
     brand?: string;
     description?: string;
@@ -401,7 +422,6 @@ export interface ProductJsonLdProps extends DeferSeoProps {
     offers?: Offers;
     // (undocumented)
     offersType?: 'Offer' | 'AggregateOffer';
-    overrides?: Product;
     // @deprecated (undocumented)
     productName?: string;
     // Warning: (ae-forgotten-export) The symbol "Review" needs to be exported by the entry point index.d.ts
@@ -431,6 +451,13 @@ export interface SocialProfileJsonLdProps extends DeferSeoProps {
     type: string;
     // (undocumented)
     url: string;
+}
+
+// @beta
+export const SpeakableJsonLd: FC<SpeakableJsonLdProps>;
+
+// @public
+export interface SpeakableJsonLdProps extends DeferSeoProps, Speakable, Overrides<SpeakableSpecification> {
 }
 
 // Warning: (ae-internal-missing-underscore) The name "StyleProps" should be prefixed with an underscore because the declaration is marked as @internal

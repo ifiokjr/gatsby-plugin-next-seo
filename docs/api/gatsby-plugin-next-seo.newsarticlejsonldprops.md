@@ -7,13 +7,12 @@
 <b>Signature:</b>
 
 ```typescript
-export interface NewsArticleJsonLdProps extends ArticleJsonLdProps 
+export interface NewsArticleJsonLdProps extends Except<ArticleJsonLdProps, 'overrides'>, Overrides<NewsArticle> 
 ```
 
 ## Properties
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [overrides](./gatsby-plugin-next-seo.newsarticlejsonldprops.overrides.md) | <code>NewsArticle</code> | An overrides object with custom article properties for the provided article type. |
 |  [section](./gatsby-plugin-next-seo.newsarticlejsonldprops.section.md) | <code>string &#124; string[]</code> | Articles may belong to one or more 'sections' in a magazine or newspaper, such as Sports, Lifestyle, etc. |
 

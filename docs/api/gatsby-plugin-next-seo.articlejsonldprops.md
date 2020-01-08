@@ -9,7 +9,7 @@ The component props for a JSON LD Article.
 <b>Signature:</b>
 
 ```typescript
-export interface ArticleJsonLdProps extends DeferSeoProps 
+export interface ArticleJsonLdProps extends DeferSeoProps, Overrides<Article> 
 ```
 
 ## Properties
@@ -26,9 +26,9 @@ export interface ArticleJsonLdProps extends DeferSeoProps
 |  [headline](./gatsby-plugin-next-seo.articlejsonldprops.headline.md) | <code>string &#124; string[]</code> | The headline of the article. |
 |  [images](./gatsby-plugin-next-seo.articlejsonldprops.images.md) | <code>string[]</code> | The images URLs that is representative of the article or AMP story. |
 |  [keywords](./gatsby-plugin-next-seo.articlejsonldprops.keywords.md) | <code>string &#124; string[]</code> | Keywords or tags used to describe this content. |
-|  [overrides](./gatsby-plugin-next-seo.articlejsonldprops.overrides.md) | <code>Article</code> | An overrides object with custom article properties for the provided article type. |
 |  [publisherLogo](./gatsby-plugin-next-seo.articlejsonldprops.publisherlogo.md) | <code>string</code> | The url of the publisher logo. |
 |  [publisherName](./gatsby-plugin-next-seo.articlejsonldprops.publishername.md) | <code>string</code> | The name of the publisher. |
+|  [speakable](./gatsby-plugin-next-seo.articlejsonldprops.speakable.md) | <code>Speakable[]</code> | Provide |
 |  [title](./gatsby-plugin-next-seo.articlejsonldprops.title.md) | <code>string</code> |  |
 |  [url](./gatsby-plugin-next-seo.articlejsonldprops.url.md) | <code>string</code> | The canonical URL of the article page. |
 
