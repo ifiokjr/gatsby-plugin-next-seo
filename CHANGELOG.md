@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.1.0...v1.2.0) (2020-01-08)
+
+
+### Features
+
+* **JSON-LD:** export core `JsonLd` component ([1c14777](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/1c14777e63bfb4ece350cffde66cca8ba05cc094))
+
 ## [1.1.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.0.2...v1.1.0) (2020-01-07)
 
 
