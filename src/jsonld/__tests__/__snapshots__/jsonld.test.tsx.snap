@@ -134,6 +134,63 @@ exports[`BlogPostJsonLd 1`] = `
 </html>
 `;
 
+exports[`BookJsonLd 1`] = `
+<html>
+  <head>
+    <script
+      data-rh="true"
+      type="application/ld+json"
+    >
+      {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Rock your world - the final chapter",
+  "url": "https://example.com/tolub",
+  "author": {
+    "@type": "Person",
+    "name": "Tolu B."
+  },
+  "workExample": [
+    {
+      "@type": "Book",
+      "bookFormat": "https://schema.org/AudiobookFormat",
+      "isbn": "123123123",
+      "person": {
+        "@type": "Person"
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "expectsAcceptanceOf": {
+          "@type": "Offer",
+          "price": "6.99",
+          "priceCurrency": "USD",
+          "eligibleRegion": {
+            "@type": "Country",
+            "name": "US"
+          },
+          "availability": "http://schema.org/InStock"
+        },
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "http://www.barnesandnoble.com/store/info/offer/0316769487?purchase=true",
+          "actionPlatform": [
+            "http://schema.org/DesktopWebPlatform",
+            "http://schema.org/IOSPlatform",
+            "http://schema.org/AndroidPlatform"
+          ]
+        }
+      }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <div />
+  </body>
+</html>
+`;
+
 exports[`BreadcrumbJsonLd 1`] = `
 <html>
   <head>
@@ -383,6 +440,29 @@ exports[`ProductJsonLd 1`] = `
       "name": "Executive Objects"
     }
   }
+}
+    </script>
+  </head>
+  <body>
+    <div />
+  </body>
+</html>
+`;
+
+exports[`SpeakableJsonLd 1`] = `
+<html>
+  <head>
+    <script
+      data-rh="true"
+      type="application/ld+json"
+    >
+      {
+  "@context": "https://schema.org",
+  "@type": "SpeakableSpecification",
+  "cssSelector": [
+    "#abc",
+    "#root"
+  ]
 }
     </script>
   </head>

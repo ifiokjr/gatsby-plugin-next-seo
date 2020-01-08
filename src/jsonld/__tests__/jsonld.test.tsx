@@ -7,6 +7,7 @@ import {
   ArticleJsonLd,
   BlogJsonLd,
   BlogPostJsonLd,
+  BookJsonLd,
   BreadcrumbJsonLd,
   CourseJsonLd,
   LocalBusinessJsonLd,
@@ -15,6 +16,7 @@ import {
   ProductJsonLd,
 } from '../..';
 import schemas from '../../../e2e/schema';
+import { SpeakableJsonLd } from '../speakable';
 
 const render = (ui: ReactElement) => testRender(ui, { wrapper: HelmetProvider });
 
@@ -145,6 +147,45 @@ test('BreadcrumbJsonLd', () => {
   expect(document.documentElement).toMatchSnapshot();
 });
 
+test('BookJsonLd', () => {
+  render(
+    <BookJsonLd
+      author={{ name: 'Tolu B.' }}
+      url='https://example.com/tolub'
+      name='Rock your world - the final chapter'
+      workExample={[
+        {
+          bookFormat: 'AudiobookFormat',
+          isbn: '123123123',
+          potentialAction: {
+            expectsAcceptanceOf: {
+              '@type': 'Offer',
+              price: '6.99',
+              priceCurrency: 'USD',
+              eligibleRegion: {
+                '@type': 'Country',
+                name: 'US',
+              },
+              availability: 'http://schema.org/InStock',
+            },
+            target: {
+              '@type': 'EntryPoint',
+              urlTemplate: 'http://www.barnesandnoble.com/store/info/offer/0316769487?purchase=true',
+              actionPlatform: [
+                'http://schema.org/DesktopWebPlatform',
+                'http://schema.org/IOSPlatform',
+                'http://schema.org/AndroidPlatform',
+              ],
+            },
+          },
+        },
+      ]}
+    />,
+  );
+  JSON.parse(document.querySelector('script')?.innerHTML!);
+  expect(document.documentElement).toMatchSnapshot();
+});
+
 test('CourseJsonLd', () => {
   render(
     <CourseJsonLd
@@ -157,6 +198,15 @@ test('CourseJsonLd', () => {
   const jsonLD = JSON.parse(document.querySelector('script')?.innerHTML ?? '{}');
   assertSchema(schemas)('Course', '1.0.0')(jsonLD);
   expect(document.documentElement).toMatchSnapshot();
+});
+
+test('SpeakableJsonLd', () => {
+  render(<SpeakableJsonLd cssSelector={['#abc', '#root']} />);
+  JSON.parse(document.querySelector('script')?.innerHTML!);
+  expect(document.documentElement).toMatchSnapshot();
+  expect(() =>
+    render(<SpeakableJsonLd cssSelector={['#abc', '#root']} xpath={['/asdf/a']} />),
+  ).toThrowError();
 });
 
 test('LocalBusinessJsonLd', () => {
