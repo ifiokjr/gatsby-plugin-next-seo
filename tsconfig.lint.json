@@ -5,6 +5,7 @@
     "src/__mocks__",
     "**/*.tsx",
     "*.js",
+    "**/*.js",
     ".eslintrc.js",
     "babel.config.js",
     "example/*.js",

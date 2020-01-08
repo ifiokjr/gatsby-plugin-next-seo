@@ -8,5 +8,5 @@
 
 - [ ] I have read the [**contributing**](https://github.com/ifiokjr/gatsby-plugin-next-seo/blob/master/CONTRIBUTING.md) document.
 - [ ] My code follows the code style of this project and `yarn fix` runs successfully.
-- [ ] I have updated the documentation where necessary.
-- [ ] New code is unit tested and all current tests pass when running `yarn test && yarn test:e2e` .
+- [ ] I have run `yarn api:generate` and updated the README documentation where necessary.
+- [ ] New code is unit tested and all current tests pass when running `yarn test && yarn test:e2e`.

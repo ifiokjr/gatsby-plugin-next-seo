@@ -1,5 +1,8 @@
 import { LiteralUnion } from 'type-fest';
 
+/**
+ * @public
+ */
 export interface OpenGraphImages {
   url: string;
   width?: number;
@@ -7,6 +10,9 @@ export interface OpenGraphImages {
   alt?: string;
 }
 
+/**
+ * @public
+ */
 export interface OpenGraphVideos {
   url: string;
   width?: number;
@@ -14,11 +20,17 @@ export interface OpenGraphVideos {
   alt?: string;
 }
 
+/**
+ * @public
+ */
 export interface OpenGraphVideoActors {
   profile: string;
   role?: string;
 }
 
+/**
+ * @public
+ */
 export interface OpenGraph {
   /**
    * The canonical URL of your object that will be used as its permanent ID in
@@ -68,7 +80,7 @@ export interface OpenGraph {
    * The locale the open graph tags are marked up in. Of the format
    * language_TERRITORY.
    *
-   * @default 'en_US'
+   * @defaultValue 'en_US'
    */
   locale?: string;
 
@@ -99,6 +111,9 @@ export interface OpenGraph {
   video?: OpenGraphVideo;
 }
 
+/**
+ * @public
+ */
 export interface OpenGraphProfile {
   /**
    * Person's first name.
@@ -121,6 +136,9 @@ export interface OpenGraphProfile {
   gender?: string;
 }
 
+/**
+ * @public
+ */
 export interface OpenGraphBook {
   /**
    * The list of author names for the book.
@@ -147,6 +165,9 @@ export interface OpenGraphBook {
   tags?: string[];
 }
 
+/**
+ * @public
+ */
 export interface OpenGraphArticle {
   publishedTime?: string;
   modifiedTime?: string;
@@ -157,6 +178,9 @@ export interface OpenGraphArticle {
   tags?: string[];
 }
 
+/**
+ * @public
+ */
 export interface OpenGraphVideo {
   actors?: OpenGraphVideoActors[];
   directors?: string[];
@@ -169,6 +193,9 @@ export interface OpenGraphVideo {
 
 export type TwitterCardType = 'summary' | 'summary_large_image' | 'app' | 'player';
 
+/**
+ * @public
+ */
 export interface Twitter {
   /**
    * `@username` for the content creator / author (outputs as `twitter:creator`).
@@ -204,6 +231,9 @@ interface LanguageAlternate {
   href: string;
 }
 
+/**
+ * @public
+ */
 export interface BaseSeoProps {
   /**
    * Set the meta title of the page
@@ -348,8 +378,7 @@ export interface BaseSeoProps {
   mobileAlternate?: MobileAlternate;
 
   /**
-   * Set the language of the alternate urls. Excepts object: `{ hrefLang:
-   * string, href: string }`.
+   * Set the language of the alternate urls.
    */
   languageAlternates?: LanguageAlternate[];
 
@@ -433,17 +462,26 @@ export interface BaseSeoProps {
   linkTags?: LinkProps[];
 }
 
+/**
+ * @public
+ */
 export interface DeferSeoProps {
   /**
    * Whether or not to defer the addition of the head tag.
    *
-   * @default false
+   * @defaultValue false
    */
   defer?: boolean;
 }
 
+/**
+ * @public
+ */
 export interface GatsbySeoProps extends BaseSeoProps, DeferSeoProps {}
 
+/**
+ * @public
+ */
 export interface DefaultSeoProps {
   /**
    * It has the prefix of `dangerously` because it will `noindex` all pages. As
@@ -484,19 +522,52 @@ export interface DefaultSeoProps {
   defaultOpenGraphVideoHeight?: number;
 }
 
+/**
+ * @public
+ */
 export interface AllSeoProps extends DefaultSeoProps, GatsbySeoProps {}
 
+/**
+ * @public
+ */
 export interface GatsbySeoPluginOptions extends DefaultSeoProps, BaseSeoProps {}
 
+/**
+ * @internal
+ */
 export interface OtherElementAttributes {
   [key: string]: string | number | boolean | null | undefined;
 }
 
+/**
+ * @internal
+ */
 export type HtmlProps = JSX.IntrinsicElements['html'] & OtherElementAttributes;
+/**
+ * @internal
+ */
 export type BodyProps = JSX.IntrinsicElements['body'] & OtherElementAttributes;
+/**
+ * @internal
+ */
 export type LinkProps = JSX.IntrinsicElements['link'];
+/**
+ * @internal
+ */
 export type MetaProps = JSX.IntrinsicElements['meta'];
+/**
+ * @internal
+ */
 export type NoscriptProps = JSX.IntrinsicElements['noscript'];
+/**
+ * @internal
+ */
 export type ScriptProps = JSX.IntrinsicElements['script'];
+/**
+ * @internal
+ */
 export type StyleProps = JSX.IntrinsicElements['style'];
+/**
+ * @internal
+ */
 export type TitleProps = JSX.IntrinsicElements['title'];

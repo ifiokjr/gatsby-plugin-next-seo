@@ -5,6 +5,11 @@ import { Except } from 'type-fest';
 import { DeferSeoProps } from '../types';
 import { JsonLd } from './jsonld';
 
+/**
+ * The component props for a JSON LD Article.
+ *
+ * @public
+ */
 export interface ArticleJsonLdProps extends DeferSeoProps {
   /**
    * The canonical URL of the article page.
@@ -97,7 +102,7 @@ export interface ArticleJsonLdProps extends DeferSeoProps {
   /**
    * The type of author for this article.
    *
-   * @default 'Person'
+   * @defaultValue 'Person'
    */
   authorType?: 'Person' | 'Organization';
 
@@ -248,6 +253,8 @@ export interface BlogPostJsonLdProps extends Except<ArticleJsonLdProps, 'publish
  *   </>
  * );
  * ```
+ *
+ * @public
  */
 export const BlogPostJsonLd: FC<BlogPostJsonLdProps> = ({
   overrides,

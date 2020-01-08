@@ -90,7 +90,7 @@ export interface BlogJsonLdProps extends DeferSeoProps {
   /**
    * The type of author for this article.
    *
-   * @default 'Person'
+   * @defaultValue 'Person'
    */
   authorType?: 'Person' | 'Organization';
 

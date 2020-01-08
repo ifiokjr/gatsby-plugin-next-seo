@@ -1,5 +1,4 @@
 import { assertSchema } from '@cypress/schema-tools';
-// import { prettyDOM } from '@testing-library/dom';
 import { render as testRender } from '@testing-library/react';
 import React, { ReactElement } from 'react';
 import { HelmetProvider } from 'react-helmet-async';

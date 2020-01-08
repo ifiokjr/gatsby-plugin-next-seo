@@ -20,6 +20,8 @@ import { BaseSeo } from './base-seo';
  *   </>
  * );
  * ```
+ *
+ * @public
  */
 export const GatsbySeo = ({
   metaTags,

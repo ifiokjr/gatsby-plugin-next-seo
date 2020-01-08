@@ -50,6 +50,9 @@ jobs:
       - name: build project
         run: yarn build
 
+      - name: check api documentation is up to date
+        run: yarn api:check
+
       - name: run gatsby build integration tests
         run: yarn test:e2e
         if: matrix.node-version == '12.x'

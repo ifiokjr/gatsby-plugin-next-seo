@@ -11,46 +11,48 @@ This codebase was initially forked from the brilliant [next-seo](https://github.
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [gatsby-plugin-next-seo](#gatsby-plugin-next-seo)
-  - [Table of Contents](#table-of-contents)
-  - [Usage](#usage)
-    - [Setup](#setup)
-    - [Add Plugin to Gatsby Config](#add-plugin-to-gatsby-config)
-    - [Add SEO to Page](#add-seo-to-page)
-      - [A note on Twitter Tags](#a-note-on-twitter-tags)
-    - [Default SEO Configuration in Gatsby Config](#default-seo-configuration-in-gatsby-config)
-    - [GatsbySeo Options](#gatsbyseo-options)
-      - [Title Template](#title-template)
-      - [No Index](#no-index)
-      - [dangerouslySetAllPagesToNoIndex](#dangerouslysetallpagestonoindex)
-      - [No Follow](#no-follow)
-      - [dangerouslySetAllPagesToNoFollow](#dangerouslysetallpagestonofollow)
-      - [Twitter](#twitter)
-      - [facebook](#facebook)
-      - [Canonical URL](#canonical-url)
-      - [Alternate](#alternate)
-      - [Additional Meta Tags](#additional-meta-tags)
-  - [Open Graph](#open-graph)
-    - [Open Graph Examples](#open-graph-examples)
-      - [Basic Example](#basic-example)
-      - [Video Example](#video-example)
-      - [Article Example](#article-example)
-      - [Book Example](#book-example)
-      - [Profile Example](#profile-example)
-  - [JSON-LD](#json-ld)
-    - [Article](#article)
-    - [Breadcrumb](#breadcrumb)
-    - [Blog Post](#blog-post)
-    - [Course](#course)
-    - [Corporate Contact (Deprecated)](#corporate-contact-deprecated)
-    - [Local Business](#local-business)
-    - [Logo](#logo)
-    - [Product](#product)
-    - [Social Profile (Deprecated)](#social-profile-deprecated)
-    - [News Article](#news-article)
-  - [Contributors](#contributors)
-  - [FAQ](#faq)
-    - [Why did you choose such a long name?](#why-did-you-choose-such-a-long-name)
+- [Usage](#usage)
+  - [Setup](#setup)
+  - [Add Plugin to Gatsby Config](#add-plugin-to-gatsby-config)
+  - [Add SEO to Page](#add-seo-to-page)
+    - [A note on Twitter Tags](#a-note-on-twitter-tags)
+  - [Default SEO Configuration in Gatsby Config](#default-seo-configuration-in-gatsby-config)
+  - [GatsbySeo Options](#gatsbyseo-options)
+    - [Title Template](#title-template)
+    - [No Index](#no-index)
+    - [dangerouslySetAllPagesToNoIndex](#dangerouslysetallpagestonoindex)
+    - [No Follow](#no-follow)
+    - [dangerouslySetAllPagesToNoFollow](#dangerouslysetallpagestonofollow)
+    - [Twitter](#twitter)
+    - [facebook](#facebook)
+    - [Canonical URL](#canonical-url)
+    - [Alternate](#alternate)
+    - [Additional Meta Tags](#additional-meta-tags)
+- [Open Graph](#open-graph)
+  - [Open Graph Examples](#open-graph-examples)
+    - [Basic Example](#basic-example)
+    - [Video Example](#video-example)
+    - [Article Example](#article-example)
+    - [Book Example](#book-example)
+    - [Profile Example](#profile-example)
+- [JSON-LD](#json-ld)
+  - [Override](#override)
+  - [Article](#article)
+  - [News Article](#news-article)
+  - [Blog Post](#blog-post)
+  - [Breadcrumb](#breadcrumb)
+  - [Blog](#blog)
+  - [Course](#course)
+  - [Corporate Contact (Deprecated)](#corporate-contact-deprecated)
+  - [Local Business](#local-business)
+  - [Logo](#logo)
+  - [Product](#product)
+  - [Social Profile (Deprecated)](#social-profile-deprecated)
+  - [JsonLd](#jsonld)
+- [API Docs](#api-docs)
+- [FAQ](#faq)
+  - [Why did you choose `gatsby-plugin-next-seo` as the project name?](#why-did-you-choose-gatsby-plugin-next-seo-as-the-project-name)
+- [Contributors](#contributors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -624,17 +626,40 @@ export default () => (
 
 Gatsby SEO has the ability to set JSON-LD a form of structured data. Structured data is a standardised format for providing information about a page and classifying the page content.
 
-Google has excellent content on JSON-LD -> [HERE](https://developers.google.com/search/docs/data-types/article)
+Google has excellent documentation on JSON-LD -> [HERE](https://developers.google.com/search/docs/data-types/article)
 
+- [Override](#override)
 - [Article](#article)
-- [Breadcrumb](#breadcrumb)
-- [Blog Post](#blog-post)
-- [Course](#course)
-- [Corporate Contact](#corporate-contact-deprecated)
-- [Local Business](#local-business)
-- [Product](#product)
-- [Social Profile](#social-profile-deprecated)
 - [News Article](#news-article)
+- [Blog Post](#blog-post)
+- [Breadcrumb](#breadcrumb)
+- [Blog](#blog)
+- [Course](#course)
+- [Corporate Contact (Deprecated)](#corporate-contact-deprecated)
+- [Local Business](#local-business)
+- [Logo](#logo)
+- [Product](#product)
+- [Social Profile (Deprecated)](#social-profile-deprecated)
+
+### Override
+
+Each (non-deprecated) JSON LD component provides a set of utility props to help you in the journey of setting up your your site for Search Engine Optimization and voice assistant support. However there are times when you will need more control, and for these situations there is an `overrides` prop available which allows you to manually override the schema type.
+
+The following example would add a `datePublished` property to the JSON LD head script produced.
+
+```tsx
+const OverrideCourseJsonLd = () => (
+  <CourseJsonLd
+    name='Course Name'
+    providerName='Course Provider'
+    providerUrl='https//www.example.com/provider'
+    description='Course description goes right here'
+    overrides={{ '@type': 'Course', datePublished: '2015-02-05T08:00:00+08:00' }}
+  />
+);
+```
+
+Currently, when using TypeScript, you must provide an `@type` property to the `overrides` prop. This may change in the future.
 
 ### Article
 
@@ -662,6 +687,67 @@ export default () => (
       overrides={{
         '@type': 'BlogPosting', // set's this as a blog post.
       }}
+    />
+  </>
+);
+```
+
+### News Article
+
+This is simply a fancy wrapper around the [`Article`](#article) component.
+
+```jsx
+import React from 'react';
+import { NewsArticleJsonLd } from 'gatsby-plugin-next-seo';
+
+export default () => (
+  <>
+    <h1>News Article JSON-LD</h1>
+    <NewsArticleJsonLd
+      url='https://example.com/article'
+      title='Article headline'
+      images={[
+        'https://example.com/photos/1x1/photo.jpg',
+        'https://example.com/photos/4x3/photo.jpg',
+        'https://example.com/photos/16x9/photo.jpg',
+      ]}
+      section='politic'
+      keywords='prayuth,taksin'
+      datePublished='2015-02-05T08:00:00+08:00'
+      dateModified='2015-02-05T09:00:00+08:00'
+      authorName='Jane Blogs'
+      publisherName='Gary Meehan'
+      publisherLogo='https://www.example.com/photos/logo.jpg'
+      description='This is a mighty good description of this article.'
+      body='This is all text for this news article'
+    />
+  </>
+);
+```
+
+### Blog Post
+
+A utility component which wraps the `<ArticleJsonLd />` component but is classified as a `BlogPosting`.
+
+```tsx
+import React from 'react';
+import { BlogPostJsonLd } from 'gatsby-plugin-next-seo';
+ *
+export default () => (
+  <>
+    <h1>Blog Post JSON-LD</h1>
+    <BlogPostJsonLd
+      url='https://example.com/blog'
+      title='Blog headline'
+      images={[
+        'https://example.com/photos/1x1/photo.jpg',
+        'https://example.com/photos/4x3/photo.jpg',
+        'https://example.com/photos/16x9/photo.jpg',
+      ]}
+      datePublished='2015-02-05T08:00:00+08:00'
+      dateModified='2015-02-05T09:00:00+08:00'
+      authorName='Jane Blogs'
+      description='This is a mighty good description of this blog.'
     />
   </>
 );
@@ -713,9 +799,9 @@ export default () => (
 | `itemListElements.name`     | The title of the breadcrumb displayed for the user.                                                      |
 | `itemListElements.item`     | The URL to the webpage that represents the breadcrumb.                                                   |
 
-### Blog Post
+### Blog
 
-A utility component which wraps the `<ArticleJsonLd />` component but is classified as a `BlogPosting`.
+Identifies the page as a blog and outlines the available posts.
 
 ```tsx
 import React from 'react';
@@ -723,15 +809,12 @@ import { BlogPostJsonLd } from 'gatsby-plugin-next-seo';
  *
 export default () => (
   <>
-    <h1>Blog Post JSON-LD</h1>
-    <BlogPostJsonLd
+    <h1>Blog with several posts</h1>
+    <BlogJsonLd
       url='https://example.com/blog'
-      title='Blog headline'
-      images={[
-        'https://example.com/photos/1x1/photo.jpg',
-        'https://example.com/photos/4x3/photo.jpg',
-        'https://example.com/photos/16x9/photo.jpg',
-      ]}
+      headline='Blog headline'
+      images='https://example.com/photos/1x1/photo.jpg',
+      posts={[{ headline: 'Post 1', image: 'https://example.com/photos/1x1/photo.jpg' }, { headline: 'Post 2' }]}
       datePublished='2015-02-05T08:00:00+08:00'
       dateModified='2015-02-05T09:00:00+08:00'
       authorName='Jane Blogs'
@@ -1020,38 +1103,21 @@ export default () => (
 - SoundCloud
 - Tumblr
 
-### News Article
+### JsonLd
 
-```jsx
-import React from 'react';
-import { NewsArticleJsonLd } from 'gatsby-plugin-next-seo';
-
-export default () => (
-  <>
-    <h1>News Article JSON-LD</h1>
-    <NewsArticleJsonLd
-      url='https://example.com/article'
-      title='Article headline'
-      images={[
-        'https://example.com/photos/1x1/photo.jpg',
-        'https://example.com/photos/4x3/photo.jpg',
-        'https://example.com/photos/16x9/photo.jpg',
-      ]}
-      section='politic'
-      keywords='prayuth,taksin'
-      datePublished='2015-02-05T08:00:00+08:00'
-      dateModified='2015-02-05T09:00:00+08:00'
-      authorName='Jane Blogs'
-      publisherName='Gary Meehan'
-      publisherLogo='https://www.example.com/photos/logo.jpg'
-      description='This is a mighty good description of this article.'
-      body='This is all text for this news article'
-    />
-  </>
-);
-```
+This is the base JSON component that allows you to create your own JSON LD components according to the spec.
 
 [Google Docs for Social Profile](https://developers.google.com/search/docs/data-types/social-profile)
+
+## API Docs
+
+You can explore the [**api documentation here**](https://github.com/ifiokjr/gatsby-plugin-next-seo/blob/master/docs/api/gatsby-plugin-next-seo.md).
+
+## FAQ
+
+### Why did you choose `gatsby-plugin-next-seo` as the project name?
+
+Unfortunately the better options [gatsby-seo](https://github.com/sidharthachatterjee/gatsby-seo#readme) and [gatsby-plugin-seo](https://github.com/franklintarter/gatsby-plugin-seo/tree/master/gatsby-plugin-seo) were already taken. As a result I've used gatsby-plugin-**next-seo** as a shout out to the original **next-seo** project from which this codebase has been forked.
 
 ## Contributors
 
@@ -1072,9 +1138,3 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
-
-## FAQ
-
-### Why did you choose such a long name?
-
-Unfortunately the better options [gatsby-seo]() and gatsby-plugin-seo were already taken. As a result I've used **gatsby-plugin-next-seo** as a shout out to the original **next-seo** project from which this codebase has been forked.

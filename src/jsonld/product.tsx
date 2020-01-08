@@ -110,6 +110,8 @@ interface Offers {
 
 /**
  * Component props for the Product JSON LD.
+ *
+ * @public
  */
 export interface ProductJsonLdProps extends DeferSeoProps {
   /**
@@ -194,26 +196,26 @@ export interface ProductJsonLdProps extends DeferSeoProps {
 
   /**
    * A Global Trade Item Number
-   * ({@link https://www.gs1.org/standards/id-keys/gtin GTIN}).
+   * ({@link https://www.gs1.org/standards/id-keys/gtin | GTIN}).
    *
    * @remarks
    *
    * GTINs identify trade items, including products and services, using numeric
-   * identification codes. The {@link http://schema.org/gtin gtin} property
-   * generalizes the earlier {@link http://schema.org/gtin8 gtin8},
-   * {@link http://schema.org/gtin12 gtin12},
-   * {@link http://schema.org/gtin13 gtin13}, and
-   * {@link http://schema.org/gtin14 gtin14} properties. The GS1
-   * {@link https://www.gs1.org/standards/Digital-Link/ digital link specifications}
-   * express GTINs as URLs. A correct {@link http://schema.org/gtin gtin} value
+   * identification codes. The {@link http://schema.org/gtin | gtin} property
+   * generalizes the earlier {@link http://schema.org/gtin8 | gtin8},
+   * {@link http://schema.org/gtin12 | gtin12},
+   * {@link http://schema.org/gtin13 | gtin13}, and
+   * {@link http://schema.org/gtin14 | gtin14} properties. The GS1
+   * {@link https://www.gs1.org/standards/Digital-Link/ | digital link specifications}
+   * express GTINs as URLs. A correct {@link http://schema.org/gtin | gtin} value
    * should be a valid GTIN, which means that it should be an all-numeric string
    * of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such
    * a string. The numeric component should also have a
-   * {@link https://www.gs1.org/services/check-digit-calculator valid GS1 check digit}
+   * {@link https://www.gs1.org/services/check-digit-calculator | valid GS1 check digit}
    * and meet the other rules for valid GTINs. See also
-   * {@link http://www.gs1.org/barcodes/technical/idkeys/gtin GS1's GTIN Summary}
+   * {@link http://www.gs1.org/barcodes/technical/idkeys/gtin | GS1's GTIN Summary}
    * and
-   * {@link https://en.wikipedia.org/wiki/Global_Trade_Item_Number Wikipedia}
+   * {@link https://en.wikipedia.org/wiki/Global_Trade_Item_Number | Wikipedia}
    * for more details. Left-padding of the gtin values is not required or
    * encouraged.
    */
@@ -227,7 +229,7 @@ export interface ProductJsonLdProps extends DeferSeoProps {
    * The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C.
    * Company Prefix, Item Reference, and Check Digit used to identify trade
    * items. See
-   * {@link http://www.gs1.org/barcodes/technical/idkeys/gtin GS1 GTIN Summary}
+   * {@link http://www.gs1.org/barcodes/technical/idkeys/gtin | GS1 GTIN Summary}
    * for more details.
    */
   gtin12?: string | string[];
@@ -240,7 +242,7 @@ export interface ProductJsonLdProps extends DeferSeoProps {
    * This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit
    * UPC codes can be converted into a GTIN-13 code by simply adding a
    * preceeding zero. See
-   * {@link http://www.gs1.org/barcodes/technical/idkeys/gtin GS1 GTIN Summary}
+   * {@link http://www.gs1.org/barcodes/technical/idkeys/gtin | GS1 GTIN Summary}
    * for more details.
    */
   gtin13?: string | string[];
@@ -251,19 +253,19 @@ export interface ProductJsonLdProps extends DeferSeoProps {
    * @remarks
    *
    * See
-   * {@link http://www.gs1.org/barcodes/technical/idkeys/gtin GS1 GTIN Summary}
+   * {@link http://www.gs1.org/barcodes/technical/idkeys/gtin | GS1 GTIN Summary}
    * for more details.
    */
   gtin14?: string | string[];
 
   /**
-   * The {@link http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx GTIN-8} code
+   * The {@link http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx | GTIN-8} code
    * of the product, or the product to which the offer refers.
    *
    * @remarks
    *
    * This code is also known as EAN/UCC-8 or 8-digit EAN. See
-   * {@link http://www.gs1.org/barcodes/technical/idkeys/gtin GS1 GTIN Summary}
+   * {@link http://www.gs1.org/barcodes/technical/idkeys/gtin | GS1 GTIN Summary}
    * for more details.
    *
    */
@@ -296,6 +298,8 @@ export interface ProductJsonLdProps extends DeferSeoProps {
  *
  * Users can see price, availability, and review ratings right on Search
  * results.
+ *
+ * @public
  */
 export const ProductJsonLd: FC<ProductJsonLdProps> = ({
   name,

@@ -3,6 +3,9 @@ import { Helmet } from 'react-helmet-async';
 
 import { DeferSeoProps } from '../types';
 
+/**
+ * @internal
+ */
 export interface SocialProfileJsonLdProps extends DeferSeoProps {
   type: string;
   name: string;
@@ -16,6 +19,8 @@ export interface SocialProfileJsonLdProps extends DeferSeoProps {
  * See the Google
  * {@link https://developers.google.com/search/docs/data-types/social-profile | documentation}
  * with the reason for deprecation.
+ *
+ * @internal
  */
 export const SocialProfileJsonLd: FC<SocialProfileJsonLdProps> = ({
   type,

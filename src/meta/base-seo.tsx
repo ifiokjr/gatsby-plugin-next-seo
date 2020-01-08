@@ -44,6 +44,8 @@ export const __resetDefaults = () => {
  *   );
  * };
  * ```
+ *
+ * @public
  */
 export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props }: AllSeoProps) => {
   const meta: MetaProps[] = [];
