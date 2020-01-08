@@ -1,3 +1,12 @@
+## [1.3.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.2.0...v1.3.0) (2020-01-08)
+
+
+### Features
+
+* **BookJsonLd:** add component for books ([c5f7fa4](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/c5f7fa457c918335ac2e16150b6e18abd8f83b6d))
+* **SpeakableJsonLd:** add speakable component ([95ad053](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/95ad053049126dea7a7cf7b9e069329cf9701513))
+* add speakable property to articles ([b2840ae](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/b2840aefcd698899a8dbf87e06706a767fe88a85))
+
 ## [1.2.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.1.0...v1.2.0) (2020-01-08)
 
 
