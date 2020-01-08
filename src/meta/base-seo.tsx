@@ -16,12 +16,35 @@ const BASE_DEFAULTS = {
 let DEFAULTS = { ...BASE_DEFAULTS };
 
 /**
+ * Reset all the defaults.
+ *
  * @internal
  */
-export const _resetDefaults = () => {
+export const __resetDefaults = () => {
   DEFAULTS = { ...BASE_DEFAULTS };
 };
 
+/**
+ * This is the BaseSeo component which also takes in the default seo props.
+ *
+ * @remarks
+ *
+ * It should be used for setting default props and is used internally as the
+ * base for the `GatsbySeo` component.
+ *
+ * ```tsx
+ * import { BaseSeo } from 'gatsby-plugin-next-seo';
+ *
+ * const Page = () => {
+ *   return (
+ *     <>
+ *       <BaseSeo title='Fun times' defaultOpenGraphImageWidth={100} />
+ *       <h1>Look at me!</h1>
+ *     </>
+ *   );
+ * };
+ * ```
+ */
 export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props }: AllSeoProps) => {
   const meta: MetaProps[] = [];
   const link: LinkProps[] = [];

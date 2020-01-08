@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Course, WithContext } from 'schema-dts';
 
 import { DeferSeoProps } from '../types';
-import { BaseJsonLd } from './base';
+import { JsonLd } from './jsonld';
 
 /**
  * The Course JSON LD Component props.
@@ -68,5 +68,5 @@ export const CourseJsonLd: FC<CourseJsonLdProps> = ({
     ...overrides,
   };
 
-  return <BaseJsonLd defer={defer} {...json} />;
+  return <JsonLd defer={defer} json={json} />;
 };

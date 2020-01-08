@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { Offer as RawOffer, Product, Review as RawReview, WithContext } from 'schema-dts';
 
 import { DeferSeoProps } from '../types';
-import { BaseJsonLd } from './base';
-import { AggregateRating } from './shared-internal-types';
+import { AggregateRating } from '../utils/shared-types';
+import { JsonLd } from './jsonld';
 
 interface ReviewRating {
   bestRating?: string;
@@ -244,6 +244,7 @@ export interface ProductJsonLdProps extends DeferSeoProps {
    * for more details.
    */
   gtin13?: string | string[];
+
   /**
    * The GTIN-14 code of the product, or the product to which the offer refers.
    *
@@ -353,5 +354,5 @@ export const ProductJsonLd: FC<ProductJsonLdProps> = ({
     ...overrides,
   };
 
-  return <BaseJsonLd defer={defer} {...json} />;
+  return <JsonLd defer={defer} json={json} />;
 };

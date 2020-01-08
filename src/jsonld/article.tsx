@@ -3,7 +3,7 @@ import { Article, BlogPosting, NewsArticle, WithContext } from 'schema-dts';
 import { Except } from 'type-fest';
 
 import { DeferSeoProps } from '../types';
-import { BaseJsonLd } from './base';
+import { JsonLd } from './jsonld';
 
 export interface ArticleJsonLdProps extends DeferSeoProps {
   /**
@@ -199,7 +199,7 @@ export const ArticleJsonLd: FC<ArticleJsonLdProps> = ({
     ...overrides,
   };
 
-  return <BaseJsonLd defer={defer} {...json} />;
+  return <JsonLd defer={defer} json={json} />;
 };
 
 export interface BlogPostJsonLdProps extends Except<ArticleJsonLdProps, 'publisherName' | 'publisherLogo'> {

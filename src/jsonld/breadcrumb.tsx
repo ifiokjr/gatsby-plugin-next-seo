@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { BreadcrumbList, ListItem, WithContext } from 'schema-dts';
 
 import { DeferSeoProps } from '../types';
-import { BaseJsonLd } from './base';
+import { JsonLd } from './jsonld';
 
 export interface ItemListElements {
   /**
@@ -110,5 +110,5 @@ export const BreadcrumbJsonLd: FC<BreadcrumbJsonLdProps> = ({
     ...overrides,
   };
 
-  return <BaseJsonLd defer={defer} {...json} />;
+  return <JsonLd defer={defer} json={json} />;
 };

@@ -2,7 +2,7 @@ import { getByText, render as testRender } from '@testing-library/react';
 import React, { ReactElement } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 
-import { _resetDefaults, BaseSeo } from '../base-seo';
+import { __resetDefaults, BaseSeo } from '../base-seo';
 
 const SEO = {
   title: 'This is a test title.',
@@ -55,7 +55,7 @@ const SEO = {
 
 const render = (ui: ReactElement) => testRender(ui, { wrapper: HelmetProvider });
 
-beforeEach(_resetDefaults);
+beforeEach(__resetDefaults);
 
 test('renders correctly', () => {
   render(<BaseSeo {...SEO} />);

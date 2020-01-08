@@ -7,8 +7,8 @@ import {
 } from 'schema-dts';
 
 import { DeferSeoProps } from '../types';
-import { BaseJsonLd } from './base';
-import { AggregateRating } from './shared-internal-types';
+import { AggregateRating } from '../utils/shared-types';
+import { JsonLd } from './jsonld';
 
 interface LocalBusinessAddress {
   /** The country. For example, USA. You can also provide the two-letter
@@ -413,5 +413,5 @@ export const LocalBusinessJsonLd: FC<LocalBusinessJsonLdProps> = ({
     ...overrides,
   };
 
-  return <BaseJsonLd defer={defer} {...json} />;
+  return <JsonLd defer={defer} json={json} />;
 };

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Blog, WithContext } from 'schema-dts';
 
 import { DeferSeoProps } from '../types';
-import { BaseJsonLd } from './base';
+import { JsonLd } from './jsonld';
 
 /**
  * The Blog JSON LD props.
@@ -208,5 +208,5 @@ export const BlogJsonLd: FC<BlogJsonLdProps> = ({
     ...overrides,
   };
 
-  return <BaseJsonLd defer={defer} {...json} />;
+  return <JsonLd defer={defer} json={json} />;
 };

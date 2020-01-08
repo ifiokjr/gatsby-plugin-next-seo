@@ -4,7 +4,10 @@ import { GatsbySeoProps } from '../types';
 import { BaseSeo } from './base-seo';
 
 /**
- * This component render the tags in the `<head>` for SEO on a per page basis. As a bare minimum, you should add a title and description.
+ * This component render the tags in the `<head>` for SEO on a per page basis.
+ * As a bare minimum, you should add a title and description.
+ *
+ * @remarks
  *
  * ```tsx
  * import React from 'react';

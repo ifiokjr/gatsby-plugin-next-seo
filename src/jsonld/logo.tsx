@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Organization, WithContext } from 'schema-dts';
 
 import { DeferSeoProps } from '../types';
-import { BaseJsonLd } from './base';
+import { JsonLd } from './jsonld';
 
 /**
  * The Logo JSON LD component properties.
@@ -72,5 +72,5 @@ export const LogoJsonLd: FC<LogoJsonLdProps> = ({ url, logo, overrides = {}, def
     ...overrides,
   };
 
-  return <BaseJsonLd defer={defer} {...json} />;
+  return <JsonLd defer={defer} json={json} />;
 };
