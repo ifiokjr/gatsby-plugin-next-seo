@@ -1,5 +1,6 @@
 export * from './jsonld';
 export * from './article';
+export * from './book';
 export * from './breadcrumb';
 export * from './blog';
 export * from './course';
