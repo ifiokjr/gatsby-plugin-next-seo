@@ -42,6 +42,8 @@ This codebase was initially forked from the brilliant [next-seo](https://github.
   - [Blog Post](#blog-post)
   - [Breadcrumb](#breadcrumb)
   - [Blog](#blog)
+  - [Book](#book)
+  - [Speakable](#speakable)
   - [Course](#course)
   - [Corporate Contact (Deprecated)](#corporate-contact-deprecated)
   - [Local Business](#local-business)
@@ -98,7 +100,7 @@ Then you need to import `GatsbySeo` and add the desired properties. This compone
 
 **Example with just title and description:**
 
-```jsx
+```tsx
 import React from 'react';
 import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
@@ -114,7 +116,7 @@ But `GatsbySeo` gives you many more options that you can add. See below for a ty
 
 **Typical page example:**
 
-```jsx
+```tsx
 import React, { FC } from 'react';
 import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
@@ -267,7 +269,7 @@ Setting this to `true` will set `noindex,follow` (to set `nofollow`, please refe
 
 If you have a single page that you want no indexed you can achieve this by:
 
-```jsx
+```tsx
 import React from 'react';
 import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
@@ -298,7 +300,7 @@ Setting this to `true` will set `index,nofollow` (to set `noindex`, please refer
 
 If you have a single page that you want no indexed you can achieve this by:
 
-```jsx
+```tsx
 import React from 'react';
 import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
@@ -337,7 +339,7 @@ Some tools may report this an error. See [Issue #14](https://github.com/garmeeh/
 
 #### facebook
 
-```jsx
+```tsx
 facebook={{
   appId: 1234567890,
 }}
@@ -359,14 +361,14 @@ This link relation is used to indicate a relation between a desktop and a mobile
 
 Example:
 
-```jsx
+```tsx
 mobileAlternate={{
   media: 'only screen and (max-width: 640px)',
   href: 'https://m.canonical.ie',
 }}
 ```
 
-```jsx
+```tsx
 languageAlternate={{
   hrefLang: 'de-AT',
   href: 'https://www.canonical.ie/de',
@@ -423,7 +425,7 @@ Gatsby SEO currently supports:
 
 #### Basic Example
 
-```jsx
+```tsx
 import React from 'react';
 import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
@@ -460,7 +462,7 @@ export default () => (
 
 Full info on [http://ogp.me/](http://ogp.me/#type_video)
 
-```jsx
+```tsx
 import React from 'react';
 import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
@@ -511,7 +513,7 @@ export default () => (
 
 #### Article Example
 
-```jsx
+```tsx
 import React from 'react';
 import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
@@ -551,7 +553,7 @@ export default () => (
 
 #### Book Example
 
-```jsx
+```tsx
 import React from 'react';
 import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
@@ -589,7 +591,7 @@ export default () => (
 
 #### Profile Example
 
-```jsx
+```tsx
 import React from 'react';
 import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
@@ -634,12 +636,15 @@ Google has excellent documentation on JSON-LD -> [HERE](https://developers.googl
 - [Blog Post](#blog-post)
 - [Breadcrumb](#breadcrumb)
 - [Blog](#blog)
+- [Book](#book)
+- [Speakable](#speakable)
 - [Course](#course)
 - [Corporate Contact (Deprecated)](#corporate-contact-deprecated)
 - [Local Business](#local-business)
 - [Logo](#logo)
 - [Product](#product)
 - [Social Profile (Deprecated)](#social-profile-deprecated)
+- [JsonLd](#jsonld)
 
 ### Override
 
@@ -663,7 +668,7 @@ Currently, when using TypeScript, you must provide an `@type` property to the `o
 
 ### Article
 
-```jsx
+```tsx
 import React from 'react';
 import { ArticleJsonLd } from 'gatsby-plugin-next-seo';
 
@@ -696,7 +701,7 @@ export default () => (
 
 This is simply a fancy wrapper around the [`Article`](#article) component.
 
-```jsx
+```tsx
 import React from 'react';
 import { NewsArticleJsonLd } from 'gatsby-plugin-next-seo';
 
@@ -755,7 +760,7 @@ export default () => (
 
 ### Breadcrumb
 
-```jsx
+```tsx
 import React from 'react';
 import { BreadcrumbJsonLd } from 'gatsby-plugin-next-seo';
 
@@ -824,9 +829,76 @@ export default () => (
 );
 ```
 
+### Book
+
+The `Book` component makes search engines an entry point for discovering your books and authors. Users can then buy the books that they find directly from Search results.
+
+An example feed is shown below.
+
+```tsx
+import React from 'react';
+import { CourseJsonLd } from 'gatsby-plugin-next-seo';
+
+export default () => (
+  <>
+    <h1>Book JSON-LD</h1>
+    <BookJsonLd
+      author={{ name: 'Tolu B.' }}
+      url='https://example.com/tolub'
+      name='Rock your world - the final chapter'
+      workExample={[
+        {
+          bookFormat: 'AudiobookFormat',
+          isbn: '123123123',
+          potentialAction: {
+            expectsAcceptanceOf: {
+              '@type': 'Offer',
+              price: '6.99',
+              priceCurrency: 'USD',
+              eligibleRegion: {
+                '@type': 'Country',
+                name: 'US',
+              },
+              availability: 'http://schema.org/InStock',
+            },
+            target: {
+              '@type': 'EntryPoint',
+              urlTemplate: 'http://www.barnesandnoble.com/store/info/offer/0316769487?purchase=true',
+              actionPlatform: [
+                'http://schema.org/DesktopWebPlatform',
+                'http://schema.org/IOSPlatform',
+                'http://schema.org/AndroidPlatform',
+              ],
+            },
+          },
+        },
+      ]}
+    />
+  </>
+);
+```
+
+### Speakable
+
+The speakable schema.org property identifies sections within an article or webpage that are best suited for audio playback using text-to-speech (TTS).
+
+Adding markup allows search engines and other applications to identify content to read aloud on Google Assistant-enabled devices using TTS. Webpages with speakable structured data can use the Google Assistant to distribute the content through new channels and reach a wider base of users.
+
+```tsx
+import React from 'react';
+import { SpeakableJsonLd } from 'gatsby-plugin-next-seo';
+
+export default () => (
+  <>
+    <h1>Speakable JSON-LD</h1>
+    <SpeakableJsonLd cssSelector={['#abc', '#root']} />
+  </>
+);
+```
+
 ### Course
 
-```jsx
+```tsx
 import React from 'react';
 import { CourseJsonLd } from 'gatsby-plugin-next-seo';
 
@@ -847,7 +919,7 @@ export default () => (
 
 See the [documentation](https://developers.google.com/search/docs/data-types/corporate-contact) with the reason for deprecation.
 
-```jsx
+```tsx
 import React from 'react';
 import { CorporateContactJsonLd } from 'gatsby-plugin-next-seo';
 
@@ -904,7 +976,7 @@ export default () => (
 
 Local business is supported with a sub-set of properties.
 
-```jsx
+```tsx
 <LocalBusinessJsonLd
   type='Store'
   id='http://davesdeptstore.example.com'
@@ -963,7 +1035,7 @@ Images are required for most of the types that you can use for `LocalBusiness`, 
 
 ### Logo
 
-```jsx
+```tsx
 import React from 'react';
 import { LogoJsonLd } from 'gatsby-plugin-next-seo';
 
@@ -982,7 +1054,7 @@ export default () => (
 
 ### Product
 
-```jsx
+```tsx
 import React from 'react';
 import { ProductJsonLd } from 'gatsby-plugin-next-seo';
 
@@ -1059,7 +1131,7 @@ More info on the product data type can be found [here](https://developers.google
 
 See the [documentation](https://developers.google.com/search/docs/data-types/social-profile) with the reason for deprecation.
 
-```jsx
+```tsx
 import React from 'react';
 import { SocialProfileJsonLd } from 'gatsby-plugin-next-seo';
 
