@@ -1,5 +1,6 @@
 import { assertSchema } from '@cypress/schema-tools';
 import { render as testRender } from '@testing-library/react';
+import mockConsole, { RestoreConsole } from 'jest-mock-console';
 import React, { ReactElement } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 
@@ -19,6 +20,16 @@ import schemas from '../../../e2e/schema';
 import { SpeakableJsonLd } from '../speakable';
 
 const render = (ui: ReactElement) => testRender(ui, { wrapper: HelmetProvider });
+
+let restoreConsole: RestoreConsole;
+
+beforeAll(() => {
+  restoreConsole = mockConsole('error');
+});
+
+afterAll(() => {
+  restoreConsole();
+});
 
 test('ArticleJsonLd', () => {
   render(
