@@ -1,3 +1,15 @@
+## [1.4.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.3.0...v1.4.0) (2020-01-09)
+
+
+### Features
+
+* **FAQJsonLd:** add new json ld component for FAQ pages ([2c0e8a0](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/2c0e8a09ac72954a3ad6166652b584fabf647f92))
+
+
+### Bug Fixes
+
+* **ssr:** remove canUseDom option in SSR ([aa447a7](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/aa447a74fd201b0823c78fd21ae0c9fdbf0f088c))
+
 ## [1.3.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.2.0...v1.3.0) (2020-01-08)
 
 
