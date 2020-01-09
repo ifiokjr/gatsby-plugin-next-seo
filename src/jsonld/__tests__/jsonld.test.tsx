@@ -11,13 +11,14 @@ import {
   BookJsonLd,
   BreadcrumbJsonLd,
   CourseJsonLd,
+  FAQJsonLd,
   LocalBusinessJsonLd,
   LogoJsonLd,
   NewsArticleJsonLd,
   ProductJsonLd,
+  SpeakableJsonLd,
 } from '../..';
 import schemas from '../../../e2e/schema';
-import { SpeakableJsonLd } from '../speakable';
 
 const render = (ui: ReactElement) => testRender(ui, { wrapper: HelmetProvider });
 
@@ -33,23 +34,21 @@ afterAll(() => {
 
 test('ArticleJsonLd', () => {
   render(
-    <>
-      <ArticleJsonLd
-        url='https://example.com/article'
-        headline='Article headline'
-        images={[
-          'https://example.com/photos/1x1/photo.jpg',
-          'https://example.com/photos/4x3/photo.jpg',
-          'https://example.com/photos/16x9/photo.jpg',
-        ]}
-        datePublished='2015-02-05T08:00:00+08:00'
-        dateModified='2015-02-05T09:00:00+08:00'
-        authorName='Jane Blogs'
-        publisherName='Gary Meehan'
-        publisherLogo='https://www.example.com/photos/logo.jpg'
-        description='This is a mighty good description of this article.'
-      />
-    </>,
+    <ArticleJsonLd
+      url='https://example.com/article'
+      headline='Article headline'
+      images={[
+        'https://example.com/photos/1x1/photo.jpg',
+        'https://example.com/photos/4x3/photo.jpg',
+        'https://example.com/photos/16x9/photo.jpg',
+      ]}
+      datePublished='2015-02-05T08:00:00+08:00'
+      dateModified='2015-02-05T09:00:00+08:00'
+      authorName='Jane Blogs'
+      publisherName='Ifiok Jr.'
+      publisherLogo='https://www.example.com/photos/logo.jpg'
+      description='This is a mighty good description of this article.'
+    />,
   );
   const jsonLD = JSON.parse(document.querySelector('script')?.innerHTML ?? '{}');
   assertSchema(schemas)('Article', '1.0.0')(jsonLD);
@@ -72,7 +71,7 @@ test('NewsArticleJsonLd', () => {
       datePublished='2015-02-05T08:00:00+08:00'
       dateModified='2015-02-05T09:00:00+08:00'
       authorName='Jane Blogs'
-      publisherName='Gary Meehan'
+      publisherName='Ifiok Jr.'
       publisherLogo='https://www.example.com/photos/logo.jpg'
       description='This is a mighty good description of this news article.'
       body='This is article body of news article'
@@ -303,5 +302,19 @@ test('ProductJsonLd', () => {
   );
   const jsonLD = JSON.parse(document.querySelector('script')?.innerHTML ?? '{}');
   assertSchema(schemas)('Product', '1.0.0')(jsonLD);
+  expect(document.documentElement).toMatchSnapshot();
+});
+
+test('FAQJsonLd', () => {
+  render(
+    <FAQJsonLd
+      mainEntity={[
+        { question: 'What?', answer: 'Stand' },
+        { question: 'How?', answer: 'Effort' },
+        { question: 'Why?', answer: 'Peace' },
+      ]}
+    />,
+  );
+  JSON.parse(document.querySelector('script')?.innerHTML!);
   expect(document.documentElement).toMatchSnapshot();
 });

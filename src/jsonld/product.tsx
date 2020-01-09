@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Offer as RawOffer, Product, Review as RawReview, WithContext } from 'schema-dts';
+import { Offer as SchemaOffer, Product, Review as SchemaReview, WithContext } from 'schema-dts';
 
 import { DeferSeoProps } from '../types';
 import { AggregateRating, Overrides } from '../utils/shared-types';
@@ -19,7 +19,7 @@ interface Review {
   reviewRating: ReviewRating;
 }
 
-type RawOfferAvailability = Extract<RawOffer['availability'], string>;
+type SchemaOfferAvailability = Extract<SchemaOffer['availability'], string>;
 type OfferAvailability =
   | 'Discontinued'
   | 'InStock'
@@ -30,7 +30,7 @@ type OfferAvailability =
   | 'PreOrder'
   | 'PreSale'
   | 'SoldOut';
-type RawItemCondition = Extract<RawOffer['itemCondition'], string>;
+type SchemaItemCondition = Extract<SchemaOffer['itemCondition'], string>;
 type ItemCondition = 'DamagedCondition' | 'NewCondition' | 'RefurbishedCondition' | 'UsedCondition';
 
 const availabilityConverter = {
@@ -52,9 +52,9 @@ const itemConditionConverter = {
   UsedCondition: 'http://schema.org/UsedCondition',
 } as const;
 
-const getAvailability = (availability: OfferAvailability | undefined): RawOfferAvailability | undefined =>
+const getAvailability = (availability: OfferAvailability | undefined): SchemaOfferAvailability | undefined =>
   availability ? availabilityConverter[availability] : undefined;
-const getItemCondition = (itemCondition: ItemCondition | undefined): RawItemCondition | undefined =>
+const getItemCondition = (itemCondition: ItemCondition | undefined): SchemaItemCondition | undefined =>
   itemCondition ? itemConditionConverter[itemCondition] : undefined;
 
 interface Offers {
@@ -329,7 +329,7 @@ export const ProductJsonLd: FC<ProductJsonLdProps> = ({
     mpn,
     brand: brand ? { '@type': 'Brand', name: brand } : undefined,
     description,
-    review: reviews.map<RawReview>(({ reviewRating, ...review }) => ({
+    review: reviews.map<SchemaReview>(({ reviewRating, ...review }) => ({
       '@type': 'Review',
       ...review,
       reviewRating: { '@type': 'Rating', ...reviewRating },

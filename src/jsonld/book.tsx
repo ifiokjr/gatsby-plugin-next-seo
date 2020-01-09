@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import {
   Book,
-  BookFormatType as RawBookFormatType,
+  BookFormatType as SchemaBookFormatType,
   Date,
   ReadAction,
   Text,
@@ -15,8 +15,8 @@ import { Overrides } from '../utils/shared-types';
 import { JsonLd } from './jsonld';
 
 export type BookFormatType = 'AudiobookFormat' | 'EBook' | 'GraphicNovel' | 'Hardcover' | 'Paperback';
-const getBookFormat = (type?: BookFormatType): RawBookFormatType | undefined =>
-  type ? (`https://schema.org/${type}` as RawBookFormatType) : undefined;
+const getBookFormat = (type?: BookFormatType): SchemaBookFormatType | undefined =>
+  type ? (`https://schema.org/${type}` as SchemaBookFormatType) : undefined;
 
 interface Person {
   /**

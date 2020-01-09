@@ -27,7 +27,7 @@ const JsonLd = () => (
       datePublished='2015-02-05T08:00:00+08:00'
       dateModified='2015-02-05T09:00:00+08:00'
       authorName='Jane Blogs'
-      publisherName='Gary Meehan'
+      publisherName='Ifiok Jr.'
       publisherLogo='https://www.example.com/photos/logo.jpg'
       description='This is a mighty good description of this article.'
     />
@@ -160,7 +160,7 @@ const JsonLd = () => (
       datePublished='2015-02-05T08:00:00+08:00'
       dateModified='2015-02-05T09:00:00+08:00'
       authorName='Jane Blogs'
-      publisherName='Gary Meehan'
+      publisherName='Ifiok Jr.'
       publisherLogo='https://www.example.com/photos/logo.jpg'
       description='This is a mighty good description of this news article.'
       body='This is article body of news article'

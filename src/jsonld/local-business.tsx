@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import {
-  DayOfWeek as RawDayOfWeek,
-  LocalBusiness as RawLocalBusiness,
-  OpeningHoursSpecification as RawOpeningHoursSpecification,
+  DayOfWeek as SchemaDayOfWeek,
+  LocalBusiness as SchemaLocalBusiness,
+  OpeningHoursSpecification as SchemaOpeningHoursSpecification,
   WithContext,
 } from 'schema-dts';
 
@@ -39,7 +39,7 @@ interface LocalBusinessAddress {
   streetAddress: string;
 }
 
-type LocalBusiness = Extract<RawLocalBusiness, object>;
+type LocalBusiness = Extract<SchemaLocalBusiness, object>;
 export type LocalBusinessType = LocalBusiness['@type'];
 
 /**
@@ -329,23 +329,23 @@ const converter = {
   Sun: 'Sunday',
 } as const;
 
-const validDay = (day: DayOfWeek): RawDayOfWeek =>
-  `http://schema.org/${converter[day as keyof typeof converter] ?? day}` as RawDayOfWeek;
+const validDay = (day: DayOfWeek): SchemaDayOfWeek =>
+  `http://schema.org/${converter[day as keyof typeof converter] ?? day}` as SchemaDayOfWeek;
 
 const getDayOfWeek = (
   dayOfWeek: undefined | DayOfWeek | DayOfWeek[],
-): RawDayOfWeek | RawDayOfWeek[] | undefined =>
+): SchemaDayOfWeek | SchemaDayOfWeek[] | undefined =>
   !dayOfWeek ? undefined : Array.isArray(dayOfWeek) ? dayOfWeek.map(validDay) : validDay(dayOfWeek);
 
 const getOpeningHoursSpecification = (
   openingHours: undefined | OpeningHoursSpecification | OpeningHoursSpecification[],
-): RawOpeningHoursSpecification | RawOpeningHoursSpecification[] | undefined => {
+): SchemaOpeningHoursSpecification | SchemaOpeningHoursSpecification[] | undefined => {
   if (!openingHours) {
     return undefined;
   }
 
   if (Array.isArray(openingHours)) {
-    return openingHours.map<RawOpeningHoursSpecification>(({ dayOfWeek, ...rest }) => ({
+    return openingHours.map<SchemaOpeningHoursSpecification>(({ dayOfWeek, ...rest }) => ({
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: getDayOfWeek(dayOfWeek),
       ...rest,

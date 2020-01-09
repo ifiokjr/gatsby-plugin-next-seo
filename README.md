@@ -44,6 +44,7 @@ This codebase was initially forked from the brilliant [next-seo](https://github.
   - [Blog](#blog)
   - [Book](#book)
   - [Speakable](#speakable)
+  - [FAQ](#faq)
   - [Course](#course)
   - [Corporate Contact (Deprecated)](#corporate-contact-deprecated)
   - [Local Business](#local-business)
@@ -52,7 +53,7 @@ This codebase was initially forked from the brilliant [next-seo](https://github.
   - [Social Profile (Deprecated)](#social-profile-deprecated)
   - [JsonLd](#jsonld)
 - [API Docs](#api-docs)
-- [FAQ](#faq)
+- [FAQ](#faq-1)
   - [Why did you choose `gatsby-plugin-next-seo` as the project name?](#why-did-you-choose-gatsby-plugin-next-seo-as-the-project-name)
 - [Contributors](#contributors)
 
@@ -639,6 +640,7 @@ Google has excellent documentation on JSON-LD -> [HERE](https://developers.googl
 - [Book](#book)
 - [Speakable](#speakable)
 - [Course](#course)
+- [FAQ](#faq)
 - [Corporate Contact (Deprecated)](#corporate-contact-deprecated)
 - [Local Business](#local-business)
 - [Logo](#logo)
@@ -882,7 +884,7 @@ export default () => (
 
 The speakable schema.org property identifies sections within an article or webpage that are best suited for audio playback using text-to-speech (TTS).
 
-Adding markup allows search engines and other applications to identify content to read aloud on Google Assistant-enabled devices using TTS. Webpages with speakable structured data can use the Google Assistant to distribute the content through new channels and reach a wider base of users.
+Adding markup allows search engines and other applications to identify content to read aloud on voice assistant-enabled devices using TTS. Webpages with speakable structured data can use voice assistants to distribute the content through new channels and reach a wider base of users.
 
 ```tsx
 import React from 'react';
@@ -892,6 +894,36 @@ export default () => (
   <>
     <h1>Speakable JSON-LD</h1>
     <SpeakableJsonLd cssSelector={['#abc', '#root']} />
+  </>
+);
+```
+
+### FAQ
+
+A Frequently Asked Question (FAQ) page contains a list of questions and answers pertaining to a particular topic. Properly marked up FAQ pages may be eligible to have a rich result on Search and voice assistants.
+
+```tsx
+import React from 'react';
+import { FAQJsonLd } from 'gatsby-plugin-next-seo';
+
+export default () => (
+  <>
+    <FAQJsonLd
+      mainEntity={[
+        { question: 'What?', answer: 'Stand' },
+        { question: 'How?', answer: 'Effort' },
+        { question: 'Why?', answer: 'Peace' },
+      ]}
+    />
+
+    <h1>What?</h1>
+    <p>Stand</p>
+
+    <h1>How?</h1>
+    <p>Effort</p>
+
+    <h1>Why?</h1>
+    <p>Peace</p>
   </>
 );
 ```
