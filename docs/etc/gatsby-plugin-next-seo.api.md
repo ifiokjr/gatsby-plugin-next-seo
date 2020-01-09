@@ -12,6 +12,7 @@ import { BreadcrumbList } from 'schema-dts';
 import { Course } from 'schema-dts';
 import { Date as Date_2 } from 'schema-dts';
 import { Except } from 'type-fest';
+import { FAQPage } from 'schema-dts';
 import { FC } from 'react';
 import { LiteralUnion } from 'type-fest';
 import { LocalBusiness as LocalBusiness_2 } from 'schema-dts';
@@ -200,6 +201,14 @@ export interface DefaultSeoProps {
 // @public (undocumented)
 export interface DeferSeoProps {
     defer?: boolean;
+}
+
+// @public
+export const FAQJsonLd: FC<FAQJsonLdProps>;
+
+// @public
+export interface FAQJsonLdProps extends DeferSeoProps, Overrides<FAQPage> {
+    questions: Question[];
 }
 
 // @public
@@ -427,6 +436,12 @@ export interface ProductJsonLdProps extends DeferSeoProps, Overrides<Product> {
     // Warning: (ae-forgotten-export) The symbol "Review" needs to be exported by the entry point index.d.ts
     reviews?: Review[];
     sku?: string | string[];
+}
+
+// @public
+export interface Question {
+    answer: string;
+    question: string;
 }
 
 // Warning: (ae-internal-missing-underscore) The name "ScriptProps" should be prefixed with an underscore because the declaration is marked as @internal

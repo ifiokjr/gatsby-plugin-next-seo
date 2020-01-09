@@ -20,6 +20,7 @@
 |  [CourseJsonLdProps](./gatsby-plugin-next-seo.coursejsonldprops.md) | The Course JSON LD Component props. |
 |  [DefaultSeoProps](./gatsby-plugin-next-seo.defaultseoprops.md) |  |
 |  [DeferSeoProps](./gatsby-plugin-next-seo.deferseoprops.md) |  |
+|  [FAQJsonLdProps](./gatsby-plugin-next-seo.faqjsonldprops.md) | The FAQPage JSON LD Component props. |
 |  [GatsbySeoPluginOptions](./gatsby-plugin-next-seo.gatsbyseopluginoptions.md) |  |
 |  [GatsbySeoProps](./gatsby-plugin-next-seo.gatsbyseoprops.md) |  |
 |  [ItemListElements](./gatsby-plugin-next-seo.itemlistelements.md) |  |
@@ -36,6 +37,7 @@
 |  [OpenGraphVideoActors](./gatsby-plugin-next-seo.opengraphvideoactors.md) |  |
 |  [OpenGraphVideos](./gatsby-plugin-next-seo.opengraphvideos.md) |  |
 |  [ProductJsonLdProps](./gatsby-plugin-next-seo.productjsonldprops.md) | Component props for the Product JSON LD. |
+|  [Question](./gatsby-plugin-next-seo.question.md) | The questions and answers for an FAQ Page. |
 |  [SpeakableJsonLdProps](./gatsby-plugin-next-seo.speakablejsonldprops.md) | The Speakable JSON LD Component props. |
 |  [Twitter](./gatsby-plugin-next-seo.twitter.md) |  |
 
@@ -51,6 +53,7 @@
 |  [BreadcrumbJsonLd](./gatsby-plugin-next-seo.breadcrumbjsonld.md) | A breadcrumb trail on a page indicates the page's position in the site hierarchy. A user can navigate all the way up in the site hierarchy, one level at a time, by starting from the last breadcrumb in the breadcrumb trail. |
 |  [CorporateContactJsonLd](./gatsby-plugin-next-seo.corporatecontactjsonld.md) |  |
 |  [CourseJsonLd](./gatsby-plugin-next-seo.coursejsonld.md) |  |
+|  [FAQJsonLd](./gatsby-plugin-next-seo.faqjsonld.md) | A Frequently Asked Question (FAQ) page contains a list of questions and answers pertaining to a particular topic. |
 |  [GatsbySeo](./gatsby-plugin-next-seo.gatsbyseo.md) | This component render the tags in the <code>&lt;head&gt;</code> for SEO on a per page basis. As a bare minimum, you should add a title and description. |
 |  [JsonLd](./gatsby-plugin-next-seo.jsonld.md) | Component that inline-includes a JSON-LD script where specified. |
 |  [LocalBusinessJsonLd](./gatsby-plugin-next-seo.localbusinessjsonld.md) | When users search for businesses on Google Search or Maps, Search results may display a prominent Knowledge Graph card with details about a business that matched the query. |
