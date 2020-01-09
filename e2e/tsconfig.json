@@ -3,6 +3,5 @@
   "compilerOptions": {
     "types": ["jest", "jest-environment-puppeteer", "expect-puppeteer", "puppeteer", "jest-extended"]
   },
-  "include": ["src"],
-  "exclude": ["**/dist", "**/lib/", "**/__tests__/", "**/__mocks__/"]
+  "include": ["**/*.ts"]
 }
