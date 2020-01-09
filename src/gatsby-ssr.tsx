@@ -6,8 +6,6 @@ import { BaseSeo } from './meta/base-seo';
 import { emptyContext, getFilledContext } from './ssr-context';
 import { GatsbySeoPluginOptions } from './types';
 
-(HelmetProvider as any).canUseDOM = false;
-
 export const onRenderBody = ({ setHeadComponents, setHtmlAttributes, setBodyAttributes }: RenderBodyArgs) => {
   const filledContext = getFilledContext();
 
