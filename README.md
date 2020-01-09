@@ -45,6 +45,7 @@ This codebase was initially forked from the brilliant [next-seo](https://github.
   - [Book](#book)
   - [Speakable](#speakable)
   - [FAQ](#faq)
+    - [Question Interface](#question-interface)
   - [Course](#course)
   - [Corporate Contact (Deprecated)](#corporate-contact-deprecated)
   - [Local Business](#local-business)
@@ -927,6 +928,19 @@ export default () => (
   </>
 );
 ```
+
+| Property                         | Type                    | Description                                                                                             |
+| -------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------- |
+| [questions](#question-interface) | <code>Question[]</code> | An array of Question elements which comprise the list of answered questions that this FAQPage is about. |
+
+#### Question Interface
+
+The questions and answers for an FAQ Page.
+
+| Property                                                                                                                       | Type                | Description                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------- | ----------------------------------------------------------------------------------------- |
+| [answer](https://github.com/ifiokjr/gatsby-plugin-next-seo/blob/master/docs/api/gatsby-plugin-next-seo.question.answer.md)     | <code>string</code> | The answer to the question. There must be one answer per question.                        |
+| [question](https://github.com/ifiokjr/gatsby-plugin-next-seo/blob/master/docs/api/gatsby-plugin-next-seo.question.question.md) | <code>string</code> | The full text of the question. For example, "How long does it take to process a refund?". |
 
 ### Course
 

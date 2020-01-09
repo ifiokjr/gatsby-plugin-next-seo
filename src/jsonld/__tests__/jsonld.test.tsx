@@ -308,7 +308,7 @@ test('ProductJsonLd', () => {
 test('FAQJsonLd', () => {
   render(
     <FAQJsonLd
-      mainEntity={[
+      questions={[
         { question: 'What?', answer: 'Stand' },
         { question: 'How?', answer: 'Effort' },
         { question: 'Why?', answer: 'Peace' },

@@ -15,10 +15,15 @@ export interface FAQJsonLdProps extends DeferSeoProps, Overrides<FAQPage> {
    * An array of Question elements which comprise the list of answered questions
    * that this FAQPage is about.
    */
-  mainEntity: Question[];
+  questions: Question[];
 }
 
-interface Question {
+/**
+ * The questions and answers for an FAQ Page.
+ *
+ * @public
+ */
+export interface Question {
   /**
    * The full text of the question. For example, "How long does it take to
    * process a refund?".
@@ -78,7 +83,7 @@ const transformMainEntity = (questions: Question[]): SchemaQuestion[] =>
  *
  * @public
  */
-export const FAQJsonLd: FC<FAQJsonLdProps> = ({ mainEntity, overrides = {}, defer = false }) => {
+export const FAQJsonLd: FC<FAQJsonLdProps> = ({ questions: mainEntity, overrides = {}, defer = false }) => {
   const json: WithContext<FAQPage> = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
