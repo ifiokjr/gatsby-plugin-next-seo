@@ -821,7 +821,7 @@ export default () => (
     <BlogJsonLd
       url='https://example.com/blog'
       headline='Blog headline'
-      images='https://example.com/photos/1x1/photo.jpg',
+      images='https://example.com/photos/1x1/photo.jpg'
       posts={[{ headline: 'Post 1', image: 'https://example.com/photos/1x1/photo.jpg' }, { headline: 'Post 2' }]}
       datePublished='2015-02-05T08:00:00+08:00'
       dateModified='2015-02-05T09:00:00+08:00'
