@@ -33,11 +33,13 @@ const breadcrumb100: ObjectSchema = {
               properties: {
                 '@id': {
                   type: 'string',
-                  description: 'The URL to the webpage that represents the breadcrumb.',
+                  description:
+                    'The URL to the webpage that represents the breadcrumb.',
                 },
                 name: {
                   type: 'string',
-                  description: 'The title of the breadcrumb displayed for the user.',
+                  description:
+                    'The title of the breadcrumb displayed for the user.',
                 },
               },
             },

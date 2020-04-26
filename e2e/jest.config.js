@@ -14,7 +14,10 @@ module.exports = {
   testRegex: `.*\\.e2e\\.ts$`,
   modulePathIgnorePatterns: ['node_modules'],
   preset: 'jest-puppeteer',
-  watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
+  watchPlugins: [
+    'jest-watch-typeahead/filename',
+    'jest-watch-typeahead/testname',
+  ],
   setupFilesAfterEnv: ['expect-puppeteer', '<rootDir>/jest.framework.ts'],
   globalSetup: './jest.puppeteer.setup.ts',
   globalTeardown: './jest.puppeteer.teardown.ts',

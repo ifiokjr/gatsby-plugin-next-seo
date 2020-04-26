@@ -191,7 +191,11 @@ export interface OpenGraphVideo {
   series?: string;
 }
 
-export type TwitterCardType = 'summary' | 'summary_large_image' | 'app' | 'player';
+export type TwitterCardType =
+  | 'summary'
+  | 'summary_large_image'
+  | 'app'
+  | 'player';
 
 /**
  * @public

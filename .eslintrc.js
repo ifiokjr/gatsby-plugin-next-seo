@@ -1,6 +1,8 @@
 const { EXCLUDE_TS } = process.env;
 
-const tsProjectOptions = EXCLUDE_TS ? {} : { project: ['./tsconfig.lint.json'] };
+const tsProjectOptions = EXCLUDE_TS
+  ? {}
+  : { project: ['./tsconfig.lint.json'] };
 const tsProjectRules = EXCLUDE_TS
   ? {}
   : {
@@ -155,7 +157,10 @@ module.exports = {
         ...tsProjectRules,
         '@typescript-eslint/no-extra-non-null-assertion': ['error'],
         '@typescript-eslint/prefer-optional-chain': ['error'],
-        '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
+        '@typescript-eslint/consistent-type-definitions': [
+          'error',
+          'interface',
+        ],
         '@typescript-eslint/explicit-member-accessibility': [
           'warn',
           {

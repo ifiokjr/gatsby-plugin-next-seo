@@ -199,7 +199,7 @@ export const BlogJsonLd: FC<BlogJsonLdProps> = ({
             : undefined,
         }
       : undefined,
-    blogPost: posts.map(post => ({ '@type': 'BlogPosting', ...post })),
+    blogPost: posts.map((post) => ({ '@type': 'BlogPosting', ...post })),
     ...overrides,
   };
 

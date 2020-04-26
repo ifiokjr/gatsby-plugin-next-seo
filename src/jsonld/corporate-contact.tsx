@@ -17,11 +17,13 @@ export interface CorporateContactJsonLdProps extends DeferSeoProps {
 }
 
 const formatIfArray = (value: string[] | string) =>
-  Array.isArray(value) ? `[${value.map(val => `"${val}"`).toString()}]` : `"${value}"`;
+  Array.isArray(value)
+    ? `[${value.map((val) => `"${val}"`).toString()}]`
+    : `"${value}"`;
 
 const buildContactPoint = (contactPoint: ContactPoint[]) =>
   contactPoint.map(
-    contact => `{
+    (contact) => `{
     "@type": "ContactPoint",
     "telephone": "${contact.telephone}",
     "contactType": "${contact.contactType}"${

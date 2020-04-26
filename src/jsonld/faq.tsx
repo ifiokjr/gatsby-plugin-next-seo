@@ -83,7 +83,11 @@ const transformMainEntity = (questions: Question[]): SchemaQuestion[] =>
  *
  * @public
  */
-export const FAQJsonLd: FC<FAQJsonLdProps> = ({ questions: mainEntity, overrides = {}, defer = false }) => {
+export const FAQJsonLd: FC<FAQJsonLdProps> = ({
+  questions: mainEntity,
+  overrides = {},
+  defer = false,
+}) => {
   const json: WithContext<FAQPage> = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

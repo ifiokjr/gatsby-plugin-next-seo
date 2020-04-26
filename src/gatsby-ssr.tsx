@@ -1,4 +1,8 @@
-import { RenderBodyArgs, WrapPageElementNodeArgs, WrapRootElementNodeArgs } from 'gatsby';
+import {
+  RenderBodyArgs,
+  WrapPageElementNodeArgs,
+  WrapRootElementNodeArgs,
+} from 'gatsby';
 import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 
@@ -6,7 +10,11 @@ import { BaseSeo } from './meta/base-seo';
 import { emptyContext, getFilledContext } from './ssr-context';
 import { GatsbySeoPluginOptions } from './types';
 
-export const onRenderBody = ({ setHeadComponents, setHtmlAttributes, setBodyAttributes }: RenderBodyArgs) => {
+export const onRenderBody = ({
+  setHeadComponents,
+  setHtmlAttributes,
+  setBodyAttributes,
+}: RenderBodyArgs) => {
   const filledContext = getFilledContext();
 
   if (!filledContext) {
@@ -34,7 +42,10 @@ export const onRenderBody = ({ setHeadComponents, setHtmlAttributes, setBodyAttr
   ]);
 };
 
-export const wrapPageElement = ({ element }: WrapPageElementNodeArgs, options: GatsbySeoPluginOptions) => {
+export const wrapPageElement = (
+  { element }: WrapPageElementNodeArgs,
+  options: GatsbySeoPluginOptions,
+) => {
   return (
     <>
       <BaseSeo {...options} defer={false} />

@@ -38,7 +38,9 @@ const runApiExtractor = async () => {
     );
 
     if (result.apiReportChanged) {
-      console.info('\n\n\nRun yarn api:generate to update your API signature\n\n\n');
+      console.info(
+        '\n\n\nRun yarn api:generate to update your API signature\n\n\n',
+      );
     }
 
     process.exitCode = 1;

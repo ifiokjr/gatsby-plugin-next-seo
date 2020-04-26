@@ -14,8 +14,15 @@ import { DeferSeoProps } from '../types';
 import { Overrides } from '../utils/shared-types';
 import { JsonLd } from './jsonld';
 
-export type BookFormatType = 'AudiobookFormat' | 'EBook' | 'GraphicNovel' | 'Hardcover' | 'Paperback';
-const getBookFormat = (type?: BookFormatType): SchemaBookFormatType | undefined =>
+export type BookFormatType =
+  | 'AudiobookFormat'
+  | 'EBook'
+  | 'GraphicNovel'
+  | 'Hardcover'
+  | 'Paperback';
+const getBookFormat = (
+  type?: BookFormatType,
+): SchemaBookFormatType | undefined =>
   type ? (`https://schema.org/${type}` as SchemaBookFormatType) : undefined;
 
 interface Person {
@@ -189,19 +196,21 @@ export const BookJsonLd: FC<BookJsonLdProps> = ({
     '@id': id,
     sameAs,
     author: { '@type': 'Person', ...author },
-    workExample: workExample.map(({ bookFormat, potentialAction, author, ...rest }) => ({
-      '@type': 'Book',
-      bookFormat: getBookFormat(bookFormat),
-      ...rest,
-      person: {
-        '@type': 'Person',
-        ...author,
-      },
-      potentialAction: {
-        '@type': 'ReadAction',
-        ...potentialAction,
-      },
-    })),
+    workExample: workExample.map(
+      ({ bookFormat, potentialAction, author, ...rest }) => ({
+        '@type': 'Book',
+        bookFormat: getBookFormat(bookFormat),
+        ...rest,
+        person: {
+          '@type': 'Person',
+          ...author,
+        },
+        potentialAction: {
+          '@type': 'ReadAction',
+          ...potentialAction,
+        },
+      }),
+    ),
 
     ...overrides,
   };

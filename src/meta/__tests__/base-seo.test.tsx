@@ -53,7 +53,8 @@ const SEO = {
   },
 };
 
-const render = (ui: ReactElement) => testRender(ui, { wrapper: HelmetProvider });
+const render = (ui: ReactElement) =>
+  testRender(ui, { wrapper: HelmetProvider });
 
 beforeEach(__resetDefaults);
 
@@ -67,28 +68,64 @@ test('returns full array for default seo object', () => {
 
   const title = getByText(
     document.documentElement,
-    (content, element) => element.tagName.toLowerCase() === 'title' && content.startsWith(`${SEO.title}`),
+    (content, element) =>
+      element.tagName.toLowerCase() === 'title' &&
+      content.startsWith(`${SEO.title}`),
   );
-  const index = document.documentElement.querySelectorAll('meta[content="index,follow"]');
-  const description = document.documentElement.querySelectorAll(`meta[content="${SEO.description}"]`);
-  const descriptionTag = document.documentElement.querySelectorAll('meta[name="description"]');
-  const twitterCard = document.documentElement.querySelectorAll('meta[content="summary_large_image"]');
-  const facebookAppId = document.documentElement.querySelectorAll('meta[property="fb:app_id"]');
-  const twitterCardTag = document.documentElement.querySelectorAll('meta[name="twitter:card"]');
-  const twitterHandle = document.documentElement.querySelectorAll(`meta[content="${SEO.twitter.handle}"]`);
-  const twitterHandleTag = document.documentElement.querySelectorAll('meta[name="twitter:creator"]');
-  const twitterSite = document.documentElement.querySelectorAll(`meta[content="${SEO.twitter.site}"]`);
-  const twitterSiteTag = document.documentElement.querySelectorAll('meta[name="twitter:site"]');
-  const ogUrl = document.documentElement.querySelectorAll(`meta[content="${SEO.openGraph.url}"]`);
-  const ogUrlTag = document.documentElement.querySelectorAll('meta[property="og:url"]');
-  const ogType = document.documentElement.querySelectorAll(`meta[content="${SEO.openGraph.type}"]`);
-  const ogTypeTag = document.documentElement.querySelectorAll('meta[property="og:type"]');
-  const ogTitle = document.documentElement.querySelectorAll(`meta[content="${SEO.openGraph.title}"]`);
-  const ogTitleTag = document.documentElement.querySelectorAll('meta[property="og:title"]');
+  const index = document.documentElement.querySelectorAll(
+    'meta[content="index,follow"]',
+  );
+  const description = document.documentElement.querySelectorAll(
+    `meta[content="${SEO.description}"]`,
+  );
+  const descriptionTag = document.documentElement.querySelectorAll(
+    'meta[name="description"]',
+  );
+  const twitterCard = document.documentElement.querySelectorAll(
+    'meta[content="summary_large_image"]',
+  );
+  const facebookAppId = document.documentElement.querySelectorAll(
+    'meta[property="fb:app_id"]',
+  );
+  const twitterCardTag = document.documentElement.querySelectorAll(
+    'meta[name="twitter:card"]',
+  );
+  const twitterHandle = document.documentElement.querySelectorAll(
+    `meta[content="${SEO.twitter.handle}"]`,
+  );
+  const twitterHandleTag = document.documentElement.querySelectorAll(
+    'meta[name="twitter:creator"]',
+  );
+  const twitterSite = document.documentElement.querySelectorAll(
+    `meta[content="${SEO.twitter.site}"]`,
+  );
+  const twitterSiteTag = document.documentElement.querySelectorAll(
+    'meta[name="twitter:site"]',
+  );
+  const ogUrl = document.documentElement.querySelectorAll(
+    `meta[content="${SEO.openGraph.url}"]`,
+  );
+  const ogUrlTag = document.documentElement.querySelectorAll(
+    'meta[property="og:url"]',
+  );
+  const ogType = document.documentElement.querySelectorAll(
+    `meta[content="${SEO.openGraph.type}"]`,
+  );
+  const ogTypeTag = document.documentElement.querySelectorAll(
+    'meta[property="og:type"]',
+  );
+  const ogTitle = document.documentElement.querySelectorAll(
+    `meta[content="${SEO.openGraph.title}"]`,
+  );
+  const ogTitleTag = document.documentElement.querySelectorAll(
+    'meta[property="og:title"]',
+  );
   const ogDescription = document.documentElement.querySelectorAll(
     `meta[content="${SEO.openGraph.description}"]`,
   );
-  const ogDescriptionTag = document.documentElement.querySelectorAll('meta[property="og:description"]');
+  const ogDescriptionTag = document.documentElement.querySelectorAll(
+    'meta[property="og:description"]',
+  );
   const ogImage00 = document.documentElement.querySelectorAll(
     `meta[content="${SEO.openGraph.images[0].url}"]`,
   );
@@ -113,10 +150,16 @@ test('returns full array for default seo object', () => {
   const ogSetImageAlt = document.documentElement.querySelectorAll(
     `meta[content="${SEO.openGraph.images[0].alt}"]`,
   );
-  const ogLocale = document.documentElement.querySelectorAll(`meta[content="${SEO.openGraph.locale}"]`);
-  const ogSiteName = document.documentElement.querySelectorAll(`meta[content="${SEO.openGraph.site_name}"]`);
+  const ogLocale = document.documentElement.querySelectorAll(
+    `meta[content="${SEO.openGraph.locale}"]`,
+  );
+  const ogSiteName = document.documentElement.querySelectorAll(
+    `meta[content="${SEO.openGraph.site_name}"]`,
+  );
 
-  const mobileAlternateTag = document.documentElement.querySelectorAll('link[rel="alternate"][media]');
+  const mobileAlternateTag = document.documentElement.querySelectorAll(
+    'link[rel="alternate"][media]',
+  );
   const mobileAlternateHref = document.documentElement.querySelectorAll(
     `link[href="${SEO.mobileAlternate.href}"]`,
   );
@@ -128,8 +171,12 @@ test('returns full array for default seo object', () => {
   expect(Array.from(mobileAlternateHref).length).toBe(1);
   expect(Array.from(mobileAlternateMedia).length).toBe(1);
 
-  const languageAlternatesTags = document.documentElement.querySelectorAll('link[rel="alternate"][hrefLang]');
-  expect(Array.from(languageAlternatesTags).length).toBe(SEO.languageAlternates.length);
+  const languageAlternatesTags = document.documentElement.querySelectorAll(
+    'link[rel="alternate"][hrefLang]',
+  );
+  expect(Array.from(languageAlternatesTags).length).toBe(
+    SEO.languageAlternates.length,
+  );
 
   SEO.languageAlternates.forEach((_, idx) => {
     const languageAlternateHref = document.documentElement.querySelectorAll(
@@ -180,8 +227,12 @@ test('correctly sets noindex', () => {
     noindex: true,
   };
   render(<BaseSeo {...overrideProps} />);
-  const index = document.documentElement.querySelectorAll('meta[content="index,follow"]');
-  const noindex = document.documentElement.querySelectorAll('meta[content="noindex,follow"]');
+  const index = document.documentElement.querySelectorAll(
+    'meta[content="index,follow"]',
+  );
+  const noindex = document.documentElement.querySelectorAll(
+    'meta[content="noindex,follow"]',
+  );
 
   expect(Array.from(index).length).toBe(0);
   expect(Array.from(noindex).length).toBe(2);
@@ -193,8 +244,12 @@ test('correctly sets nofollow', () => {
     nofollow: true,
   };
   render(<BaseSeo {...overrideProps} />);
-  const indexfollow = document.documentElement.querySelectorAll('meta[content="index,follow"]');
-  const indexnofollow = document.documentElement.querySelectorAll('meta[content="index,nofollow"]');
+  const indexfollow = document.documentElement.querySelectorAll(
+    'meta[content="index,follow"]',
+  );
+  const indexnofollow = document.documentElement.querySelectorAll(
+    'meta[content="index,nofollow"]',
+  );
 
   expect(Array.from(indexfollow).length).toBe(0);
   expect(Array.from(indexnofollow).length).toBe(2);
@@ -207,8 +262,12 @@ test('correctly sets noindex, nofollow', () => {
     nofollow: true,
   };
   render(<BaseSeo {...overrideProps} />);
-  const indexfollow = document.documentElement.querySelectorAll('meta[content="index,follow"]');
-  const noindexnofollow = document.documentElement.querySelectorAll('meta[content="noindex,nofollow"]');
+  const indexfollow = document.documentElement.querySelectorAll(
+    'meta[content="index,follow"]',
+  );
+  const noindexnofollow = document.documentElement.querySelectorAll(
+    'meta[content="noindex,nofollow"]',
+  );
 
   expect(Array.from(indexfollow).length).toBe(0);
   expect(Array.from(noindexnofollow).length).toBe(2);
@@ -223,7 +282,8 @@ test('displays title with titleTemplate integrated', () => {
   render(<BaseSeo {...overrideProps} />);
   const title = getByText(
     document.documentElement,
-    (content, element) => element.tagName.toLowerCase() === 'title' && content.startsWith(template),
+    (content, element) =>
+      element.tagName.toLowerCase() === 'title' && content.startsWith(template),
   );
   expect(title.innerHTML).toMatch(`${template} | ${SEO.title}`);
 });
@@ -278,8 +338,12 @@ test('Article SEO renders correctly', () => {
 test('Check article og type meta', () => {
   render(<BaseSeo {...ArticleSEO} />);
 
-  const ogType = document.documentElement.querySelectorAll(`meta[content="${ArticleSEO.openGraph.type}"]`);
-  const ogTypeTag = document.documentElement.querySelectorAll('meta[property="og:type"]');
+  const ogType = document.documentElement.querySelectorAll(
+    `meta[content="${ArticleSEO.openGraph.type}"]`,
+  );
+  const ogTypeTag = document.documentElement.querySelectorAll(
+    'meta[property="og:type"]',
+  );
   const ogArticlePublishedTime = document.documentElement.querySelectorAll(
     `meta[content="${ArticleSEO.openGraph.article.publishedTime}"]`,
   );
@@ -307,7 +371,9 @@ test('Check article og type meta', () => {
   const ogArticleSection = document.documentElement.querySelectorAll(
     `meta[content="${ArticleSEO.openGraph.article.section}"]`,
   );
-  const ogArticleSectionTag = document.documentElement.querySelectorAll('meta[property="article:section"]');
+  const ogArticleSectionTag = document.documentElement.querySelectorAll(
+    'meta[property="article:section"]',
+  );
   const ogArticleTags00 = document.documentElement.querySelectorAll(
     `meta[content="${ArticleSEO.openGraph.article.tags[0]}"]`,
   );
@@ -379,8 +445,12 @@ test('Book SEO renders correctly', () => {
 test('Check book og type meta', () => {
   render(<BaseSeo {...BookSEO} />);
 
-  const ogType = document.documentElement.querySelectorAll(`meta[content="${BookSEO.openGraph.type}"]`);
-  const ogTypeTag = document.documentElement.querySelectorAll('meta[property="og:type"]');
+  const ogType = document.documentElement.querySelectorAll(
+    `meta[content="${BookSEO.openGraph.type}"]`,
+  );
+  const ogTypeTag = document.documentElement.querySelectorAll(
+    'meta[property="og:type"]',
+  );
   const ogBookReleaseDate = document.documentElement.querySelectorAll(
     `meta[content="${BookSEO.openGraph.book.releaseDate}"]`,
   );
@@ -396,7 +466,9 @@ test('Check book og type meta', () => {
   const ogBookIsbn = document.documentElement.querySelectorAll(
     `meta[content="${BookSEO.openGraph.book.isbn}"]`,
   );
-  const ogBookIsbnTag = document.documentElement.querySelectorAll('meta[property="book:isbn"]');
+  const ogBookIsbnTag = document.documentElement.querySelectorAll(
+    'meta[property="book:isbn"]',
+  );
   const ogBookTags00 = document.documentElement.querySelectorAll(
     `meta[content="${BookSEO.openGraph.book.tags[0]}"]`,
   );
@@ -461,8 +533,12 @@ test('Profile SEO renders correctly', () => {
 test('Check profile og type meta', () => {
   render(<BaseSeo {...ProfileSEO} />);
 
-  const ogType = document.documentElement.querySelectorAll(`meta[content="${ProfileSEO.openGraph.type}"]`);
-  const ogTypeTag = document.documentElement.querySelectorAll('meta[property="og:type"]');
+  const ogType = document.documentElement.querySelectorAll(
+    `meta[content="${ProfileSEO.openGraph.type}"]`,
+  );
+  const ogTypeTag = document.documentElement.querySelectorAll(
+    'meta[property="og:type"]',
+  );
   const ogProfileFirstName = document.documentElement.querySelectorAll(
     `meta[content="${ProfileSEO.openGraph.profile.firstName}"]`,
   );
@@ -478,11 +554,15 @@ test('Check profile og type meta', () => {
   const ogProfileUsername = document.documentElement.querySelectorAll(
     `meta[content="${ProfileSEO.openGraph.profile.username}"]`,
   );
-  const ogProfileUsernameTag = document.documentElement.querySelectorAll('meta[property="profile:username"]');
+  const ogProfileUsernameTag = document.documentElement.querySelectorAll(
+    'meta[property="profile:username"]',
+  );
   const ogProfileGender = document.documentElement.querySelectorAll(
     `meta[content="${ProfileSEO.openGraph.profile.gender}"]`,
   );
-  const ogProfileGenderTag = document.documentElement.querySelectorAll('meta[property="profile:gender"]');
+  const ogProfileGenderTag = document.documentElement.querySelectorAll(
+    'meta[property="profile:gender"]',
+  );
 
   expect(Array.from(ogType).length).toBe(1);
   expect(Array.from(ogTypeTag).length).toBe(1);
@@ -558,8 +638,12 @@ test('Video SEO renders correctly', () => {
 test('Check video og type meta', () => {
   render(<BaseSeo {...VideoSEO} />);
 
-  const ogType = document.documentElement.querySelectorAll(`meta[content="${VideoSEO.openGraph.type}"]`);
-  const ogTypeTag = document.documentElement.querySelectorAll('meta[property="og:type"]');
+  const ogType = document.documentElement.querySelectorAll(
+    `meta[content="${VideoSEO.openGraph.type}"]`,
+  );
+  const ogTypeTag = document.documentElement.querySelectorAll(
+    'meta[property="og:type"]',
+  );
   const ogVideoReleaseDate = document.documentElement.querySelectorAll(
     `meta[content="${VideoSEO.openGraph.video.releaseDate}"]`,
   );
@@ -569,7 +653,9 @@ test('Check video og type meta', () => {
   const ogVideoDuration = document.documentElement.querySelectorAll(
     `meta[content="${VideoSEO.openGraph.video.duration}"]`,
   );
-  const ogVideoDurationTag = document.documentElement.querySelectorAll('meta[property="video:duration"]');
+  const ogVideoDurationTag = document.documentElement.querySelectorAll(
+    'meta[property="video:duration"]',
+  );
   const ogVideoActors00 = document.documentElement.querySelectorAll(
     `meta[content="${VideoSEO.openGraph.video.actors[0].profile}"]`,
   );
@@ -628,8 +714,12 @@ test('additional meta tags are set', () => {
     ],
   };
   render(<BaseSeo {...overrideProps} />);
-  const propertyTag = document.documentElement.querySelectorAll('meta[content="something"]');
-  const nameTag = document.documentElement.querySelectorAll('meta[content="bar"]');
+  const propertyTag = document.documentElement.querySelectorAll(
+    'meta[content="something"]',
+  );
+  const nameTag = document.documentElement.querySelectorAll(
+    'meta[content="bar"]',
+  );
   expect(Array.from(propertyTag).length).toBe(1);
   expect(Array.from(nameTag).length).toBe(1);
 });
@@ -639,8 +729,12 @@ test('correctly sets noindex default', () => {
     dangerouslySetAllPagesToNoIndex: true,
   };
   render(<BaseSeo {...overrideProps} />);
-  const indexfollow = document.documentElement.querySelectorAll('meta[content="index,follow"]');
-  const noindexfollow = document.documentElement.querySelectorAll('meta[content="noindex,follow"]');
+  const indexfollow = document.documentElement.querySelectorAll(
+    'meta[content="index,follow"]',
+  );
+  const noindexfollow = document.documentElement.querySelectorAll(
+    'meta[content="noindex,follow"]',
+  );
 
   expect(Array.from(indexfollow).length).toBe(0);
   expect(Array.from(noindexfollow).length).toBe(2);
@@ -651,8 +745,12 @@ test('correctly sets nofollow default', () => {
     dangerouslySetAllPagesToNoFollow: true,
   };
   render(<BaseSeo {...overrideProps} />);
-  const indexfollow = document.documentElement.querySelectorAll('meta[content="index,follow"]');
-  const indexnofollow = document.documentElement.querySelectorAll('meta[content="index,nofollow"]');
+  const indexfollow = document.documentElement.querySelectorAll(
+    'meta[content="index,follow"]',
+  );
+  const indexnofollow = document.documentElement.querySelectorAll(
+    'meta[content="index,nofollow"]',
+  );
 
   expect(Array.from(indexfollow).length).toBe(0);
   expect(Array.from(indexnofollow).length).toBe(2);
@@ -665,8 +763,12 @@ test('correctly read noindex & nofollow false', () => {
     nofollow: false,
   };
   render(<BaseSeo {...overrideProps} />);
-  const indexfollow = document.documentElement.querySelectorAll('meta[content="index,follow"]');
-  const noindexnofollow = document.documentElement.querySelectorAll('meta[content="noindex,nofollow"]');
+  const indexfollow = document.documentElement.querySelectorAll(
+    'meta[content="index,follow"]',
+  );
+  const noindexnofollow = document.documentElement.querySelectorAll(
+    'meta[content="noindex,nofollow"]',
+  );
 
   expect(Array.from(indexfollow).length).toBe(2);
   expect(Array.from(noindexnofollow).length).toBe(0);

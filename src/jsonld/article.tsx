@@ -1,5 +1,11 @@
 import React, { FC } from 'react';
-import { Article, BlogPosting, NewsArticle, SpeakableSpecification, WithContext } from 'schema-dts';
+import {
+  Article,
+  BlogPosting,
+  NewsArticle,
+  SpeakableSpecification,
+  WithContext,
+} from 'schema-dts';
 import { Except } from 'type-fest';
 
 import { DeferSeoProps } from '../types';
@@ -187,7 +193,10 @@ export const ArticleJsonLd: FC<ArticleJsonLdProps> = ({
     description: description,
     articleBody: body,
     speakable: speakable
-      ? speakable.map<SpeakableSpecification>(item => ({ '@type': 'SpeakableSpecification', ...item }))
+      ? speakable.map<SpeakableSpecification>((item) => ({
+          '@type': 'SpeakableSpecification',
+          ...item,
+        }))
       : undefined,
     keywords: Array.isArray(keywords) ? keywords.join(', ') : keywords,
     ...overrides,
@@ -197,7 +206,10 @@ export const ArticleJsonLd: FC<ArticleJsonLdProps> = ({
 };
 
 export interface BlogPostJsonLdProps
-  extends Except<ArticleJsonLdProps, 'publisherName' | 'publisherLogo' | 'overrides'>,
+  extends Except<
+      ArticleJsonLdProps,
+      'publisherName' | 'publisherLogo' | 'overrides'
+    >,
     Overrides<BlogPosting> {
   /**
    * The name of the publisher.
@@ -315,7 +327,11 @@ export const NewsArticleJsonLd: FC<NewsArticleJsonLdProps> = ({
     <ArticleJsonLd
       defer={defer}
       {...props}
-      overrides={{ articleSection: section, ...overrides, '@type': 'NewsArticle' }}
+      overrides={{
+        articleSection: section,
+        ...overrides,
+        '@type': 'NewsArticle',
+      }}
     />
   );
 };

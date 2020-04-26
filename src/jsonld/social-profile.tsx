@@ -35,7 +35,7 @@ export const SocialProfileJsonLd: FC<SocialProfileJsonLdProps> = ({
     "name": "${name}",
     "url": "${url}",
     "sameAs": [
-      ${sameAs.map(socialUrl => `"${socialUrl}"`).toString()}
+      ${sameAs.map((socialUrl) => `"${socialUrl}"`).toString()}
      ]
   }`;
 

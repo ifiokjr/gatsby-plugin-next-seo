@@ -15,5 +15,8 @@ module.exports = {
   ],
   testEnvironment: 'jsdom',
   testRunner: 'jest-circus/runner',
-  watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
+  watchPlugins: [
+    'jest-watch-typeahead/filename',
+    'jest-watch-typeahead/testname',
+  ],
 };

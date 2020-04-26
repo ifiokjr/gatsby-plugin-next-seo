@@ -22,7 +22,7 @@ export const props = async <GReturn>(
   property: string,
 ): Promise<GReturn[]> => {
   const handles = await $elements;
-  return Promise.all(handles.map(handle => prop<GReturn>(handle, property)));
+  return Promise.all(handles.map((handle) => prop<GReturn>(handle, property)));
 };
 
 export interface TagAssertionBuilder {
@@ -32,11 +32,14 @@ export interface TagAssertionBuilder {
   indexes?: number[];
 }
 
-export const assertTags = async (assertions: TagAssertionBuilder[], $document: ElementHandle) => {
+export const assertTags = async (
+  assertions: TagAssertionBuilder[],
+  $document: ElementHandle,
+) => {
   for (const assertion of assertions) {
     const { prop: p, result, selector, indexes } = assertion;
     if (Array.isArray(result)) {
-      await props($document.$$(selector), p).then(async content => {
+      await props($document.$$(selector), p).then(async (content) => {
         if (Array.isArray(indexes)) {
           expect(indexes.length).toBe(result.length); // Ensure the indexes match;
           indexes.forEach((ii, index) => {
@@ -78,11 +81,17 @@ interface LaunchParams {
   disableJavascript?: boolean;
 }
 
-export const launch = async ({ path = '', disableJavascript = false }: LaunchParams = {}) => {
+export const launch = async ({
+  path = '',
+  disableJavascript = false,
+}: LaunchParams = {}) => {
   if (disableJavascript) {
     await page.setJavaScriptEnabled(false);
   }
-  await page.goto(url(path), disableJavascript ? {} : { waitUntil: 'domcontentloaded' });
+  await page.goto(
+    url(path),
+    disableJavascript ? {} : { waitUntil: 'domcontentloaded' },
+  );
 
   if (clientOnly) {
     await page.waitFor(500); // gatsby develop takes a moment to warm up on first load

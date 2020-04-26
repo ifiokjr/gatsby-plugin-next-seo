@@ -14,7 +14,9 @@ import { JsonLd } from './jsonld';
  * {@link https://developers.google.com/search/docs/data-types/logo#definitions | here}
  * for further documentation.
  */
-export interface LogoJsonLdProps extends DeferSeoProps, Overrides<Extract<Organization, object>> {
+export interface LogoJsonLdProps
+  extends DeferSeoProps,
+    Overrides<Extract<Organization, object>> {
   /**
    * URL of a logo that is representative of the organization.
    *
@@ -58,7 +60,12 @@ export interface LogoJsonLdProps extends DeferSeoProps, Overrides<Extract<Organi
  * );
  * ```
  */
-export const LogoJsonLd: FC<LogoJsonLdProps> = ({ url, logo, overrides = {}, defer = false }) => {
+export const LogoJsonLd: FC<LogoJsonLdProps> = ({
+  url,
+  logo,
+  overrides = {},
+  defer = false,
+}) => {
   const json: WithContext<Organization> = {
     '@context': 'https://schema.org',
     '@type': 'Organization',

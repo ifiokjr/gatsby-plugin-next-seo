@@ -58,7 +58,8 @@ const corporateContact100: ObjectSchema = {
   schema: {
     type: 'object',
     title: 'Corporate Contact',
-    description: 'An example schema describing JSON-LD for type: Corporate Contact',
+    description:
+      'An example schema describing JSON-LD for type: Corporate Contact',
     properties: {
       '@context': {
         type: 'string',

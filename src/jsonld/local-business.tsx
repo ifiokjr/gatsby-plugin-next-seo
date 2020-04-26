@@ -120,7 +120,9 @@ interface OpeningHoursSpecification {
   validThrough?: string;
 }
 
-export interface LocalBusinessJsonLdProps extends DeferSeoProps, Overrides<LocalBusiness> {
+export interface LocalBusinessJsonLdProps
+  extends DeferSeoProps,
+    Overrides<LocalBusiness> {
   /**
    * @deprecated
    *
@@ -330,26 +332,40 @@ const converter = {
 } as const;
 
 const validDay = (day: DayOfWeek): SchemaDayOfWeek =>
-  `http://schema.org/${converter[day as keyof typeof converter] ?? day}` as SchemaDayOfWeek;
+  `http://schema.org/${
+    converter[day as keyof typeof converter] ?? day
+  }` as SchemaDayOfWeek;
 
 const getDayOfWeek = (
   dayOfWeek: undefined | DayOfWeek | DayOfWeek[],
 ): SchemaDayOfWeek | SchemaDayOfWeek[] | undefined =>
-  !dayOfWeek ? undefined : Array.isArray(dayOfWeek) ? dayOfWeek.map(validDay) : validDay(dayOfWeek);
+  !dayOfWeek
+    ? undefined
+    : Array.isArray(dayOfWeek)
+    ? dayOfWeek.map(validDay)
+    : validDay(dayOfWeek);
 
 const getOpeningHoursSpecification = (
-  openingHours: undefined | OpeningHoursSpecification | OpeningHoursSpecification[],
-): SchemaOpeningHoursSpecification | SchemaOpeningHoursSpecification[] | undefined => {
+  openingHours:
+    | undefined
+    | OpeningHoursSpecification
+    | OpeningHoursSpecification[],
+):
+  | SchemaOpeningHoursSpecification
+  | SchemaOpeningHoursSpecification[]
+  | undefined => {
   if (!openingHours) {
     return undefined;
   }
 
   if (Array.isArray(openingHours)) {
-    return openingHours.map<SchemaOpeningHoursSpecification>(({ dayOfWeek, ...rest }) => ({
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: getDayOfWeek(dayOfWeek),
-      ...rest,
-    }));
+    return openingHours.map<SchemaOpeningHoursSpecification>(
+      ({ dayOfWeek, ...rest }) => ({
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: getDayOfWeek(dayOfWeek),
+        ...rest,
+      }),
+    );
   }
   return {
     '@type': 'OpeningHoursSpecification',

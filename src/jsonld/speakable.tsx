@@ -8,7 +8,10 @@ import { JsonLd } from './jsonld';
 /**
  * The Speakable JSON LD Component props.
  */
-export interface SpeakableJsonLdProps extends DeferSeoProps, Speakable, Overrides<SpeakableSpecification> {}
+export interface SpeakableJsonLdProps
+  extends DeferSeoProps,
+    Speakable,
+    Overrides<SpeakableSpecification> {}
 
 /**
  * The speakable schema.org property identifies sections within an article or
@@ -34,7 +37,9 @@ export const SpeakableJsonLd: FC<SpeakableJsonLdProps> = ({
   defer = false,
 }) => {
   if (xpath && cssSelector) {
-    throw new Error('Speakable should use either xpath or the cssSelector, not both.');
+    throw new Error(
+      'Speakable should use either xpath or the cssSelector, not both.',
+    );
   }
 
   const json: WithContext<SpeakableSpecification> = {

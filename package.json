@@ -1,17 +1,23 @@
 {
   "name": "gatsby-plugin-next-seo",
+  "version": "1.4.0",
   "description": "SEO plugin for Gatsby projects",
-  "license": "MIT",
-  "author": "Ifiok Jr. <ifiokotung@gmail.com>",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "seo",
+    "ssr"
+  ],
   "homepage": "https://github.com/ifiokjr/gatsby-plugin-next-seo#readme",
+  "bugs": {
+    "url": "https://github.com/ifiokjr/gatsby-plugin-next-seo/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ifiokjr/gatsby-plugin-next-seo.git"
   },
-  "bugs": {
-    "url": "https://github.com/ifiokjr/gatsby-plugin-next-seo/issues"
-  },
-  "version": "1.4.0",
+  "license": "MIT",
+  "author": "Ifiok Jr. <ifiokotung@gmail.com>",
   "main": "lib/index.js",
   "files": [
     "gatsby-browser.js",
@@ -52,15 +58,46 @@
     "test:watch": "jest  --watch --verbose=false --coverage=false",
     "typecheck": "tsc --noEmit"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn checks"
+    }
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,yml,yaml,md}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "bracketSpacing": true,
+    "endOfLine": "lf",
+    "jsxBracketSameLine": false,
+    "jsxSingleQuote": true,
+    "plugins": [
+      "./node_modules/prettier-plugin-packagejson"
+    ],
+    "proseWrap": "preserve",
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "useTabs": false
+  },
+  "resolutions": {
+    "jsdom": "^15.2.1",
+    "kind-of": ">=6.0.3",
+    "typescript": "3.7.x"
+  },
   "dependencies": {
     "@babel/runtime": "^7.9.2",
     "@types/react-helmet": "^5",
     "schema-dts": "0.5.2",
     "type-fest": "^0.13.1"
-  },
-  "peerDependencies": {
-    "gatsby": "^2",
-    "react-helmet-async": "^1"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -123,7 +160,7 @@
     "npm-run-all": "^4.1.5",
     "pptr-testing-library": "^0.5.0",
     "prettier": "^2.0.5",
-    "prettier-package-json": "^2.1.3",
+    "prettier-plugin-packagejson": "^2.2.2",
     "puppeteer": "^3.0.1",
     "puppeteer-firefox": "^0.5.1",
     "react": "^16.13.1",
@@ -134,56 +171,9 @@
     "signal-exit": "^3.0.3",
     "typescript": "^3.8.3"
   },
-  "keywords": [
-    "gatsby",
-    "gatsby-plugin",
-    "seo",
-    "ssr"
-  ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn checks"
-    }
-  },
-  "lint-staged": {
-    "**/*.{ts,tsx,js}": [
-      "eslint --fix",
-      "git add"
-    ],
-    "README.md": [
-      "yarn table-of-contents",
-      "git add"
-    ],
-    "package.json": [
-      "prettier-package-json --write",
-      "git add"
-    ],
-    "**/.babelrc.js": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
-  "prettier": {
-    "useTabs": false,
-    "tabWidth": 2,
-    "jsxBracketSameLine": false,
-    "bracketSpacing": true,
-    "printWidth": 110,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "all",
-    "proseWrap": "preserve",
-    "endOfLine": "lf",
-    "jsxSingleQuote": true,
-    "overrides": [
-      {
-        "files": "*.js",
-        "options": {
-          "printWidth": 90
-        }
-      }
-    ]
+  "peerDependencies": {
+    "gatsby": "^2",
+    "react-helmet-async": "^1"
   },
   "release": {
     "plugins": [
@@ -213,9 +203,5 @@
         }
       ]
     ]
-  },
-  "resolutions": {
-    "typescript": "3.7.x",
-    "jsdom": "^15.2.1"
   }
 }

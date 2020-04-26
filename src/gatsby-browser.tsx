@@ -5,7 +5,10 @@ import { HelmetProvider } from 'react-helmet-async';
 import { BaseSeo } from './meta/base-seo';
 import { GatsbySeoPluginOptions } from './types';
 
-export const wrapPageElement = ({ element }: WrapPageElementBrowserArgs, options: GatsbySeoPluginOptions) => {
+export const wrapPageElement = (
+  { element }: WrapPageElementBrowserArgs,
+  options: GatsbySeoPluginOptions,
+) => {
   return (
     <>
       <BaseSeo {...options} />

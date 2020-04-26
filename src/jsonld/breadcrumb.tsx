@@ -32,7 +32,9 @@ export interface ItemListElements {
   position: number;
 }
 
-export interface BreadcrumbJsonLdProps extends DeferSeoProps, Overrides<BreadcrumbList> {
+export interface BreadcrumbJsonLdProps
+  extends DeferSeoProps,
+    Overrides<BreadcrumbList> {
   /**
    * An array of breadcrumbs listed in a specific order. Specify each breadcrumb
    * with a ListItem For example:
@@ -97,11 +99,13 @@ export const BreadcrumbJsonLd: FC<BreadcrumbJsonLdProps> = ({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
 
-    itemListElement: itemListElements.map<ListItem>(({ position, item, name }) => ({
-      '@type': 'ListItem',
-      position,
-      item: { '@id': item, name, '@type': 'Thing' },
-    })),
+    itemListElement: itemListElements.map<ListItem>(
+      ({ position, item, name }) => ({
+        '@type': 'ListItem',
+        position,
+        item: { '@id': item, name, '@type': 'Thing' },
+      }),
+    ),
     ...overrides,
   };
 

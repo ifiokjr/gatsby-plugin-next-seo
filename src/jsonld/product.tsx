@@ -1,5 +1,10 @@
 import React, { FC } from 'react';
-import { Offer as SchemaOffer, Product, Review as SchemaReview, WithContext } from 'schema-dts';
+import {
+  Offer as SchemaOffer,
+  Product,
+  Review as SchemaReview,
+  WithContext,
+} from 'schema-dts';
 
 import { DeferSeoProps } from '../types';
 import { AggregateRating, Overrides } from '../utils/shared-types';
@@ -31,7 +36,11 @@ type OfferAvailability =
   | 'PreSale'
   | 'SoldOut';
 type SchemaItemCondition = Extract<SchemaOffer['itemCondition'], string>;
-type ItemCondition = 'DamagedCondition' | 'NewCondition' | 'RefurbishedCondition' | 'UsedCondition';
+type ItemCondition =
+  | 'DamagedCondition'
+  | 'NewCondition'
+  | 'RefurbishedCondition'
+  | 'UsedCondition';
 
 const availabilityConverter = {
   Discontinued: 'http://schema.org/Discontinued',
@@ -52,9 +61,13 @@ const itemConditionConverter = {
   UsedCondition: 'http://schema.org/UsedCondition',
 } as const;
 
-const getAvailability = (availability: OfferAvailability | undefined): SchemaOfferAvailability | undefined =>
+const getAvailability = (
+  availability: OfferAvailability | undefined,
+): SchemaOfferAvailability | undefined =>
   availability ? availabilityConverter[availability] : undefined;
-const getItemCondition = (itemCondition: ItemCondition | undefined): SchemaItemCondition | undefined =>
+const getItemCondition = (
+  itemCondition: ItemCondition | undefined,
+): SchemaItemCondition | undefined =>
   itemCondition ? itemConditionConverter[itemCondition] : undefined;
 
 interface Offers {
@@ -334,7 +347,9 @@ export const ProductJsonLd: FC<ProductJsonLdProps> = ({
       ...review,
       reviewRating: { '@type': 'Rating', ...reviewRating },
     })),
-    aggregateRating: aggregateRating ? { '@type': 'AggregateRating', ...aggregateRating } : undefined,
+    aggregateRating: aggregateRating
+      ? { '@type': 'AggregateRating', ...aggregateRating }
+      : undefined,
     offers: offers
       ? {
           '@type': offersType as any,

@@ -9,7 +9,8 @@ const localBusiness100: ObjectSchema = {
   schema: {
     type: 'object',
     title: 'Local Business',
-    description: 'An example schema describing JSON-LD for type: Local Business',
+    description:
+      'An example schema describing JSON-LD for type: Local Business',
     properties: {
       '@context': {
         type: 'string',
@@ -17,7 +18,8 @@ const localBusiness100: ObjectSchema = {
       },
       '@type': {
         type: 'string',
-        description: 'Any more specific type supported by Local Business https://schema.org/LocalBusiness',
+        description:
+          'Any more specific type supported by Local Business https://schema.org/LocalBusiness',
       },
       '@id': {
         type: 'string',

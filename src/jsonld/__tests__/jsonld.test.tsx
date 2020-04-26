@@ -20,7 +20,8 @@ import {
 } from '../..';
 import schemas from '../../../e2e/schema';
 
-const render = (ui: ReactElement) => testRender(ui, { wrapper: HelmetProvider });
+const render = (ui: ReactElement) =>
+  testRender(ui, { wrapper: HelmetProvider });
 
 let restoreConsole: RestoreConsole;
 
@@ -50,7 +51,9 @@ test('ArticleJsonLd', () => {
       description='This is a mighty good description of this article.'
     />,
   );
-  const jsonLD = JSON.parse(document.querySelector('script')?.innerHTML ?? '{}');
+  const jsonLD = JSON.parse(
+    document.querySelector('script')?.innerHTML ?? '{}',
+  );
   assertSchema(schemas)('Article', '1.0.0')(jsonLD);
   expect(document.documentElement).toMatchSnapshot();
 });
@@ -77,7 +80,9 @@ test('NewsArticleJsonLd', () => {
       body='This is article body of news article'
     />,
   );
-  const jsonLD = JSON.parse(document.querySelector('script')?.innerHTML ?? '{}');
+  const jsonLD = JSON.parse(
+    document.querySelector('script')?.innerHTML ?? '{}',
+  );
   assertSchema(schemas)('NewsArticle', '1.0.0')(jsonLD);
   expect(document.documentElement).toMatchSnapshot();
 });
@@ -98,7 +103,9 @@ test('BlogPostJsonLd', () => {
       description='This is a mighty good description of this blog.'
     />,
   );
-  const jsonLD = JSON.parse(document.querySelector('script')?.innerHTML ?? '{}');
+  const jsonLD = JSON.parse(
+    document.querySelector('script')?.innerHTML ?? '{}',
+  );
   assertSchema(schemas)('BlogPosting', '1.0.0')(jsonLD);
   expect(document.documentElement).toMatchSnapshot();
 });
@@ -120,7 +127,9 @@ test('BlogJsonLd', () => {
       description='This is a mighty good description of this blog.'
     />,
   );
-  const jsonLD = JSON.parse(document.querySelector('script')?.innerHTML ?? '{}');
+  const jsonLD = JSON.parse(
+    document.querySelector('script')?.innerHTML ?? '{}',
+  );
   assertSchema(schemas)('Blog', '1.0.0')(jsonLD);
   expect(document.documentElement).toMatchSnapshot();
 });
@@ -152,7 +161,9 @@ test('BreadcrumbJsonLd', () => {
       ]}
     />,
   );
-  const jsonLD = JSON.parse(document.querySelector('script')?.innerHTML ?? '{}');
+  const jsonLD = JSON.parse(
+    document.querySelector('script')?.innerHTML ?? '{}',
+  );
   assertSchema(schemas)('Breadcrumb', '1.0.0')(jsonLD);
   expect(document.documentElement).toMatchSnapshot();
 });
@@ -180,7 +191,8 @@ test('BookJsonLd', () => {
             },
             target: {
               '@type': 'EntryPoint',
-              urlTemplate: 'http://www.barnesandnoble.com/store/info/offer/0316769487?purchase=true',
+              urlTemplate:
+                'http://www.barnesandnoble.com/store/info/offer/0316769487?purchase=true',
               actionPlatform: [
                 'http://schema.org/DesktopWebPlatform',
                 'http://schema.org/IOSPlatform',
@@ -205,7 +217,9 @@ test('CourseJsonLd', () => {
       description='Course description goes right here'
     />,
   );
-  const jsonLD = JSON.parse(document.querySelector('script')?.innerHTML ?? '{}');
+  const jsonLD = JSON.parse(
+    document.querySelector('script')?.innerHTML ?? '{}',
+  );
   assertSchema(schemas)('Course', '1.0.0')(jsonLD);
   expect(document.documentElement).toMatchSnapshot();
 });
@@ -215,7 +229,9 @@ test('SpeakableJsonLd', () => {
   JSON.parse(document.querySelector('script')?.innerHTML!);
   expect(document.documentElement).toMatchSnapshot();
   expect(() =>
-    render(<SpeakableJsonLd cssSelector={['#abc', '#root']} xpath={['/asdf/a']} />),
+    render(
+      <SpeakableJsonLd cssSelector={['#abc', '#root']} xpath={['/asdf/a']} />,
+    ),
   ).toThrowError();
 });
 
@@ -246,14 +262,23 @@ test('LocalBusinessJsonLd', () => {
       ]}
     />,
   );
-  const jsonLD = JSON.parse(document.querySelector('script')?.innerHTML ?? '{}');
+  const jsonLD = JSON.parse(
+    document.querySelector('script')?.innerHTML ?? '{}',
+  );
   assertSchema(schemas)('Local Business', '1.0.0')(jsonLD);
   expect(document.documentElement).toMatchSnapshot();
 });
 
 test('LogoJsonLd', () => {
-  render(<LogoJsonLd logo='http://www.your-site.com/images/logo.jpg' url='http://www.your-site.com' />);
-  const jsonLD = JSON.parse(document.querySelector('script')?.innerHTML ?? '{}');
+  render(
+    <LogoJsonLd
+      logo='http://www.your-site.com/images/logo.jpg'
+      url='http://www.your-site.com'
+    />,
+  );
+  const jsonLD = JSON.parse(
+    document.querySelector('script')?.innerHTML ?? '{}',
+  );
   assertSchema(schemas)('Logo', '1.0.0')(jsonLD);
   expect(document.documentElement).toMatchSnapshot();
 });
@@ -273,7 +298,8 @@ test('ProductJsonLd', () => {
         {
           author: 'Jim',
           datePublished: '2017-01-06T03:37:40Z',
-          reviewBody: 'This is my favorite product yet! Thanks Nate for the example products and reviews.',
+          reviewBody:
+            'This is my favorite product yet! Thanks Nate for the example products and reviews.',
           name: 'So awesome!!!',
           reviewRating: {
             bestRating: '5',
@@ -300,7 +326,9 @@ test('ProductJsonLd', () => {
       mpn='925872'
     />,
   );
-  const jsonLD = JSON.parse(document.querySelector('script')?.innerHTML ?? '{}');
+  const jsonLD = JSON.parse(
+    document.querySelector('script')?.innerHTML ?? '{}',
+  );
   assertSchema(schemas)('Product', '1.0.0')(jsonLD);
   expect(document.documentElement).toMatchSnapshot();
 });

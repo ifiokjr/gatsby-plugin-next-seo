@@ -34,7 +34,10 @@ export interface JsonLdProps<GThing extends Thing> extends DeferSeoProps {
  * />
  * ```
  */
-export const JsonLd = <GThing extends Thing>({ defer, json }: JsonLdProps<GThing>) => (
+export const JsonLd = <GThing extends Thing>({
+  defer,
+  json,
+}: JsonLdProps<GThing>) => (
   <Helmet defer={defer}>
     <script type='application/ld+json'>{JSON.stringify(json, null, 2)}</script>
   </Helmet>

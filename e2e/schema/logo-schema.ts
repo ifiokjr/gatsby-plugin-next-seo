@@ -21,7 +21,8 @@ const logo100: ObjectSchema = {
       },
       logo: {
         type: 'string',
-        description: 'URL of a logo that is representative of the organization.',
+        description:
+          'URL of a logo that is representative of the organization.',
       },
       url: {
         type: 'string',

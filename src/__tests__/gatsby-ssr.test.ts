@@ -35,7 +35,9 @@ describe('onRenderBody', () => {
     onRenderBody(actions);
 
     expect(actions.setHeadComponents).toHaveBeenCalledTimes(1);
-    expect(actions.setHtmlAttributes).toHaveBeenCalledWith('html-attributes-component');
+    expect(actions.setHtmlAttributes).toHaveBeenCalledWith(
+      'html-attributes-component',
+    );
   });
 
   it('sets body attributes', () => {
@@ -44,6 +46,8 @@ describe('onRenderBody', () => {
     onRenderBody(actions);
 
     expect(actions.setBodyAttributes).toHaveBeenCalledTimes(1);
-    expect(actions.setBodyAttributes).toHaveBeenCalledWith('body-attributes-component');
+    expect(actions.setBodyAttributes).toHaveBeenCalledWith(
+      'body-attributes-component',
+    );
   });
 });

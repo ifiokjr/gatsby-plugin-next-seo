@@ -47,7 +47,12 @@ export const __resetDefaults = () => {
  *
  * @public
  */
-export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props }: AllSeoProps) => {
+export const BaseSeo = ({
+  defer = false,
+  metaTags = [],
+  linkTags = [],
+  ...props
+}: AllSeoProps) => {
   const meta: MetaProps[] = [];
   const link: LinkProps[] = [];
 
@@ -55,8 +60,12 @@ export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props 
     DEFAULTS.templateTitle = props.titleTemplate;
   }
 
-  const noindex = (props.noindex ?? DEFAULTS.noindex) || props.dangerouslySetAllPagesToNoIndex;
-  const nofollow = (props.nofollow ?? DEFAULTS.nofollow) || props.dangerouslySetAllPagesToNoFollow;
+  const noindex =
+    (props.noindex ?? DEFAULTS.noindex) ||
+    props.dangerouslySetAllPagesToNoIndex;
+  const nofollow =
+    (props.nofollow ?? DEFAULTS.nofollow) ||
+    props.dangerouslySetAllPagesToNoFollow;
 
   const indexTags = ['robots', 'googlebot'];
   if (noindex || nofollow) {
@@ -68,7 +77,12 @@ export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props 
     }
 
     for (const name of indexTags) {
-      meta.push({ name, content: `${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}` });
+      meta.push({
+        name,
+        content: `${noindex ? 'noindex' : 'index'},${
+          nofollow ? 'nofollow' : 'follow'
+        }`,
+      });
     }
   } else {
     for (const name of indexTags) {
@@ -81,11 +95,15 @@ export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props 
   }
 
   if (props.mobileAlternate) {
-    link.push({ rel: 'alternate', media: props.mobileAlternate.media, href: props.mobileAlternate.href });
+    link.push({
+      rel: 'alternate',
+      media: props.mobileAlternate.media,
+      href: props.mobileAlternate.href,
+    });
   }
 
   if (props.languageAlternates && props.languageAlternates.length > 0) {
-    props.languageAlternates.forEach(languageAlternate => {
+    props.languageAlternates.forEach((languageAlternate) => {
       link.push({
         rel: 'alternate',
         key: `languageAlternate-${languageAlternate.hrefLang}`,
@@ -117,7 +135,10 @@ export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props 
 
   if (props.openGraph) {
     if (props.openGraph.url || props.canonical) {
-      meta.push({ property: 'og:url', content: props.openGraph.url ?? props.canonical });
+      meta.push({
+        property: 'og:url',
+        content: props.openGraph.url ?? props.canonical,
+      });
     }
 
     if (props.openGraph.type) {
@@ -148,11 +169,17 @@ export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props 
         }
 
         if (props.openGraph.profile.gender) {
-          meta.push({ property: 'profile:gender', content: props.openGraph.profile.gender });
+          meta.push({
+            property: 'profile:gender',
+            content: props.openGraph.profile.gender,
+          });
         }
       } else if (type === 'book' && props.openGraph.book) {
-        if (props.openGraph.book.authors && props.openGraph.book.authors.length) {
-          props.openGraph.book.authors.forEach(author => {
+        if (
+          props.openGraph.book.authors &&
+          props.openGraph.book.authors.length
+        ) {
+          props.openGraph.book.authors.forEach((author) => {
             meta.push({
               property: 'book:author',
               content: author,
@@ -161,7 +188,10 @@ export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props 
         }
 
         if (props.openGraph.book.isbn) {
-          meta.push({ property: 'book:isbn', content: props.openGraph.book.isbn });
+          meta.push({
+            property: 'book:isbn',
+            content: props.openGraph.book.isbn,
+          });
         }
 
         if (props.openGraph.book.releaseDate) {
@@ -172,7 +202,7 @@ export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props 
         }
 
         if (props.openGraph.book.tags && props.openGraph.book.tags.length) {
-          props.openGraph.book.tags.forEach(tag => {
+          props.openGraph.book.tags.forEach((tag) => {
             meta.push({
               property: 'book:tag',
               content: tag,
@@ -201,8 +231,11 @@ export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props 
           });
         }
 
-        if (props.openGraph.article.authors && props.openGraph.article.authors.length) {
-          props.openGraph.article.authors.forEach(author => {
+        if (
+          props.openGraph.article.authors &&
+          props.openGraph.article.authors.length
+        ) {
+          props.openGraph.article.authors.forEach((author) => {
             meta.push({
               property: 'article:author',
               content: author,
@@ -217,8 +250,11 @@ export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props 
           });
         }
 
-        if (props.openGraph.article.tags && props.openGraph.article.tags.length) {
-          props.openGraph.article.tags.forEach(tag => {
+        if (
+          props.openGraph.article.tags &&
+          props.openGraph.article.tags.length
+        ) {
+          props.openGraph.article.tags.forEach((tag) => {
             meta.push({
               property: 'article:tag',
               content: tag,
@@ -232,8 +268,11 @@ export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props 
           type === 'video.other') &&
         props.openGraph.video
       ) {
-        if (props.openGraph.video.actors && props.openGraph.video.actors.length) {
-          props.openGraph.video.actors.forEach(actor => {
+        if (
+          props.openGraph.video.actors &&
+          props.openGraph.video.actors.length
+        ) {
+          props.openGraph.video.actors.forEach((actor) => {
             if (actor.profile) {
               meta.push({
                 property: 'video:actor',
@@ -250,8 +289,11 @@ export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props 
           });
         }
 
-        if (props.openGraph.video.directors && props.openGraph.video.directors.length) {
-          props.openGraph.video.directors.forEach(director => {
+        if (
+          props.openGraph.video.directors &&
+          props.openGraph.video.directors.length
+        ) {
+          props.openGraph.video.directors.forEach((director) => {
             meta.push({
               property: 'video:director',
               content: director,
@@ -259,8 +301,11 @@ export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props 
           });
         }
 
-        if (props.openGraph.video.writers && props.openGraph.video.writers.length) {
-          props.openGraph.video.writers.forEach(writer => {
+        if (
+          props.openGraph.video.writers &&
+          props.openGraph.video.writers.length
+        ) {
+          props.openGraph.video.writers.forEach((writer) => {
             meta.push({
               property: 'video:writer',
               content: writer,
@@ -283,7 +328,7 @@ export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props 
         }
 
         if (props.openGraph.video.tags && props.openGraph.video.tags.length) {
-          props.openGraph.video.tags.forEach(tag => {
+          props.openGraph.video.tags.forEach((tag) => {
             meta.push({
               property: 'video:tag',
               content: tag,
@@ -292,13 +337,19 @@ export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props 
         }
 
         if (props.openGraph.video.series) {
-          meta.push({ property: 'video:series', content: props.openGraph.video.series });
+          meta.push({
+            property: 'video:series',
+            content: props.openGraph.video.series,
+          });
         }
       }
     }
 
     if (props.openGraph.title || props.title) {
-      meta.push({ property: 'og:title', content: props.openGraph.title ?? props.title }); // TODO fix titleTemplate fallback
+      meta.push({
+        property: 'og:title',
+        content: props.openGraph.title ?? props.title,
+      }); // TODO fix titleTemplate fallback
     }
 
     if (props.openGraph.description || props.description) {
@@ -318,7 +369,7 @@ export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props 
     }
 
     if (props.openGraph.images && props.openGraph.images.length) {
-      props.openGraph.images.forEach(image => {
+      props.openGraph.images.forEach((image) => {
         meta.push({
           property: 'og:image',
           content: image.url,
@@ -367,7 +418,7 @@ export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props 
     }
 
     if (props.openGraph.videos && props.openGraph.videos.length) {
-      props.openGraph.videos.forEach(video => {
+      props.openGraph.videos.forEach((video) => {
         meta.push({
           property: 'og:video',
           content: video.url,
@@ -411,7 +462,10 @@ export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props 
     }
 
     if (props.openGraph.site_name) {
-      meta.push({ property: 'og:site_name', content: props.openGraph.site_name });
+      meta.push({
+        property: 'og:site_name',
+        content: props.openGraph.site_name,
+      });
     }
   }
 
@@ -419,11 +473,11 @@ export const BaseSeo = ({ defer = false, metaTags = [], linkTags = [], ...props 
     link.push({ rel: 'canonical', href: props.canonical, key: 'canonical' });
   }
 
-  metaTags.forEach(tag => {
+  metaTags.forEach((tag) => {
     meta.push(tag);
   });
 
-  linkTags.forEach(tag => {
+  linkTags.forEach((tag) => {
     link.push(tag);
   });
 

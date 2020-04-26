@@ -2,7 +2,7 @@ const prettier = require('prettier');
 const indentString = require('indent-string');
 
 module.exports = {
-  test: val => val._ === 'HTML',
+  test: (val) => val._ === 'HTML',
 
   serialize(val, config, _indentation, depth, _refs, _printer) {
     const html = val.html;

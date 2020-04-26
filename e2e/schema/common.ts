@@ -127,7 +127,8 @@ export const offers100: ObjectSchema = {
       },
       availability: {
         type: 'string',
-        description: 'The availability of this item—for example In stock, Out of stock, Pre-order, etc.',
+        description:
+          'The availability of this item—for example In stock, Out of stock, Pre-order, etc.',
       },
       url: {
         type: 'string',
@@ -231,7 +232,8 @@ export const review100: ObjectSchema = {
     '@type': 'Review',
     author: 'Jim',
     datePublished: '2017-01-06T03:37:40Z',
-    reviewBody: 'This is my favorite product yet! Thanks Nate for the example products and reviews.',
+    reviewBody:
+      'This is my favorite product yet! Thanks Nate for the example products and reviews.',
     name: 'So awesome!!!',
     reviewRating: {
       '@type': 'Rating',
