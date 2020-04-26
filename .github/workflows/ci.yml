@@ -32,9 +32,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: audit dependencies
-        run: yarn audit || true
-
       - name: install dependencies
         run: yarn --pure-lockfile
 
