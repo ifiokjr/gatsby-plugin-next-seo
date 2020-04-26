@@ -14,5 +14,5 @@ answer: string;
 
 ## Remarks
 
-The answer may contain HTML content such as links and lists. Valid HTML tags include: &lt;<!-- -->h1<!-- -->&gt; through &lt;<!-- -->h6<!-- -->&gt;<!-- -->, <br>, <ol>, <ul>, <li>, <a>, <p>, <div>, <b>, <strong>, <i>, and <em>.
+The answer may contain HTML content such as links and lists. Valid HTML tags include: <h1> through <h6>, <br>, <ol>, <ul>, <li>, <a>, <p>, <div>, <b>, <strong>, <i>, and <em>.
 

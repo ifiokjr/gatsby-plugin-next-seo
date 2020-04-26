@@ -9,7 +9,7 @@ Component that inline-includes a JSON-LD script where specified.
 <b>Signature:</b>
 
 ```typescript
-JsonLd: <GThing extends Thing>({ defer, json }: JsonLdProps<GThing>) => JSX.Element
+JsonLd: <GThing extends Thing>({ defer, json, }: JsonLdProps<GThing>) => JSX.Element
 ```
 
 ## Remarks

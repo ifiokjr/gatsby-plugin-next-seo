@@ -21,9 +21,9 @@ import { Organization } from 'schema-dts';
 import { Product } from 'schema-dts';
 import { ReadAction } from 'schema-dts';
 import { SpeakableSpecification } from 'schema-dts';
-import { Text } from 'schema-dts';
+import { Text as Text_2 } from 'schema-dts';
 import { Thing } from 'schema-dts';
-import { URL } from 'schema-dts';
+import { URL as URL_2 } from 'schema-dts';
 import { WithContext } from 'schema-dts';
 
 // @internal
@@ -132,9 +132,9 @@ export const BookJsonLd: FC<BookJsonLdProps>;
 export interface BookJsonLdProps extends DeferSeoProps, Overrides<Book> {
     // Warning: (ae-forgotten-export) The symbol "Person" needs to be exported by the entry point index.d.ts
     author: Person;
-    id?: URL;
+    id?: URL_2;
     name: string;
-    sameAs?: URL;
+    sameAs?: URL_2;
     url: string;
     // Warning: (ae-forgotten-export) The symbol "WorkExample" needs to be exported by the entry point index.d.ts
     workExample: WorkExample[];
@@ -235,7 +235,7 @@ export interface ItemListElements {
 }
 
 // @public
-export const JsonLd: <GThing extends Thing>({ defer, json }: JsonLdProps<GThing>) => JSX.Element;
+export const JsonLd: <GThing extends Thing>({ defer, json, }: JsonLdProps<GThing>) => JSX.Element;
 
 // @public (undocumented)
 export interface JsonLdProps<GThing extends Thing> extends DeferSeoProps {
