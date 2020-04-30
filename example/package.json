@@ -1,19 +1,19 @@
 {
-  "private": true,
   "name": "example",
+  "private": true,
   "scripts": {
     "build": "NODE_ENV=production gatsby build",
     "develop": "NODE_ENV=development gatsby develop --port=9000",
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "gatsby": "^2.18.17",
-    "gatsby-link": "^2.2.27",
+    "gatsby": "^2.21.6",
+    "gatsby-link": "^2.4.0",
     "gatsby-plugin-next-seo": "file:../package.tar.gz",
-    "gatsby-plugin-typescript": "^2.1.23",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet-async": "^1.0.4",
-    "typescript": "^3.7.4"
+    "gatsby-plugin-typescript": "^2.4.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet-async": "^1.0.5",
+    "typescript": "^3.8.3"
   }
 }
