@@ -1,3 +1,15 @@
+## [1.5.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.4.0...v1.5.0) (2020-04-30)
+
+
+### Features
+
+* add `language` property ([bd0add9](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/bd0add90405849d3d4ba2b28935c29b9ba545aa7))
+
+
+### Bug Fixes
+
+* upgrade dependencies ([e761d98](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/e761d98c649e13d26a0f5d997609e26ece0a2a9b))
+
 ## [1.4.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.3.0...v1.4.0) (2020-01-09)
 
 
