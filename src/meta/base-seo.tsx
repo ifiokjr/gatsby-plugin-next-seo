@@ -481,6 +481,8 @@ export const BaseSeo = ({
     link.push(tag);
   });
 
+  const htmlAttributes = props.language ? { lang: props.language } : {};
+
   return (
     <>
       <Helmet
@@ -489,6 +491,7 @@ export const BaseSeo = ({
         title={props.title}
         titleTemplate={DEFAULTS.templateTitle}
         defer={defer}
+        htmlAttributes={htmlAttributes}
       ></Helmet>
     </>
   );

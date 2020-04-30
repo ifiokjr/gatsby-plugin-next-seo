@@ -18,6 +18,7 @@ export interface BaseSeoProps
 |  [canonical](./gatsby-plugin-next-seo.baseseoprops.canonical.md) | <code>string</code> | Set the page canonical url. |
 |  [description](./gatsby-plugin-next-seo.baseseoprops.description.md) | <code>string</code> | Set the page meta description. |
 |  [facebook](./gatsby-plugin-next-seo.baseseoprops.facebook.md) | <code>{</code><br/><code>        appId: string;</code><br/><code>    }</code> | Used for Facebook Insights, you must add a facebook app ID to your page to for it. |
+|  [language](./gatsby-plugin-next-seo.baseseoprops.language.md) | <code>string</code> | The language being used for the current page.<!-- -->This adds the <code>lang</code> attribute to the <code>&lt;html /&gt;</code> e.g. tag https://web.dev/html-has-lang/. |
 |  [languageAlternates](./gatsby-plugin-next-seo.baseseoprops.languagealternates.md) | <code>LanguageAlternate[]</code> | Set the language of the alternate urls. |
 |  [linkTags](./gatsby-plugin-next-seo.baseseoprops.linktags.md) | <code>LinkProps[]</code> | Allows you to add a link tag that is not documented here. |
 |  [metaTags](./gatsby-plugin-next-seo.baseseoprops.metatags.md) | <code>MetaProps[]</code> | Allows you to add a meta tag that is not documented here. |

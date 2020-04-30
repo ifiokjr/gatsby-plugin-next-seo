@@ -11,52 +11,54 @@ This codebase was initially forked from the brilliant [next-seo](https://github.
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Usage](#usage)
-  - [Setup](#setup)
-  - [Add Plugin to Gatsby Config](#add-plugin-to-gatsby-config)
-  - [Add SEO to Page](#add-seo-to-page)
-    - [A note on Twitter Tags](#a-note-on-twitter-tags)
-  - [Default SEO Configuration in Gatsby Config](#default-seo-configuration-in-gatsby-config)
-  - [GatsbySeo Options](#gatsbyseo-options)
-    - [Title Template](#title-template)
-    - [No Index](#no-index)
-    - [dangerouslySetAllPagesToNoIndex](#dangerouslysetallpagestonoindex)
-    - [No Follow](#no-follow)
-    - [dangerouslySetAllPagesToNoFollow](#dangerouslysetallpagestonofollow)
-    - [Twitter](#twitter)
-    - [facebook](#facebook)
-    - [Canonical URL](#canonical-url)
-    - [Alternate](#alternate)
-    - [Additional Meta Tags](#additional-meta-tags)
-- [Open Graph](#open-graph)
-  - [Open Graph Examples](#open-graph-examples)
-    - [Basic Example](#basic-example)
-    - [Video Example](#video-example)
-    - [Article Example](#article-example)
-    - [Book Example](#book-example)
-    - [Profile Example](#profile-example)
-- [JSON-LD](#json-ld)
-  - [Override](#override)
-  - [Article](#article)
-  - [News Article](#news-article)
-  - [Blog Post](#blog-post)
-  - [Breadcrumb](#breadcrumb)
-  - [Blog](#blog)
-  - [Book](#book)
-  - [Speakable](#speakable)
-  - [FAQ](#faq)
-    - [Question Interface](#question-interface)
-  - [Course](#course)
-  - [Corporate Contact (Deprecated)](#corporate-contact-deprecated)
-  - [Local Business](#local-business)
-  - [Logo](#logo)
-  - [Product](#product)
-  - [Social Profile (Deprecated)](#social-profile-deprecated)
-  - [JsonLd](#jsonld)
-- [API Docs](#api-docs)
-- [FAQ](#faq-1)
-  - [Why did you choose `gatsby-plugin-next-seo` as the project name?](#why-did-you-choose-gatsby-plugin-next-seo-as-the-project-name)
-- [Contributors](#contributors)
+- [gatsby-plugin-next-seo](#gatsby-plugin-next-seo)
+  - [Table of Contents](#table-of-contents)
+  - [Usage](#usage)
+    - [Setup](#setup)
+    - [Add Plugin to Gatsby Config](#add-plugin-to-gatsby-config)
+    - [Add SEO to Page](#add-seo-to-page)
+      - [A note on Twitter Tags](#a-note-on-twitter-tags)
+    - [Default SEO Configuration in Gatsby Config](#default-seo-configuration-in-gatsby-config)
+    - [GatsbySeo Options](#gatsbyseo-options)
+      - [Title Template](#title-template)
+      - [No Index](#no-index)
+      - [dangerouslySetAllPagesToNoIndex](#dangerouslysetallpagestonoindex)
+      - [No Follow](#no-follow)
+      - [dangerouslySetAllPagesToNoFollow](#dangerouslysetallpagestonofollow)
+      - [Twitter](#twitter)
+      - [facebook](#facebook)
+      - [Canonical URL](#canonical-url)
+      - [Alternate](#alternate)
+      - [Additional Meta Tags](#additional-meta-tags)
+  - [Open Graph](#open-graph)
+    - [Open Graph Examples](#open-graph-examples)
+      - [Basic Example](#basic-example)
+      - [Video Example](#video-example)
+      - [Article Example](#article-example)
+      - [Book Example](#book-example)
+      - [Profile Example](#profile-example)
+  - [JSON-LD](#json-ld)
+    - [Override](#override)
+    - [Article](#article)
+    - [News Article](#news-article)
+    - [Blog Post](#blog-post)
+    - [Breadcrumb](#breadcrumb)
+    - [Blog](#blog)
+    - [Book](#book)
+    - [Speakable](#speakable)
+    - [FAQ](#faq)
+      - [Question Interface](#question-interface)
+    - [Course](#course)
+    - [Corporate Contact (Deprecated)](#corporate-contact-deprecated)
+    - [Local Business](#local-business)
+    - [Logo](#logo)
+    - [Product](#product)
+    - [Social Profile (Deprecated)](#social-profile-deprecated)
+    - [JsonLd](#jsonld)
+  - [API Docs](#api-docs)
+  - [FAQ](#faq-1)
+    - [Why did you choose `gatsby-plugin-next-seo` as the project name?](#why-did-you-choose-gatsby-plugin-next-seo-as-the-project-name)
+  - [Contributors](#contributors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -108,7 +110,10 @@ import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
 export default () => (
   <>
-    <GatsbySeo title='Simple Usage Example' description='A short description goes here.' />
+    <GatsbySeo
+      title='Simple Usage Example'
+      description='A short description goes here.'
+    />
     <p>Simple Usage</p>
   </>
 );
@@ -210,6 +215,7 @@ From now on all of your gatsby pages will have the defaults above applied.
 | ---------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `titleTemplate`                    | string                  | Allows you to set default title template that will be added to your title [More Info](#title-template).                                                                              |
 | `title`                            | string                  | Set the meta title of the page.                                                                                                                                                      |
+| `language`                         | string                  | Set the language of the current page. This is added to the html tag and can prevent this [warning](https://web.dev/html-has-lang/).                                                  |
 | `noindex`                          | boolean (default false) | Sets whether page should be indexed or not [More Info](#no-index).                                                                                                                   |
 | `nofollow`                         | boolean (default false) | Sets whether page should be followed or not [More Info](#no-follow).                                                                                                                 |
 | `description`                      | string                  | Set the page meta description.                                                                                                                                                       |
@@ -662,7 +668,10 @@ const OverrideCourseJsonLd = () => (
     providerName='Course Provider'
     providerUrl='https//www.example.com/provider'
     description='Course description goes right here'
-    overrides={{ '@type': 'Course', datePublished: '2015-02-05T08:00:00+08:00' }}
+    overrides={{
+      '@type': 'Course',
+      datePublished: '2015-02-05T08:00:00+08:00',
+    }}
   />
 );
 ```
@@ -866,7 +875,8 @@ export default () => (
             },
             target: {
               '@type': 'EntryPoint',
-              urlTemplate: 'http://www.barnesandnoble.com/store/info/offer/0316769487?purchase=true',
+              urlTemplate:
+                'http://www.barnesandnoble.com/store/info/offer/0316769487?purchase=true',
               actionPlatform: [
                 'http://schema.org/DesktopWebPlatform',
                 'http://schema.org/IOSPlatform',
@@ -1088,7 +1098,10 @@ import { LogoJsonLd } from 'gatsby-plugin-next-seo';
 export default () => (
   <>
     <h1>Logo JSON-LD</h1>
-    <LogoJsonLd logo='http://www.your-site.com/images/logo.jpg' url='http://www.your-site.com' />
+    <LogoJsonLd
+      logo='http://www.your-site.com/images/logo.jpg'
+      url='http://www.your-site.com'
+    />
   </>
 );
 ```
@@ -1120,7 +1133,8 @@ export default () => (
         {
           author: 'Jim',
           datePublished: '2017-01-06T03:37:40Z',
-          reviewBody: 'This is my favorite product yet! Thanks Nate for the example products and reviews.',
+          reviewBody:
+            'This is my favorite product yet! Thanks Nate for the example products and reviews.',
           name: 'So awesome!!!',
           reviewRating: {
             bestRating: '5',

@@ -69,6 +69,7 @@ export interface BaseSeoProps {
     facebook?: {
         appId: string;
     };
+    language?: string;
     // Warning: (ae-forgotten-export) The symbol "LanguageAlternate" needs to be exported by the entry point index.d.ts
     languageAlternates?: LanguageAlternate[];
     // Warning: (ae-incompatible-release-tags) The symbol "linkTags" is marked as @public, but its signature references "LinkProps" which is marked as @internal

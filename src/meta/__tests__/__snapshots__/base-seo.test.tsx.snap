@@ -583,7 +583,10 @@ exports[`Video SEO renders correctly 1`] = `
 `;
 
 exports[`renders correctly 1`] = `
-<html>
+<html
+  data-rh="lang"
+  lang="en-GB"
+>
   <head>
     <title>
       This is a test title.

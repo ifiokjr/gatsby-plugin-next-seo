@@ -6,6 +6,7 @@ import { __resetDefaults, BaseSeo } from '../base-seo';
 
 const SEO = {
   title: 'This is a test title.',
+  language: 'en-GB',
   description: 'This is a test description.',
   canonical: 'https://www.canonical.ie',
   defaultOpenGraphImageHeight: 1200,
@@ -65,6 +66,10 @@ test('renders correctly', () => {
 
 test('returns full array for default seo object', () => {
   render(<BaseSeo {...SEO} />);
+
+  expect(document.querySelector('html')?.getAttribute('lang')).toBe(
+    SEO.language,
+  );
 
   const title = getByText(
     document.documentElement,

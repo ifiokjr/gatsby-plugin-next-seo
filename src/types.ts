@@ -240,6 +240,13 @@ interface LanguageAlternate {
  */
 export interface BaseSeoProps {
   /**
+   * The language being used for the current page.
+   *
+   * This adds the `lang` attribute to the  `<html />` e.g. tag https://web.dev/html-has-lang/.
+   */
+  language?: string;
+
+  /**
    * Set the meta title of the page
    */
   title?: string;
