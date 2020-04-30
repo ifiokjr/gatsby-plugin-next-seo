@@ -14,6 +14,11 @@ jobs:
         node-version: [10.x, 12.x]
 
     steps:
+      - name: install libgbm
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgbm-dev
+
       - uses: actions/checkout@v1
 
       - name: get yarn cache
