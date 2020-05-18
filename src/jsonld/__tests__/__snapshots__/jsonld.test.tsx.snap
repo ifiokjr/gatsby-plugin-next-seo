@@ -118,10 +118,10 @@ exports[`BlogPostJsonLd 1`] = `
   },
   "publisher": {
     "@type": "Organization",
-    "name": "",
+    "name": "Ifiok Jr.",
     "logo": {
       "@type": "ImageObject",
-      "url": ""
+      "url": "https://www.example.com/photos/logo.jpg"
     }
   },
   "description": "This is a mighty good description of this blog."
