@@ -1,3 +1,10 @@
+### [1.5.1](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.5.0...v1.5.1) (2020-05-18)
+
+
+### Bug Fixes
+
+* fix swapped publisherName and publisherLogo in BlogPostJsonLd ([#17](https://github.com/ifiokjr/gatsby-plugin-next-seo/issues/17)) ([5bab816](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/5bab8161fe7b358a77c62bf7561dabca2ba0e033))
+
 ## [1.5.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.4.0...v1.5.0) (2020-04-30)
 
 
