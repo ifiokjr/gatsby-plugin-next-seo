@@ -101,6 +101,8 @@ test('BlogPostJsonLd', () => {
       dateModified='2015-02-05T09:00:00+08:00'
       authorName='Jane Blogs'
       description='This is a mighty good description of this blog.'
+      publisherName='Ifiok Jr.'
+      publisherLogo='https://www.example.com/photos/logo.jpg'
     />,
   );
   const jsonLD = JSON.parse(

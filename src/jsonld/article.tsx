@@ -264,8 +264,8 @@ export const BlogPostJsonLd: FC<BlogPostJsonLdProps> = ({
   return (
     <ArticleJsonLd
       defer={defer}
-      publisherName={publisherLogo}
-      publisherLogo={publisherName}
+      publisherName={publisherName}
+      publisherLogo={publisherLogo}
       {...props}
       overrides={{ ...overrides, '@type': 'BlogPosting' }}
     />
