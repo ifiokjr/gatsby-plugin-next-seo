@@ -222,7 +222,7 @@ From now on all of your gatsby pages will have the defaults above applied.
 | `canonical`                        | string                  | Set the page canonical url.                                                                                                                                                          |
 | `mobileAlternate.media`            | string                  | Set what screen size the mobile website should be served from.                                                                                                                       |
 | `mobileAlternate.href`             | string                  | Set the mobile page alternate url.                                                                                                                                                   |
-| `languageAlternate`                | array                   | Set the language of the alternate urls. Excepts object: `{ hrefLang: string, href: string }`.                                                                                        |
+| `languageAlternates`               | array                   | Set the language of the alternate urls. The shape of the object should be: `{ hrefLang: string, href: string }`.                                                                     |
 | `additionalMetaTags`               | array                   | Allows you to add a meta tag that is not documented here. [More Info](#additional-meta-tags).                                                                                        |
 | `twitter.cardType`                 | string                  | The card type, which will be one of `summary`, `summary_large_image`, `app`, or `player`.                                                                                            |
 | `twitter.site`                     | string                  | @username for the website used in the card footer.                                                                                                                                   |
@@ -377,10 +377,16 @@ mobileAlternate={{
 ```
 
 ```tsx
-languageAlternate={{
-  hrefLang: 'de-AT',
-  href: 'https://www.canonical.ie/de',
-}}
+languageAlternates={[
+  {
+    hrefLang: 'de-AT',
+    href: 'https://www.canonical.ie/de',
+  },
+  {
+    hrefLang: 'es',
+    href: 'https://www.canonical.ie/es',
+}
+]}
 ```
 
 #### Additional Meta Tags
