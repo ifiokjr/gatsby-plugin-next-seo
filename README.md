@@ -926,7 +926,7 @@ import { FAQJsonLd } from 'gatsby-plugin-next-seo';
 export default () => (
   <>
     <FAQJsonLd
-      mainEntity={[
+      questions={[
         { question: 'What?', answer: 'Stand' },
         { question: 'How?', answer: 'Effort' },
         { question: 'Why?', answer: 'Peace' },
