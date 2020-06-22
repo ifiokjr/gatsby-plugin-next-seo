@@ -29,7 +29,7 @@ This codebase was initially forked from the brilliant [next-seo](https://github.
       - [facebook](#facebook)
       - [Canonical URL](#canonical-url)
       - [Alternate](#alternate)
-      - [Additional Meta Tags](#additional-meta-tags)
+      - [Meta Tags](#meta-tags)
   - [Open Graph](#open-graph)
     - [Open Graph Examples](#open-graph-examples)
       - [Basic Example](#basic-example)
@@ -223,7 +223,7 @@ From now on all of your gatsby pages will have the defaults above applied.
 | `mobileAlternate.media`            | string                  | Set what screen size the mobile website should be served from.                                                                                                                       |
 | `mobileAlternate.href`             | string                  | Set the mobile page alternate url.                                                                                                                                                   |
 | `languageAlternates`               | array                   | Set the language of the alternate urls. The shape of the object should be: `{ hrefLang: string, href: string }`.                                                                     |
-| `additionalMetaTags`               | array                   | Allows you to add a meta tag that is not documented here. [More Info](#additional-meta-tags).                                                                                        |
+| `metaTags`                         | array                   | Allows you to add a meta tag that is not documented here. [More Info](#meta-tags).                                                                                                   |
 | `twitter.cardType`                 | string                  | The card type, which will be one of `summary`, `summary_large_image`, `app`, or `player`.                                                                                            |
 | `twitter.site`                     | string                  | @username for the website used in the card footer.                                                                                                                                   |
 | `twitter.handle`                   | string                  | @username for the content creator / author (outputs as `twitter:creator`).                                                                                                           |
@@ -389,7 +389,7 @@ languageAlternates={[
 ]}
 ```
 
-#### Additional Meta Tags
+#### Meta Tags
 
 This allows you to add any other meta tags that are not covered in the `config`.
 
@@ -398,7 +398,7 @@ This allows you to add any other meta tags that are not covered in the `config`.
 Example:
 
 ```js
-additionalMetaTags={[{
+metaTags={[{
   property: 'dc:creator',
   content: 'Jane Doe'
 }, {
@@ -412,7 +412,7 @@ Invalid Examples:
 These are invalid as they contain `property` and `name` on the same entry.
 
 ```js
-additionalMetaTags={[{
+metaTags={[{
   property: 'dc:creator',
   name: 'dc:creator',
   content: 'Jane Doe'

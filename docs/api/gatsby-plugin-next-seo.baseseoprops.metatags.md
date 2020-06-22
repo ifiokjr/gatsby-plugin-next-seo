@@ -21,7 +21,7 @@ This allows you to add any other meta tags that are not covered in the `config`<
 Example:
 
 ```js
-additionalMetaTags={[{
+metaTags={[{
   property: 'dc:creator',
   content: 'Jane Doe'
 }, {
@@ -35,7 +35,7 @@ Invalid Examples:
 These are invalid as they contain `property` and `name` on the same entry.
 
 ```js
-additionalMetaTags={[{
+metaTags={[{
   property: 'dc:creator',
   name: 'dc:creator',
   content: 'Jane Doe'
