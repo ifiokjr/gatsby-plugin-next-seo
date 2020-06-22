@@ -293,6 +293,66 @@ test('displays title with titleTemplate integrated', () => {
   expect(title.innerHTML).toMatch(`${template} | ${SEO.title}`);
 });
 
+test('og:title fallback uses titleTemplate', () => {
+  const template = 'Gatsby SEO';
+  const overrideProps = {
+    ...SEO,
+    titleTemplate: `${template} | %s`,
+    openGraph: {},
+  };
+  render(<BaseSeo {...overrideProps} />);
+  const ogTitleTag = document.documentElement.querySelector(
+    'meta[property="og:title"]',
+  );
+  expect(ogTitleTag).toBeTruthy();
+  expect(ogTitleTag?.getAttribute('content')).toMatch(
+    `${template} | ${SEO.title}`,
+  );
+});
+
+test('BaseSeo respects the nesting/overriding behaviour of React Helmet', () => {
+  const template = 'Gatsby SEO';
+  const title = 'Example Title';
+  const exampleUrlBase = 'https://example.com';
+  const exampleUrlOverride = 'https://examp2le.com';
+  render(
+    <>
+      <BaseSeo
+        title={title}
+        titleTemplate={`${template} | %s`}
+        openGraph={{ url: exampleUrlBase }}
+      />
+      <div>
+        <div>
+          <BaseSeo openGraph={{ url: exampleUrlOverride }} />
+        </div>
+      </div>
+    </>,
+  );
+
+  // <title> tag is not overridden
+  const titleElement = getByText(
+    document.documentElement,
+    (content, element) =>
+      element.tagName.toLowerCase() === 'title' && content.startsWith(template),
+  );
+  expect(titleElement.innerHTML).toMatch(`${template} | ${title}`);
+
+  // og:title is not overridden, uses fallback with titleTemplate
+  const ogTitleTag = document.documentElement.querySelector(
+    'meta[property="og:title"]',
+  );
+  expect(ogTitleTag).toBeTruthy();
+  expect(ogTitleTag?.getAttribute('content')).toMatch(`${template} | ${title}`);
+
+  // og:url is overriden
+  const ogUrlTag = document.documentElement.querySelector(
+    'meta[property="og:url"]',
+  );
+  expect(ogUrlTag).toBeTruthy();
+  expect(ogUrlTag?.getAttribute('content')).toEqual(exampleUrlOverride);
+});
+
 const ArticleSEO = {
   title: 'Article Page Title',
   description: 'Description of article page',

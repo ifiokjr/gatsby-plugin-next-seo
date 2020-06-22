@@ -1,10 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Helmet, HelmetProps } from 'react-helmet-async';
 
 import { AllSeoProps, LinkProps, MetaProps } from '../types';
 
 const BASE_DEFAULTS = {
-  templateTitle: '',
   noindex: false,
   nofollow: false,
   defaultOpenGraphImageWidth: 0,
@@ -55,10 +54,6 @@ export const BaseSeo = ({
 }: AllSeoProps) => {
   const meta: MetaProps[] = [];
   const link: LinkProps[] = [];
-
-  if (props.titleTemplate) {
-    DEFAULTS.templateTitle = props.titleTemplate;
-  }
 
   const noindex =
     (props.noindex ?? DEFAULTS.noindex) ||
@@ -348,8 +343,10 @@ export const BaseSeo = ({
     if (props.openGraph.title || props.title) {
       meta.push({
         property: 'og:title',
-        content: props.openGraph.title ?? props.title,
-      }); // TODO fix titleTemplate fallback
+        content:
+          props.openGraph.title ??
+          (props.titleTemplate ?? '').replace('%s', props.title ?? ''),
+      });
     }
 
     if (props.openGraph.description || props.description) {
@@ -483,16 +480,24 @@ export const BaseSeo = ({
 
   const htmlAttributes = props.language ? { lang: props.language } : {};
 
+  const helmetProps: HelmetProps = {
+    meta,
+    link,
+    defer,
+    htmlAttributes,
+  };
+
+  if (props.title) {
+    helmetProps['title'] = props.title;
+  }
+
+  if (props.titleTemplate) {
+    helmetProps['titleTemplate'] = props.titleTemplate;
+  }
+
   return (
     <>
-      <Helmet
-        meta={meta}
-        link={link}
-        title={props.title}
-        titleTemplate={DEFAULTS.templateTitle}
-        defer={defer}
-        htmlAttributes={htmlAttributes}
-      ></Helmet>
+      <Helmet {...helmetProps}></Helmet>
     </>
   );
 };
