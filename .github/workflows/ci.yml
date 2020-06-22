@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [10.x, 12.x, 14.x]
 
     steps:
       - name: install libgbm
@@ -37,6 +37,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: ignore engines
+        run: yarn config set ignore-engines true
+
       - name: install dependencies
         run: yarn --pure-lockfile
 
@@ -57,11 +60,9 @@ jobs:
 
       - name: run gatsby build integration tests
         run: yarn test:e2e
-        if: matrix.node-version == '12.x'
 
       - name: run gatsby develop integration tests
         run: yarn test:e2e:develop
-        if: matrix.node-version == '10.x'
 
       - name: upload build artifact
         uses: actions/upload-artifact@v1
