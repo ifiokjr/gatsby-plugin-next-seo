@@ -440,7 +440,7 @@ export interface BaseSeoProps {
    * Example:
    *
    * ```js
-   * additionalMetaTags={[{
+   * metaTags={[{
    *   property: 'dc:creator',
    *   content: 'Jane Doe'
    * }, {
@@ -454,7 +454,7 @@ export interface BaseSeoProps {
    * These are invalid as they contain `property` and `name` on the same entry.
    *
    * ```js
-   * additionalMetaTags={[{
+   * metaTags={[{
    *   property: 'dc:creator',
    *   name: 'dc:creator',
    *   content: 'Jane Doe'
