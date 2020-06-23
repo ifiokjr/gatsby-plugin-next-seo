@@ -170,10 +170,7 @@ export const BaseSeo = ({
           });
         }
       } else if (type === 'book' && props.openGraph.book) {
-        if (
-          props.openGraph.book.authors &&
-          props.openGraph.book.authors.length
-        ) {
+        if (props.openGraph.book.authors?.length) {
           props.openGraph.book.authors.forEach((author) => {
             meta.push({
               property: 'book:author',
@@ -196,7 +193,7 @@ export const BaseSeo = ({
           });
         }
 
-        if (props.openGraph.book.tags && props.openGraph.book.tags.length) {
+        if (props.openGraph.book.tags?.length) {
           props.openGraph.book.tags.forEach((tag) => {
             meta.push({
               property: 'book:tag',
@@ -226,10 +223,7 @@ export const BaseSeo = ({
           });
         }
 
-        if (
-          props.openGraph.article.authors &&
-          props.openGraph.article.authors.length
-        ) {
+        if (props.openGraph.article.authors?.length) {
           props.openGraph.article.authors.forEach((author) => {
             meta.push({
               property: 'article:author',
@@ -245,10 +239,7 @@ export const BaseSeo = ({
           });
         }
 
-        if (
-          props.openGraph.article.tags &&
-          props.openGraph.article.tags.length
-        ) {
+        if (props.openGraph.article.tags?.length) {
           props.openGraph.article.tags.forEach((tag) => {
             meta.push({
               property: 'article:tag',
@@ -263,10 +254,7 @@ export const BaseSeo = ({
           type === 'video.other') &&
         props.openGraph.video
       ) {
-        if (
-          props.openGraph.video.actors &&
-          props.openGraph.video.actors.length
-        ) {
+        if (props.openGraph.video.actors?.length) {
           props.openGraph.video.actors.forEach((actor) => {
             if (actor.profile) {
               meta.push({
@@ -284,10 +272,7 @@ export const BaseSeo = ({
           });
         }
 
-        if (
-          props.openGraph.video.directors &&
-          props.openGraph.video.directors.length
-        ) {
+        if (props.openGraph.video.directors?.length) {
           props.openGraph.video.directors.forEach((director) => {
             meta.push({
               property: 'video:director',
@@ -296,10 +281,7 @@ export const BaseSeo = ({
           });
         }
 
-        if (
-          props.openGraph.video.writers &&
-          props.openGraph.video.writers.length
-        ) {
+        if (props.openGraph.video.writers?.length) {
           props.openGraph.video.writers.forEach((writer) => {
             meta.push({
               property: 'video:writer',
@@ -322,7 +304,7 @@ export const BaseSeo = ({
           });
         }
 
-        if (props.openGraph.video.tags && props.openGraph.video.tags.length) {
+        if (props.openGraph.video.tags?.length) {
           props.openGraph.video.tags.forEach((tag) => {
             meta.push({
               property: 'video:tag',
@@ -365,7 +347,7 @@ export const BaseSeo = ({
       DEFAULTS.defaultOpenGraphImageHeight = props.defaultOpenGraphImageHeight;
     }
 
-    if (props.openGraph.images && props.openGraph.images.length) {
+    if (props.openGraph.images?.length) {
       props.openGraph.images.forEach((image) => {
         meta.push({
           property: 'og:image',
@@ -414,7 +396,7 @@ export const BaseSeo = ({
       DEFAULTS.defaultOpenGraphVideoHeight = props.defaultOpenGraphVideoHeight;
     }
 
-    if (props.openGraph.videos && props.openGraph.videos.length) {
+    if (props.openGraph.videos?.length) {
       props.openGraph.videos.forEach((video) => {
         meta.push({
           property: 'og:video',

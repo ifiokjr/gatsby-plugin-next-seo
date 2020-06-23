@@ -206,7 +206,7 @@ test('BookJsonLd', () => {
       ]}
     />,
   );
-  JSON.parse(document.querySelector('script')?.innerHTML!);
+  JSON.parse(document.querySelector('script')?.innerHTML ?? '');
   expect(document.documentElement).toMatchSnapshot();
 });
 
@@ -228,7 +228,7 @@ test('CourseJsonLd', () => {
 
 test('SpeakableJsonLd', () => {
   render(<SpeakableJsonLd cssSelector={['#abc', '#root']} />);
-  JSON.parse(document.querySelector('script')?.innerHTML!);
+  JSON.parse(document.querySelector('script')?.innerHTML ?? '');
   expect(document.documentElement).toMatchSnapshot();
   expect(() =>
     render(
@@ -345,6 +345,6 @@ test('FAQJsonLd', () => {
       ]}
     />,
   );
-  JSON.parse(document.querySelector('script')?.innerHTML!);
+  JSON.parse(document.querySelector('script')?.innerHTML ?? '');
   expect(document.documentElement).toMatchSnapshot();
 });
