@@ -1,7 +1,7 @@
 import { getDocument } from 'pptr-testing-library';
-import { ElementHandle } from 'puppeteer';
+import { ElementHandle, Page } from 'puppeteer';
 
-const url = (path = '') => `http://localhost:9000${path}`;
+export const url = (path = '') => `http://localhost:9000${path}`;
 
 export const prop = async <GReturn>(
   $element: ElementHandle | Promise<ElementHandle>,
@@ -82,12 +82,13 @@ interface LaunchParams {
 }
 
 export const launch = async ({
-  path = '',
+  path = '/',
   disableJavascript = false,
-}: LaunchParams = {}) => {
+}: LaunchParams = {}): Promise<ElementHandle> => {
   if (disableJavascript) {
     await page.setJavaScriptEnabled(false);
   }
+
   await page.goto(
     url(path),
     disableJavascript ? {} : { waitUntil: 'domcontentloaded' },
@@ -97,5 +98,5 @@ export const launch = async ({
     await page.waitFor(500); // gatsby develop takes a moment to warm up on first load
   }
 
-  return getDocument(page);
+  return getDocument(page as Page);
 };

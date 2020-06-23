@@ -6,3 +6,6 @@ jest.setTimeout(120000);
 process.on('unhandledRejection', (reason) => {
   console.error('REJECTION', reason);
 });
+
+// Needed for gatsby develop since the first request always timesout.
+jest.retryTimes(2);

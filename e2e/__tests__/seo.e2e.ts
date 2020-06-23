@@ -6,7 +6,7 @@ import {
 } from '../helpers';
 
 test.each(testIterator)('Default SEO / - %s', async (_, disableJavascript) => {
-  const $document = await launch({ disableJavascript });
+  const $document = await launch({ disableJavascript, path: '/' });
   const tagAssertions = [
     { selector: 'h1', prop: 'innerText', result: 'Default SEO on this Page' },
     {

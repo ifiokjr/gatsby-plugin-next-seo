@@ -5,7 +5,7 @@ module.exports = {
   globals: {
     __DEV__: true,
     __TEST__: true,
-    __E2E__: false,
+    __E2E__: true,
   },
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',

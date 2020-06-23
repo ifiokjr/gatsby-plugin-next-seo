@@ -73,10 +73,6 @@ module.exports = {
       'error',
       { default: 'array-simple', readonly: 'array-simple' },
     ],
-    '@typescript-eslint/camelcase': [
-      'warn',
-      { ignoreDestructuring: true, properties: 'never' },
-    ],
     '@typescript-eslint/no-empty-function': 'off', // Empty functions/methods are often desired
     '@typescript-eslint/no-empty-interface': 'off', // Empty interfaces are useful for future planning
     '@typescript-eslint/no-var-requires': 'off', // We use 'require(..)' throughout
@@ -180,10 +176,6 @@ module.exports = {
           { allowNumber: true, allowBoolean: true, allowNullable: true },
         ],
         '@typescript-eslint/no-dynamic-delete': ['error'],
-        '@typescript-eslint/camelcase': [
-          'warn',
-          { ignoreDestructuring: true, properties: 'never' },
-        ],
       },
     },
     {
