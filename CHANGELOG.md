@@ -1,3 +1,15 @@
+## [1.6.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.5.1...v1.6.0) (2020-06-23)
+
+
+### Features
+
+* enable nested `GatsbySeo` components to exist ([#22](https://github.com/ifiokjr/gatsby-plugin-next-seo/issues/22)) ([a4f5716](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/a4f5716b9899d01b19123cfbce39a24fd9e451da))
+
+
+### Bug Fixes
+
+* update dependencies ([9eca06d](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/9eca06d8458299d53b1057e2d695dab17221b3e3))
+
 ### [1.5.1](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.5.0...v1.5.1) (2020-05-18)
 
 
