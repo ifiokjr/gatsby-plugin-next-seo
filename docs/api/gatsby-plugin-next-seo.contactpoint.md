@@ -14,9 +14,9 @@ export interface ContactPoint
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [areaServed](./gatsby-plugin-next-seo.contactpoint.areaserved.md) | <code>string &#124; string[]</code> |  |
-|  [availableLanguage](./gatsby-plugin-next-seo.contactpoint.availablelanguage.md) | <code>string &#124; string[]</code> |  |
-|  [contactOption](./gatsby-plugin-next-seo.contactpoint.contactoption.md) | <code>string &#124; string[]</code> |  |
-|  [contactType](./gatsby-plugin-next-seo.contactpoint.contacttype.md) | <code>string</code> |  |
-|  [telephone](./gatsby-plugin-next-seo.contactpoint.telephone.md) | <code>string</code> |  |
+|  [areaServed](./gatsby-plugin-next-seo.contactpoint.areaserved.md) | string \| string\[\] |  |
+|  [availableLanguage](./gatsby-plugin-next-seo.contactpoint.availablelanguage.md) | string \| string\[\] |  |
+|  [contactOption](./gatsby-plugin-next-seo.contactpoint.contactoption.md) | string \| string\[\] |  |
+|  [contactType](./gatsby-plugin-next-seo.contactpoint.contacttype.md) | string |  |
+|  [telephone](./gatsby-plugin-next-seo.contactpoint.telephone.md) | string |  |
 

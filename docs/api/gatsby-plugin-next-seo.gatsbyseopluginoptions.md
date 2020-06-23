@@ -10,3 +10,5 @@
 ```typescript
 export interface GatsbySeoPluginOptions extends DefaultSeoProps, BaseSeoProps 
 ```
+<b>Extends:</b> [DefaultSeoProps](./gatsby-plugin-next-seo.defaultseoprops.md)<!-- -->, [BaseSeoProps](./gatsby-plugin-next-seo.baseseoprops.md)
+

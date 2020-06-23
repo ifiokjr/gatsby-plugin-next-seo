@@ -15,8 +15,8 @@ export interface OpenGraphImages
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [alt](./gatsby-plugin-next-seo.opengraphimages.alt.md) | <code>string</code> |  |
-|  [height](./gatsby-plugin-next-seo.opengraphimages.height.md) | <code>number</code> |  |
-|  [url](./gatsby-plugin-next-seo.opengraphimages.url.md) | <code>string</code> |  |
-|  [width](./gatsby-plugin-next-seo.opengraphimages.width.md) | <code>number</code> |  |
+|  [alt](./gatsby-plugin-next-seo.opengraphimages.alt.md) | string |  |
+|  [height](./gatsby-plugin-next-seo.opengraphimages.height.md) | number |  |
+|  [url](./gatsby-plugin-next-seo.opengraphimages.url.md) | string |  |
+|  [width](./gatsby-plugin-next-seo.opengraphimages.width.md) | number |  |
 

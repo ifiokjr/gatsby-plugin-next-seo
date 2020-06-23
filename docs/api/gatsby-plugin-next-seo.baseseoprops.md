@@ -15,18 +15,18 @@ export interface BaseSeoProps
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [canonical](./gatsby-plugin-next-seo.baseseoprops.canonical.md) | <code>string</code> | Set the page canonical url. |
-|  [description](./gatsby-plugin-next-seo.baseseoprops.description.md) | <code>string</code> | Set the page meta description. |
-|  [facebook](./gatsby-plugin-next-seo.baseseoprops.facebook.md) | <code>{</code><br/><code>        appId: string;</code><br/><code>    }</code> | Used for Facebook Insights, you must add a facebook app ID to your page to for it. |
-|  [language](./gatsby-plugin-next-seo.baseseoprops.language.md) | <code>string</code> | The language being used for the current page.<!-- -->This adds the <code>lang</code> attribute to the <code>&lt;html /&gt;</code> e.g. tag https://web.dev/html-has-lang/. |
-|  [languageAlternates](./gatsby-plugin-next-seo.baseseoprops.languagealternates.md) | <code>LanguageAlternate[]</code> | Set the language of the alternate urls. |
-|  [linkTags](./gatsby-plugin-next-seo.baseseoprops.linktags.md) | <code>LinkProps[]</code> | Allows you to add a link tag that is not documented here. |
-|  [metaTags](./gatsby-plugin-next-seo.baseseoprops.metatags.md) | <code>MetaProps[]</code> | Allows you to add a meta tag that is not documented here. |
-|  [mobileAlternate](./gatsby-plugin-next-seo.baseseoprops.mobilealternate.md) | <code>MobileAlternate</code> | Mobile configuration object. |
-|  [nofollow](./gatsby-plugin-next-seo.baseseoprops.nofollow.md) | <code>boolean</code> | Sets whether page should be followed or not. |
-|  [noindex](./gatsby-plugin-next-seo.baseseoprops.noindex.md) | <code>boolean</code> | Sets whether page should be indexed or not. |
-|  [openGraph](./gatsby-plugin-next-seo.baseseoprops.opengraph.md) | <code>OpenGraph</code> | The open graph configuration object. |
-|  [title](./gatsby-plugin-next-seo.baseseoprops.title.md) | <code>string</code> | Set the meta title of the page |
-|  [titleTemplate](./gatsby-plugin-next-seo.baseseoprops.titletemplate.md) | <code>string</code> | Allows you to set default title template that will be added to your title. |
-|  [twitter](./gatsby-plugin-next-seo.baseseoprops.twitter.md) | <code>Twitter</code> | The twitter configuration object. |
+|  [canonical](./gatsby-plugin-next-seo.baseseoprops.canonical.md) | string | Set the page canonical url. |
+|  [description](./gatsby-plugin-next-seo.baseseoprops.description.md) | string | Set the page meta description. |
+|  [facebook](./gatsby-plugin-next-seo.baseseoprops.facebook.md) | { appId: string; } | Used for Facebook Insights, you must add a facebook app ID to your page to for it. |
+|  [language](./gatsby-plugin-next-seo.baseseoprops.language.md) | string | The language being used for the current page.<!-- -->This adds the <code>lang</code> attribute to the <code>&lt;html /&gt;</code> e.g. tag https://web.dev/html-has-lang/. |
+|  [languageAlternates](./gatsby-plugin-next-seo.baseseoprops.languagealternates.md) | LanguageAlternate\[\] | Set the language of the alternate urls. |
+|  [linkTags](./gatsby-plugin-next-seo.baseseoprops.linktags.md) | LinkProps\[\] | Allows you to add a link tag that is not documented here. |
+|  [metaTags](./gatsby-plugin-next-seo.baseseoprops.metatags.md) | MetaProps\[\] | Allows you to add a meta tag that is not documented here. |
+|  [mobileAlternate](./gatsby-plugin-next-seo.baseseoprops.mobilealternate.md) | MobileAlternate | Mobile configuration object. |
+|  [nofollow](./gatsby-plugin-next-seo.baseseoprops.nofollow.md) | boolean | Sets whether page should be followed or not. |
+|  [noindex](./gatsby-plugin-next-seo.baseseoprops.noindex.md) | boolean | Sets whether page should be indexed or not. |
+|  [openGraph](./gatsby-plugin-next-seo.baseseoprops.opengraph.md) | [OpenGraph](./gatsby-plugin-next-seo.opengraph.md) | The open graph configuration object. |
+|  [title](./gatsby-plugin-next-seo.baseseoprops.title.md) | string | Set the meta title of the page |
+|  [titleTemplate](./gatsby-plugin-next-seo.baseseoprops.titletemplate.md) | string | Allows you to set default title template that will be added to your title. |
+|  [twitter](./gatsby-plugin-next-seo.baseseoprops.twitter.md) | [Twitter](./gatsby-plugin-next-seo.twitter.md) | The twitter configuration object. |
 

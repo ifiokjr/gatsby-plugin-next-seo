@@ -9,10 +9,11 @@
 ```typescript
 export interface NewsArticleJsonLdProps extends Except<ArticleJsonLdProps, 'overrides'>, Overrides<NewsArticle> 
 ```
+<b>Extends:</b> Except&lt;[ArticleJsonLdProps](./gatsby-plugin-next-seo.articlejsonldprops.md)<!-- -->, 'overrides'&gt;, Overrides&lt;NewsArticle&gt;
 
 ## Properties
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [section](./gatsby-plugin-next-seo.newsarticlejsonldprops.section.md) | <code>string &#124; string[]</code> | Articles may belong to one or more 'sections' in a magazine or newspaper, such as Sports, Lifestyle, etc. |
+|  [section](./gatsby-plugin-next-seo.newsarticlejsonldprops.section.md) | string \| string\[\] | Articles may belong to one or more 'sections' in a magazine or newspaper, such as Sports, Lifestyle, etc. |
 

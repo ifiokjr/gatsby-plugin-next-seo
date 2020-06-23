@@ -11,3 +11,5 @@ The Speakable JSON LD Component props.
 ```typescript
 export interface SpeakableJsonLdProps extends DeferSeoProps, Speakable, Overrides<SpeakableSpecification> 
 ```
+<b>Extends:</b> [DeferSeoProps](./gatsby-plugin-next-seo.deferseoprops.md)<!-- -->, Speakable, Overrides&lt;SpeakableSpecification&gt;
+

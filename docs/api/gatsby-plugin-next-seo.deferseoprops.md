@@ -15,5 +15,5 @@ export interface DeferSeoProps
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [defer](./gatsby-plugin-next-seo.deferseoprops.defer.md) | <code>boolean</code> | Whether or not to defer the addition of the head tag. |
+|  [defer](./gatsby-plugin-next-seo.deferseoprops.defer.md) | boolean | Whether or not to defer the addition of the head tag. |
 

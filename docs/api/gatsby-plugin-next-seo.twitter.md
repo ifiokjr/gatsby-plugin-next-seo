@@ -15,7 +15,7 @@ export interface Twitter
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [cardType](./gatsby-plugin-next-seo.twitter.cardtype.md) | <code>LiteralUnion&lt;TwitterCardType, string&gt;</code> | The card type, which will be one of <code>summary</code>, <code>summary_large_image</code>, <code>app</code>, or <code>player</code>. |
-|  [handle](./gatsby-plugin-next-seo.twitter.handle.md) | <code>string</code> | <code>@username</code> for the content creator / author (outputs as <code>twitter:creator</code>). |
-|  [site](./gatsby-plugin-next-seo.twitter.site.md) | <code>string</code> | <code>@username</code> for the website used in the card footer. |
+|  [cardType](./gatsby-plugin-next-seo.twitter.cardtype.md) | LiteralUnion&lt;[TwitterCardType](./gatsby-plugin-next-seo.twittercardtype.md)<!-- -->, string&gt; | The card type, which will be one of <code>summary</code>, <code>summary_large_image</code>, <code>app</code>, or <code>player</code>. |
+|  [handle](./gatsby-plugin-next-seo.twitter.handle.md) | string | <code>@username</code> for the content creator / author (outputs as <code>twitter:creator</code>). |
+|  [site](./gatsby-plugin-next-seo.twitter.site.md) | string | <code>@username</code> for the website used in the card footer. |
 

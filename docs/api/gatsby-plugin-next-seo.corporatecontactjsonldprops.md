@@ -9,12 +9,13 @@
 ```typescript
 export interface CorporateContactJsonLdProps extends DeferSeoProps 
 ```
+<b>Extends:</b> [DeferSeoProps](./gatsby-plugin-next-seo.deferseoprops.md)
 
 ## Properties
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [contactPoint](./gatsby-plugin-next-seo.corporatecontactjsonldprops.contactpoint.md) | <code>ContactPoint[]</code> |  |
-|  [logo](./gatsby-plugin-next-seo.corporatecontactjsonldprops.logo.md) | <code>string</code> |  |
-|  [url](./gatsby-plugin-next-seo.corporatecontactjsonldprops.url.md) | <code>string</code> |  |
+|  [contactPoint](./gatsby-plugin-next-seo.corporatecontactjsonldprops.contactpoint.md) | [ContactPoint](./gatsby-plugin-next-seo.contactpoint.md)<!-- -->\[\] |  |
+|  [logo](./gatsby-plugin-next-seo.corporatecontactjsonldprops.logo.md) | string |  |
+|  [url](./gatsby-plugin-next-seo.corporatecontactjsonldprops.url.md) | string |  |
 

@@ -11,25 +11,26 @@ Component props for the Product JSON LD.
 ```typescript
 export interface ProductJsonLdProps extends DeferSeoProps, Overrides<Product> 
 ```
+<b>Extends:</b> [DeferSeoProps](./gatsby-plugin-next-seo.deferseoprops.md)<!-- -->, Overrides&lt;Product&gt;
 
 ## Properties
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [aggregateRating](./gatsby-plugin-next-seo.productjsonldprops.aggregaterating.md) | <code>AggregateRating</code> | A nested aggregateRating of the product. |
-|  [brand](./gatsby-plugin-next-seo.productjsonldprops.brand.md) | <code>string</code> | The brand of the product. |
-|  [description](./gatsby-plugin-next-seo.productjsonldprops.description.md) | <code>string</code> | Product description. |
-|  [gtin](./gatsby-plugin-next-seo.productjsonldprops.gtin.md) | <code>string &#124; string[]</code> | A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)<!-- -->). |
-|  [gtin12](./gatsby-plugin-next-seo.productjsonldprops.gtin12.md) | <code>string &#124; string[]</code> | The GTIN-12 code of the product, or the product to which the offer refers. |
-|  [gtin13](./gatsby-plugin-next-seo.productjsonldprops.gtin13.md) | <code>string &#124; string[]</code> | The GTIN-13 code of the product, or the product to which the offer refers. |
-|  [gtin14](./gatsby-plugin-next-seo.productjsonldprops.gtin14.md) | <code>string &#124; string[]</code> | The GTIN-14 code of the product, or the product to which the offer refers. |
-|  [gtin8](./gatsby-plugin-next-seo.productjsonldprops.gtin8.md) | <code>string &#124; string[]</code> | The [GTIN-8](http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx) code of the product, or the product to which the offer refers. |
-|  [images](./gatsby-plugin-next-seo.productjsonldprops.images.md) | <code>string &#124; string[]</code> | The URL(s) of a product photo. Pictures clearly showing the product (for example, against a white background) are preferred. |
-|  [mpn](./gatsby-plugin-next-seo.productjsonldprops.mpn.md) | <code>string &#124; string[]</code> | The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers. |
-|  [name](./gatsby-plugin-next-seo.productjsonldprops.name.md) | <code>string</code> | The name of the product. |
-|  [offers](./gatsby-plugin-next-seo.productjsonldprops.offers.md) | <code>Offers</code> | An offer to sell the product. Includes a nested Offer or AggregateOffer. |
-|  [offersType](./gatsby-plugin-next-seo.productjsonldprops.offerstype.md) | <code>'Offer' &#124; 'AggregateOffer'</code> |  |
-|  [productName](./gatsby-plugin-next-seo.productjsonldprops.productname.md) | <code>string</code> |  |
-|  [reviews](./gatsby-plugin-next-seo.productjsonldprops.reviews.md) | <code>Review[]</code> | A nested Review of the product. |
-|  [sku](./gatsby-plugin-next-seo.productjsonldprops.sku.md) | <code>string &#124; string[]</code> | The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers. |
+|  [aggregateRating](./gatsby-plugin-next-seo.productjsonldprops.aggregaterating.md) | AggregateRating | A nested aggregateRating of the product. |
+|  [brand](./gatsby-plugin-next-seo.productjsonldprops.brand.md) | string | The brand of the product. |
+|  [description](./gatsby-plugin-next-seo.productjsonldprops.description.md) | string | Product description. |
+|  [gtin](./gatsby-plugin-next-seo.productjsonldprops.gtin.md) | string \| string\[\] | A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)<!-- -->). |
+|  [gtin12](./gatsby-plugin-next-seo.productjsonldprops.gtin12.md) | string \| string\[\] | The GTIN-12 code of the product, or the product to which the offer refers. |
+|  [gtin13](./gatsby-plugin-next-seo.productjsonldprops.gtin13.md) | string \| string\[\] | The GTIN-13 code of the product, or the product to which the offer refers. |
+|  [gtin14](./gatsby-plugin-next-seo.productjsonldprops.gtin14.md) | string \| string\[\] | The GTIN-14 code of the product, or the product to which the offer refers. |
+|  [gtin8](./gatsby-plugin-next-seo.productjsonldprops.gtin8.md) | string \| string\[\] | The [GTIN-8](http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx) code of the product, or the product to which the offer refers. |
+|  [images](./gatsby-plugin-next-seo.productjsonldprops.images.md) | string \| string\[\] | The URL(s) of a product photo. Pictures clearly showing the product (for example, against a white background) are preferred. |
+|  [mpn](./gatsby-plugin-next-seo.productjsonldprops.mpn.md) | string \| string\[\] | The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers. |
+|  [name](./gatsby-plugin-next-seo.productjsonldprops.name.md) | string | The name of the product. |
+|  [offers](./gatsby-plugin-next-seo.productjsonldprops.offers.md) | Offers | An offer to sell the product. Includes a nested Offer or AggregateOffer. |
+|  [offersType](./gatsby-plugin-next-seo.productjsonldprops.offerstype.md) | 'Offer' \| 'AggregateOffer' |  |
+|  [productName](./gatsby-plugin-next-seo.productjsonldprops.productname.md) | string |  |
+|  [reviews](./gatsby-plugin-next-seo.productjsonldprops.reviews.md) | Review\[\] | A nested Review of the product. |
+|  [sku](./gatsby-plugin-next-seo.productjsonldprops.sku.md) | string \| string\[\] | The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers. |
 

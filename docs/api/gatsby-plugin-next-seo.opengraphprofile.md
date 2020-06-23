@@ -15,8 +15,8 @@ export interface OpenGraphProfile
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [firstName](./gatsby-plugin-next-seo.opengraphprofile.firstname.md) | <code>string</code> | Person's first name. |
-|  [gender](./gatsby-plugin-next-seo.opengraphprofile.gender.md) | <code>string</code> | Person's gender. |
-|  [lastName](./gatsby-plugin-next-seo.opengraphprofile.lastname.md) | <code>string</code> | Person's last name. |
-|  [username](./gatsby-plugin-next-seo.opengraphprofile.username.md) | <code>string</code> | Person's username. |
+|  [firstName](./gatsby-plugin-next-seo.opengraphprofile.firstname.md) | string | Person's first name. |
+|  [gender](./gatsby-plugin-next-seo.opengraphprofile.gender.md) | string | Person's gender. |
+|  [lastName](./gatsby-plugin-next-seo.opengraphprofile.lastname.md) | string | Person's last name. |
+|  [username](./gatsby-plugin-next-seo.opengraphprofile.username.md) | string | Person's username. |
 

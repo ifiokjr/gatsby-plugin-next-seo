@@ -10,3 +10,5 @@
 ```typescript
 export interface GatsbySeoProps extends BaseSeoProps, DeferSeoProps 
 ```
+<b>Extends:</b> [BaseSeoProps](./gatsby-plugin-next-seo.baseseoprops.md)<!-- -->, [DeferSeoProps](./gatsby-plugin-next-seo.deferseoprops.md)
+

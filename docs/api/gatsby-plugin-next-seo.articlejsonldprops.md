@@ -11,24 +11,25 @@ The component props for a JSON LD Article.
 ```typescript
 export interface ArticleJsonLdProps extends DeferSeoProps, Overrides<Article> 
 ```
+<b>Extends:</b> [DeferSeoProps](./gatsby-plugin-next-seo.deferseoprops.md)<!-- -->, Overrides&lt;Article&gt;
 
 ## Properties
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [authorName](./gatsby-plugin-next-seo.articlejsonldprops.authorname.md) | <code>string</code> | The name of the author. |
-|  [authorType](./gatsby-plugin-next-seo.articlejsonldprops.authortype.md) | <code>'Person' &#124; 'Organization'</code> | The type of author for this article. |
-|  [body](./gatsby-plugin-next-seo.articlejsonldprops.body.md) | <code>string</code> | The actual body of the article. |
-|  [dateCreated](./gatsby-plugin-next-seo.articlejsonldprops.datecreated.md) | <code>string</code> | The date on which the CreativeWork was created or the item was added to a DataFeed. |
-|  [dateModified](./gatsby-plugin-next-seo.articlejsonldprops.datemodified.md) | <code>string</code> | The date and time the article was most recently modified, in ISO 8601 format. |
-|  [datePublished](./gatsby-plugin-next-seo.articlejsonldprops.datepublished.md) | <code>string</code> | The date and time the article was first published, in ISO 8601 format. |
-|  [description](./gatsby-plugin-next-seo.articlejsonldprops.description.md) | <code>string</code> | A short description of the article. |
-|  [headline](./gatsby-plugin-next-seo.articlejsonldprops.headline.md) | <code>string &#124; string[]</code> | The headline of the article. |
-|  [images](./gatsby-plugin-next-seo.articlejsonldprops.images.md) | <code>string[]</code> | The images URLs that is representative of the article or AMP story. |
-|  [keywords](./gatsby-plugin-next-seo.articlejsonldprops.keywords.md) | <code>string &#124; string[]</code> | Keywords or tags used to describe this content. |
-|  [publisherLogo](./gatsby-plugin-next-seo.articlejsonldprops.publisherlogo.md) | <code>string</code> | The url of the publisher logo. |
-|  [publisherName](./gatsby-plugin-next-seo.articlejsonldprops.publishername.md) | <code>string</code> | The name of the publisher. |
-|  [speakable](./gatsby-plugin-next-seo.articlejsonldprops.speakable.md) | <code>Speakable[]</code> | Provide |
-|  [title](./gatsby-plugin-next-seo.articlejsonldprops.title.md) | <code>string</code> |  |
-|  [url](./gatsby-plugin-next-seo.articlejsonldprops.url.md) | <code>string</code> | The canonical URL of the article page. |
+|  [authorName](./gatsby-plugin-next-seo.articlejsonldprops.authorname.md) | string | The name of the author. |
+|  [authorType](./gatsby-plugin-next-seo.articlejsonldprops.authortype.md) | 'Person' \| 'Organization' | The type of author for this article. |
+|  [body](./gatsby-plugin-next-seo.articlejsonldprops.body.md) | string | The actual body of the article. |
+|  [dateCreated](./gatsby-plugin-next-seo.articlejsonldprops.datecreated.md) | string | The date on which the CreativeWork was created or the item was added to a DataFeed. |
+|  [dateModified](./gatsby-plugin-next-seo.articlejsonldprops.datemodified.md) | string | The date and time the article was most recently modified, in ISO 8601 format. |
+|  [datePublished](./gatsby-plugin-next-seo.articlejsonldprops.datepublished.md) | string | The date and time the article was first published, in ISO 8601 format. |
+|  [description](./gatsby-plugin-next-seo.articlejsonldprops.description.md) | string | A short description of the article. |
+|  [headline](./gatsby-plugin-next-seo.articlejsonldprops.headline.md) | string \| string\[\] | The headline of the article. |
+|  [images](./gatsby-plugin-next-seo.articlejsonldprops.images.md) | string\[\] | The images URLs that is representative of the article or AMP story. |
+|  [keywords](./gatsby-plugin-next-seo.articlejsonldprops.keywords.md) | string \| string\[\] | Keywords or tags used to describe this content. |
+|  [publisherLogo](./gatsby-plugin-next-seo.articlejsonldprops.publisherlogo.md) | string | The url of the publisher logo. |
+|  [publisherName](./gatsby-plugin-next-seo.articlejsonldprops.publishername.md) | string | The name of the publisher. |
+|  [speakable](./gatsby-plugin-next-seo.articlejsonldprops.speakable.md) | Speakable\[\] | Provide |
+|  [title](./gatsby-plugin-next-seo.articlejsonldprops.title.md) | string |  |
+|  [url](./gatsby-plugin-next-seo.articlejsonldprops.url.md) | string | The canonical URL of the article page. |
 

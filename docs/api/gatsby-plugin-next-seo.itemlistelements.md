@@ -14,7 +14,7 @@ export interface ItemListElements
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [item](./gatsby-plugin-next-seo.itemlistelements.item.md) | <code>string</code> | The URL to the webpage that represents the breadcrumb. |
-|  [name](./gatsby-plugin-next-seo.itemlistelements.name.md) | <code>string</code> | The title of the breadcrumb displayed for the user. |
-|  [position](./gatsby-plugin-next-seo.itemlistelements.position.md) | <code>number</code> | The position of the breadcrumb in the breadcrumb trail. Position 1 signifies the beginning of the trail. |
+|  [item](./gatsby-plugin-next-seo.itemlistelements.item.md) | string | The URL to the webpage that represents the breadcrumb. |
+|  [name](./gatsby-plugin-next-seo.itemlistelements.name.md) | string | The title of the breadcrumb displayed for the user. |
+|  [position](./gatsby-plugin-next-seo.itemlistelements.position.md) | number | The position of the breadcrumb in the breadcrumb trail. Position 1 signifies the beginning of the trail. |
 

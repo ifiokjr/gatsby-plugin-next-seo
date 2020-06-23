@@ -9,11 +9,12 @@
 ```typescript
 export interface BlogPostJsonLdProps extends Except<ArticleJsonLdProps, 'publisherName' | 'publisherLogo' | 'overrides'>, Overrides<BlogPosting> 
 ```
+<b>Extends:</b> Except&lt;[ArticleJsonLdProps](./gatsby-plugin-next-seo.articlejsonldprops.md)<!-- -->, 'publisherName' \| 'publisherLogo' \| 'overrides'&gt;, Overrides&lt;BlogPosting&gt;
 
 ## Properties
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [publisherLogo](./gatsby-plugin-next-seo.blogpostjsonldprops.publisherlogo.md) | <code>string</code> | The url of the publisher logo. |
-|  [publisherName](./gatsby-plugin-next-seo.blogpostjsonldprops.publishername.md) | <code>string</code> | The name of the publisher. |
+|  [publisherLogo](./gatsby-plugin-next-seo.blogpostjsonldprops.publisherlogo.md) | string | The url of the publisher logo. |
+|  [publisherName](./gatsby-plugin-next-seo.blogpostjsonldprops.publishername.md) | string | The name of the publisher. |
 

@@ -11,6 +11,7 @@ The Logo JSON LD component properties.
 ```typescript
 export interface LogoJsonLdProps extends DeferSeoProps, Overrides<Extract<Organization, object>> 
 ```
+<b>Extends:</b> [DeferSeoProps](./gatsby-plugin-next-seo.deferseoprops.md)<!-- -->, Overrides&lt;Extract&lt;Organization, object&gt;&gt;
 
 ## Remarks
 
@@ -20,6 +21,6 @@ See [here](https://developers.google.com/search/docs/data-types/logo#definitions
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [logo](./gatsby-plugin-next-seo.logojsonldprops.logo.md) | <code>string</code> | URL of a logo that is representative of the organization. |
-|  [url](./gatsby-plugin-next-seo.logojsonldprops.url.md) | <code>string</code> | The URL of the website associated with the logo. |
+|  [logo](./gatsby-plugin-next-seo.logojsonldprops.logo.md) | string | URL of a logo that is representative of the organization. |
+|  [url](./gatsby-plugin-next-seo.logojsonldprops.url.md) | string | The URL of the website associated with the logo. |
 

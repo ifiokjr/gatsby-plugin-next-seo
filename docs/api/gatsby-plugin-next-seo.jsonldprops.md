@@ -9,10 +9,11 @@
 ```typescript
 export interface JsonLdProps<GThing extends Thing> extends DeferSeoProps 
 ```
+<b>Extends:</b> [DeferSeoProps](./gatsby-plugin-next-seo.deferseoprops.md)
 
 ## Properties
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [json](./gatsby-plugin-next-seo.jsonldprops.json.md) | <code>WithContext&lt;GThing&gt;</code> | The props which conform to the JSON-LD Specification. |
+|  [json](./gatsby-plugin-next-seo.jsonldprops.json.md) | WithContext&lt;GThing&gt; | The props which conform to the JSON-LD Specification. |
 

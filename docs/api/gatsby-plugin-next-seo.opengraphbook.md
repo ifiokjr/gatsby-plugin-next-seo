@@ -15,8 +15,8 @@ export interface OpenGraphBook
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [authors](./gatsby-plugin-next-seo.opengraphbook.authors.md) | <code>string[]</code> | The list of author names for the book. |
-|  [isbn](./gatsby-plugin-next-seo.opengraphbook.isbn.md) | <code>string</code> | The International Standard Book Number which identifies the book. |
-|  [releaseDate](./gatsby-plugin-next-seo.opengraphbook.releasedate.md) | <code>string</code> | The books release date. |
-|  [tags](./gatsby-plugin-next-seo.opengraphbook.tags.md) | <code>string[]</code> | Tags used to further describe the book. |
+|  [authors](./gatsby-plugin-next-seo.opengraphbook.authors.md) | string\[\] | The list of author names for the book. |
+|  [isbn](./gatsby-plugin-next-seo.opengraphbook.isbn.md) | string | The International Standard Book Number which identifies the book. |
+|  [releaseDate](./gatsby-plugin-next-seo.opengraphbook.releasedate.md) | string | The books release date. |
+|  [tags](./gatsby-plugin-next-seo.opengraphbook.tags.md) | string\[\] | Tags used to further describe the book. |
 

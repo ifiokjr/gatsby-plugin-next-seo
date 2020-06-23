@@ -11,23 +11,24 @@ The Blog JSON LD props.
 ```typescript
 export interface BlogJsonLdProps extends DeferSeoProps, Overrides<Blog> 
 ```
+<b>Extends:</b> [DeferSeoProps](./gatsby-plugin-next-seo.deferseoprops.md)<!-- -->, Overrides&lt;Blog&gt;
 
 ## Properties
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [authorName](./gatsby-plugin-next-seo.blogjsonldprops.authorname.md) | <code>string</code> | The name of the author. |
-|  [authorType](./gatsby-plugin-next-seo.blogjsonldprops.authortype.md) | <code>'Person' &#124; 'Organization'</code> | The type of author for this article. |
-|  [dateModified](./gatsby-plugin-next-seo.blogjsonldprops.datemodified.md) | <code>string</code> | The date and time the article was most recently modified, in ISO 8601 format. |
-|  [datePublished](./gatsby-plugin-next-seo.blogjsonldprops.datepublished.md) | <code>string</code> | The date and time the article was first published, in ISO 8601 format. |
-|  [description](./gatsby-plugin-next-seo.blogjsonldprops.description.md) | <code>string</code> | A short description of the article. |
-|  [headline](./gatsby-plugin-next-seo.blogjsonldprops.headline.md) | <code>string &#124; string[]</code> | The headline of the article. |
-|  [images](./gatsby-plugin-next-seo.blogjsonldprops.images.md) | <code>string[]</code> | The images URLs that is representative of the article or AMP story. |
-|  [issn](./gatsby-plugin-next-seo.blogjsonldprops.issn.md) | <code>string &#124; string[]</code> | The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication. |
-|  [keywords](./gatsby-plugin-next-seo.blogjsonldprops.keywords.md) | <code>string[]</code> | Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas. |
-|  [posts](./gatsby-plugin-next-seo.blogjsonldprops.posts.md) | <code>BlogPost[]</code> | A posting that is part of this blog. |
-|  [publisherLogo](./gatsby-plugin-next-seo.blogjsonldprops.publisherlogo.md) | <code>string</code> | The url of the publisher logo. |
-|  [publisherName](./gatsby-plugin-next-seo.blogjsonldprops.publishername.md) | <code>string</code> | The name of the publisher. |
-|  [title](./gatsby-plugin-next-seo.blogjsonldprops.title.md) | <code>string</code> |  |
-|  [url](./gatsby-plugin-next-seo.blogjsonldprops.url.md) | <code>string</code> | The canonical URL of the article page. |
+|  [authorName](./gatsby-plugin-next-seo.blogjsonldprops.authorname.md) | string | The name of the author. |
+|  [authorType](./gatsby-plugin-next-seo.blogjsonldprops.authortype.md) | 'Person' \| 'Organization' | The type of author for this article. |
+|  [dateModified](./gatsby-plugin-next-seo.blogjsonldprops.datemodified.md) | string | The date and time the article was most recently modified, in ISO 8601 format. |
+|  [datePublished](./gatsby-plugin-next-seo.blogjsonldprops.datepublished.md) | string | The date and time the article was first published, in ISO 8601 format. |
+|  [description](./gatsby-plugin-next-seo.blogjsonldprops.description.md) | string | A short description of the article. |
+|  [headline](./gatsby-plugin-next-seo.blogjsonldprops.headline.md) | string \| string\[\] | The headline of the article. |
+|  [images](./gatsby-plugin-next-seo.blogjsonldprops.images.md) | string\[\] | The images URLs that is representative of the article or AMP story. |
+|  [issn](./gatsby-plugin-next-seo.blogjsonldprops.issn.md) | string \| string\[\] | The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication. |
+|  [keywords](./gatsby-plugin-next-seo.blogjsonldprops.keywords.md) | string\[\] | Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas. |
+|  [posts](./gatsby-plugin-next-seo.blogjsonldprops.posts.md) | BlogPost\[\] | A posting that is part of this blog. |
+|  [publisherLogo](./gatsby-plugin-next-seo.blogjsonldprops.publisherlogo.md) | string | The url of the publisher logo. |
+|  [publisherName](./gatsby-plugin-next-seo.blogjsonldprops.publishername.md) | string | The name of the publisher. |
+|  [title](./gatsby-plugin-next-seo.blogjsonldprops.title.md) | string |  |
+|  [url](./gatsby-plugin-next-seo.blogjsonldprops.url.md) | string | The canonical URL of the article page. |
 

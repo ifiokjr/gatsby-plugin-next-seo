@@ -11,14 +11,15 @@ The Course JSON LD Component props.
 ```typescript
 export interface CourseJsonLdProps extends DeferSeoProps, Overrides<Course> 
 ```
+<b>Extends:</b> [DeferSeoProps](./gatsby-plugin-next-seo.deferseoprops.md)<!-- -->, Overrides&lt;Course&gt;
 
 ## Properties
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [courseName](./gatsby-plugin-next-seo.coursejsonldprops.coursename.md) | <code>string</code> |  |
-|  [description](./gatsby-plugin-next-seo.coursejsonldprops.description.md) | <code>string</code> | A description of the course. Display limit of 60 characters. |
-|  [name](./gatsby-plugin-next-seo.coursejsonldprops.name.md) | <code>string</code> | The title of the course. |
-|  [providerName](./gatsby-plugin-next-seo.coursejsonldprops.providername.md) | <code>string</code> | The name of the provider. |
-|  [providerUrl](./gatsby-plugin-next-seo.coursejsonldprops.providerurl.md) | <code>string</code> | URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website. |
+|  [courseName](./gatsby-plugin-next-seo.coursejsonldprops.coursename.md) | string |  |
+|  [description](./gatsby-plugin-next-seo.coursejsonldprops.description.md) | string | A description of the course. Display limit of 60 characters. |
+|  [name](./gatsby-plugin-next-seo.coursejsonldprops.name.md) | string | The title of the course. |
+|  [providerName](./gatsby-plugin-next-seo.coursejsonldprops.providername.md) | string | The name of the provider. |
+|  [providerUrl](./gatsby-plugin-next-seo.coursejsonldprops.providerurl.md) | string | URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website. |
 

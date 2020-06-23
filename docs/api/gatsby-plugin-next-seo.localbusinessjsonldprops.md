@@ -9,21 +9,22 @@
 ```typescript
 export interface LocalBusinessJsonLdProps extends DeferSeoProps, Overrides<LocalBusiness> 
 ```
+<b>Extends:</b> [DeferSeoProps](./gatsby-plugin-next-seo.deferseoprops.md)<!-- -->, Overrides&lt;LocalBusiness&gt;
 
 ## Properties
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [address](./gatsby-plugin-next-seo.localbusinessjsonldprops.address.md) | <code>LocalBusinessAddress</code> | The physical location of the business. Include as many properties as possible. The more properties you provide, the higher quality the result is to users. |
-|  [description](./gatsby-plugin-next-seo.localbusinessjsonldprops.description.md) | <code>string</code> | The description of the business. |
-|  [geo](./gatsby-plugin-next-seo.localbusinessjsonldprops.geo.md) | <code>Geo</code> | Geographic coordinates of the business. |
-|  [id](./gatsby-plugin-next-seo.localbusinessjsonldprops.id.md) | <code>string</code> | Globally unique ID of the specific business location in the form of a URL. |
-|  [images](./gatsby-plugin-next-seo.localbusinessjsonldprops.images.md) | <code>string[]</code> | One or more images of the <code>LocalBusiness</code>. |
-|  [name](./gatsby-plugin-next-seo.localbusinessjsonldprops.name.md) | <code>string</code> | The name of the business. |
-|  [openingHours](./gatsby-plugin-next-seo.localbusinessjsonldprops.openinghours.md) | <code>OpeningHoursSpecification &#124; OpeningHoursSpecification[]</code> | The opening hours of a certain place. |
-|  [priceRange](./gatsby-plugin-next-seo.localbusinessjsonldprops.pricerange.md) | <code>string</code> | The relative price range of a business, commonly specified by either a numerical range. |
-|  [rating](./gatsby-plugin-next-seo.localbusinessjsonldprops.rating.md) | <code>AggregateRating</code> | The average rating of the local business based on multiple ratings or reviews. |
-|  [telephone](./gatsby-plugin-next-seo.localbusinessjsonldprops.telephone.md) | <code>string</code> | A business phone number meant to be the primary contact method for customers. Be sure to include the country code and area code in the phone number. |
-|  [type](./gatsby-plugin-next-seo.localbusinessjsonldprops.type.md) | <code>LocalBusinessType</code> |  |
-|  [url](./gatsby-plugin-next-seo.localbusinessjsonldprops.url.md) | <code>string</code> | The fully-qualified URL of the specific business location. Unlike the <code>id</code> property, this URL property should be a working link. |
+|  [address](./gatsby-plugin-next-seo.localbusinessjsonldprops.address.md) | LocalBusinessAddress | The physical location of the business. Include as many properties as possible. The more properties you provide, the higher quality the result is to users. |
+|  [description](./gatsby-plugin-next-seo.localbusinessjsonldprops.description.md) | string | The description of the business. |
+|  [geo](./gatsby-plugin-next-seo.localbusinessjsonldprops.geo.md) | Geo | Geographic coordinates of the business. |
+|  [id](./gatsby-plugin-next-seo.localbusinessjsonldprops.id.md) | string | Globally unique ID of the specific business location in the form of a URL. |
+|  [images](./gatsby-plugin-next-seo.localbusinessjsonldprops.images.md) | string\[\] | One or more images of the <code>LocalBusiness</code>. |
+|  [name](./gatsby-plugin-next-seo.localbusinessjsonldprops.name.md) | string | The name of the business. |
+|  [openingHours](./gatsby-plugin-next-seo.localbusinessjsonldprops.openinghours.md) | OpeningHoursSpecification \| OpeningHoursSpecification\[\] | The opening hours of a certain place. |
+|  [priceRange](./gatsby-plugin-next-seo.localbusinessjsonldprops.pricerange.md) | string | The relative price range of a business, commonly specified by either a numerical range. |
+|  [rating](./gatsby-plugin-next-seo.localbusinessjsonldprops.rating.md) | AggregateRating | The average rating of the local business based on multiple ratings or reviews. |
+|  [telephone](./gatsby-plugin-next-seo.localbusinessjsonldprops.telephone.md) | string | A business phone number meant to be the primary contact method for customers. Be sure to include the country code and area code in the phone number. |
+|  [type](./gatsby-plugin-next-seo.localbusinessjsonldprops.type.md) | [LocalBusinessType](./gatsby-plugin-next-seo.localbusinesstype.md) |  |
+|  [url](./gatsby-plugin-next-seo.localbusinessjsonldprops.url.md) | string | The fully-qualified URL of the specific business location. Unlike the <code>id</code> property, this URL property should be a working link. |
 

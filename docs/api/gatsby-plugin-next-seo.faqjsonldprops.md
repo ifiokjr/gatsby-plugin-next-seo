@@ -11,10 +11,11 @@ The FAQPage JSON LD Component props.
 ```typescript
 export interface FAQJsonLdProps extends DeferSeoProps, Overrides<FAQPage> 
 ```
+<b>Extends:</b> [DeferSeoProps](./gatsby-plugin-next-seo.deferseoprops.md)<!-- -->, Overrides&lt;FAQPage&gt;
 
 ## Properties
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [questions](./gatsby-plugin-next-seo.faqjsonldprops.questions.md) | <code>Question[]</code> | An array of Question elements which comprise the list of answered questions that this FAQPage is about. |
+|  [questions](./gatsby-plugin-next-seo.faqjsonldprops.questions.md) | [Question](./gatsby-plugin-next-seo.question.md)<!-- -->\[\] | An array of Question elements which comprise the list of answered questions that this FAQPage is about. |
 

@@ -9,10 +9,11 @@
 ```typescript
 export interface BreadcrumbJsonLdProps extends DeferSeoProps, Overrides<BreadcrumbList> 
 ```
+<b>Extends:</b> [DeferSeoProps](./gatsby-plugin-next-seo.deferseoprops.md)<!-- -->, Overrides&lt;BreadcrumbList&gt;
 
 ## Properties
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [itemListElements](./gatsby-plugin-next-seo.breadcrumbjsonldprops.itemlistelements.md) | <code>ItemListElements[]</code> | An array of breadcrumbs listed in a specific order. Specify each breadcrumb with a ListItem For example: |
+|  [itemListElements](./gatsby-plugin-next-seo.breadcrumbjsonldprops.itemlistelements.md) | [ItemListElements](./gatsby-plugin-next-seo.itemlistelements.md)<!-- -->\[\] | An array of breadcrumbs listed in a specific order. Specify each breadcrumb with a ListItem For example: |
 

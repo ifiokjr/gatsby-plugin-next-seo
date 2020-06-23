@@ -15,18 +15,18 @@ export interface OpenGraph
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [article](./gatsby-plugin-next-seo.opengraph.article.md) | <code>OpenGraphArticle</code> | The open graph article configuration object. |
-|  [book](./gatsby-plugin-next-seo.opengraph.book.md) | <code>OpenGraphBook</code> | The open graph book configuration object. |
-|  [defaultImageHeight](./gatsby-plugin-next-seo.opengraph.defaultimageheight.md) | <code>number</code> | The default height for the image used. |
-|  [defaultImageWidth](./gatsby-plugin-next-seo.opengraph.defaultimagewidth.md) | <code>number</code> | The default width of the image used. |
-|  [description](./gatsby-plugin-next-seo.opengraph.description.md) | <code>string</code> | The open graph description, this can be different than your meta description. |
-|  [images](./gatsby-plugin-next-seo.opengraph.images.md) | <code>OpenGraphImages[]</code> | An array of images (object) to be used by social media platforms, slack etc as a preview. If multiple supplied you can choose one when sharing. |
-|  [locale](./gatsby-plugin-next-seo.opengraph.locale.md) | <code>string</code> | The locale the open graph tags are marked up in. Of the format language\_TERRITORY. |
-|  [profile](./gatsby-plugin-next-seo.opengraph.profile.md) | <code>OpenGraphProfile</code> | The open graph profile configuration object. |
-|  [site\_name](./gatsby-plugin-next-seo.opengraph.site_name.md) | <code>string</code> | If your object is part of a larger web site, the name which should be displayed for the overall site. |
-|  [title](./gatsby-plugin-next-seo.opengraph.title.md) | <code>string</code> | The open graph title, this can be different than your meta title. |
-|  [type](./gatsby-plugin-next-seo.opengraph.type.md) | <code>string</code> | The type of your object. Depending on the type you specify, other properties may also be required. |
-|  [url](./gatsby-plugin-next-seo.opengraph.url.md) | <code>string</code> | The canonical URL of your object that will be used as its permanent ID in the graph. |
-|  [video](./gatsby-plugin-next-seo.opengraph.video.md) | <code>OpenGraphVideo</code> | The open graph video configuration object. |
-|  [videos](./gatsby-plugin-next-seo.opengraph.videos.md) | <code>OpenGraphVideos[]</code> | An array of videos. |
+|  [article](./gatsby-plugin-next-seo.opengraph.article.md) | [OpenGraphArticle](./gatsby-plugin-next-seo.opengrapharticle.md) | The open graph article configuration object. |
+|  [book](./gatsby-plugin-next-seo.opengraph.book.md) | [OpenGraphBook](./gatsby-plugin-next-seo.opengraphbook.md) | The open graph book configuration object. |
+|  [defaultImageHeight](./gatsby-plugin-next-seo.opengraph.defaultimageheight.md) | number | The default height for the image used. |
+|  [defaultImageWidth](./gatsby-plugin-next-seo.opengraph.defaultimagewidth.md) | number | The default width of the image used. |
+|  [description](./gatsby-plugin-next-seo.opengraph.description.md) | string | The open graph description, this can be different than your meta description. |
+|  [images](./gatsby-plugin-next-seo.opengraph.images.md) | [OpenGraphImages](./gatsby-plugin-next-seo.opengraphimages.md)<!-- -->\[\] | An array of images (object) to be used by social media platforms, slack etc as a preview. If multiple supplied you can choose one when sharing. |
+|  [locale](./gatsby-plugin-next-seo.opengraph.locale.md) | string | The locale the open graph tags are marked up in. Of the format language\_TERRITORY. |
+|  [profile](./gatsby-plugin-next-seo.opengraph.profile.md) | [OpenGraphProfile](./gatsby-plugin-next-seo.opengraphprofile.md) | The open graph profile configuration object. |
+|  [site\_name](./gatsby-plugin-next-seo.opengraph.site_name.md) | string | If your object is part of a larger web site, the name which should be displayed for the overall site. |
+|  [title](./gatsby-plugin-next-seo.opengraph.title.md) | string | The open graph title, this can be different than your meta title. |
+|  [type](./gatsby-plugin-next-seo.opengraph.type.md) | string | The type of your object. Depending on the type you specify, other properties may also be required. |
+|  [url](./gatsby-plugin-next-seo.opengraph.url.md) | string | The canonical URL of your object that will be used as its permanent ID in the graph. |
+|  [video](./gatsby-plugin-next-seo.opengraph.video.md) | [OpenGraphVideo](./gatsby-plugin-next-seo.opengraphvideo.md) | The open graph video configuration object. |
+|  [videos](./gatsby-plugin-next-seo.opengraph.videos.md) | [OpenGraphVideos](./gatsby-plugin-next-seo.opengraphvideos.md)<!-- -->\[\] | An array of videos. |
 

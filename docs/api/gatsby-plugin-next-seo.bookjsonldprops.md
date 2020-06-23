@@ -11,15 +11,16 @@ The Book JSON LD Component props.
 ```typescript
 export interface BookJsonLdProps extends DeferSeoProps, Overrides<Book> 
 ```
+<b>Extends:</b> [DeferSeoProps](./gatsby-plugin-next-seo.deferseoprops.md)<!-- -->, Overrides&lt;Book&gt;
 
 ## Properties
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [author](./gatsby-plugin-next-seo.bookjsonldprops.author.md) | <code>Person</code> | The author(s) of the book. For each author you list, you must provide a specific Person entity. See Person. |
-|  [id](./gatsby-plugin-next-seo.bookjsonldprops.id.md) | <code>URL</code> | Globally unique ID of the work in the a URL format. The ID should be stable and not change over time. The URL is treated as an opaque string and does not have to resolve to an actual web page. |
-|  [name](./gatsby-plugin-next-seo.bookjsonldprops.name.md) | <code>string</code> | The title of the book. If you provide multiple editions, use the title of the book edition. |
-|  [sameAs](./gatsby-plugin-next-seo.bookjsonldprops.sameas.md) | <code>URL</code> | A reference page that unambiguously indicates the book's identity; for example, the URL of the book's Wikipedia page, Freebase page, or official website. |
-|  [url](./gatsby-plugin-next-seo.bookjsonldprops.url.md) | <code>string</code> | URL of the page on your site about the book. The page may list all available editions. |
-|  [workExample](./gatsby-plugin-next-seo.bookjsonldprops.workexample.md) | <code>WorkExample[]</code> | The editions of this book. See sub-properties for workExample. |
+|  [author](./gatsby-plugin-next-seo.bookjsonldprops.author.md) | Person | The author(s) of the book. For each author you list, you must provide a specific Person entity. See Person. |
+|  [id](./gatsby-plugin-next-seo.bookjsonldprops.id.md) | URL | Globally unique ID of the work in the a URL format. The ID should be stable and not change over time. The URL is treated as an opaque string and does not have to resolve to an actual web page. |
+|  [name](./gatsby-plugin-next-seo.bookjsonldprops.name.md) | string | The title of the book. If you provide multiple editions, use the title of the book edition. |
+|  [sameAs](./gatsby-plugin-next-seo.bookjsonldprops.sameas.md) | URL | A reference page that unambiguously indicates the book's identity; for example, the URL of the book's Wikipedia page, Freebase page, or official website. |
+|  [url](./gatsby-plugin-next-seo.bookjsonldprops.url.md) | string | URL of the page on your site about the book. The page may list all available editions. |
+|  [workExample](./gatsby-plugin-next-seo.bookjsonldprops.workexample.md) | WorkExample\[\] | The editions of this book. See sub-properties for workExample. |
 

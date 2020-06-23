@@ -15,8 +15,8 @@ export interface OpenGraphVideos
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [alt](./gatsby-plugin-next-seo.opengraphvideos.alt.md) | <code>string</code> |  |
-|  [height](./gatsby-plugin-next-seo.opengraphvideos.height.md) | <code>number</code> |  |
-|  [url](./gatsby-plugin-next-seo.opengraphvideos.url.md) | <code>string</code> |  |
-|  [width](./gatsby-plugin-next-seo.opengraphvideos.width.md) | <code>number</code> |  |
+|  [alt](./gatsby-plugin-next-seo.opengraphvideos.alt.md) | string |  |
+|  [height](./gatsby-plugin-next-seo.opengraphvideos.height.md) | number |  |
+|  [url](./gatsby-plugin-next-seo.opengraphvideos.url.md) | string |  |
+|  [width](./gatsby-plugin-next-seo.opengraphvideos.width.md) | number |  |
 

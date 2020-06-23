@@ -15,10 +15,10 @@ export interface OpenGraphArticle
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [authors](./gatsby-plugin-next-seo.opengrapharticle.authors.md) | <code>string[]</code> |  |
-|  [expirationTime](./gatsby-plugin-next-seo.opengrapharticle.expirationtime.md) | <code>string</code> |  |
-|  [modifiedTime](./gatsby-plugin-next-seo.opengrapharticle.modifiedtime.md) | <code>string</code> |  |
-|  [publishedTime](./gatsby-plugin-next-seo.opengrapharticle.publishedtime.md) | <code>string</code> |  |
-|  [section](./gatsby-plugin-next-seo.opengrapharticle.section.md) | <code>string</code> |  |
-|  [tags](./gatsby-plugin-next-seo.opengrapharticle.tags.md) | <code>string[]</code> |  |
+|  [authors](./gatsby-plugin-next-seo.opengrapharticle.authors.md) | string\[\] |  |
+|  [expirationTime](./gatsby-plugin-next-seo.opengrapharticle.expirationtime.md) | string |  |
+|  [modifiedTime](./gatsby-plugin-next-seo.opengrapharticle.modifiedtime.md) | string |  |
+|  [publishedTime](./gatsby-plugin-next-seo.opengrapharticle.publishedtime.md) | string |  |
+|  [section](./gatsby-plugin-next-seo.opengrapharticle.section.md) | string |  |
+|  [tags](./gatsby-plugin-next-seo.opengrapharticle.tags.md) | string\[\] |  |
 

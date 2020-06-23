@@ -16,6 +16,6 @@ export interface Question
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [answer](./gatsby-plugin-next-seo.question.answer.md) | <code>string</code> | The answer to the question. There must be one answer per question. |
-|  [question](./gatsby-plugin-next-seo.question.question.md) | <code>string</code> | The full text of the question. For example, "How long does it take to process a refund?". |
+|  [answer](./gatsby-plugin-next-seo.question.answer.md) | string | The answer to the question. There must be one answer per question. |
+|  [question](./gatsby-plugin-next-seo.question.question.md) | string | The full text of the question. For example, "How long does it take to process a refund?". |
 

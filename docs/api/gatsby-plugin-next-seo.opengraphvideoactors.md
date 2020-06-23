@@ -15,6 +15,6 @@ export interface OpenGraphVideoActors
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [profile](./gatsby-plugin-next-seo.opengraphvideoactors.profile.md) | <code>string</code> |  |
-|  [role](./gatsby-plugin-next-seo.opengraphvideoactors.role.md) | <code>string</code> |  |
+|  [profile](./gatsby-plugin-next-seo.opengraphvideoactors.profile.md) | string |  |
+|  [role](./gatsby-plugin-next-seo.opengraphvideoactors.role.md) | string |  |
 

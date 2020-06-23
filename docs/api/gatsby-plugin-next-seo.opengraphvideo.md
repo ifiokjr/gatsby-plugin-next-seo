@@ -15,11 +15,11 @@ export interface OpenGraphVideo
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [actors](./gatsby-plugin-next-seo.opengraphvideo.actors.md) | <code>OpenGraphVideoActors[]</code> |  |
-|  [directors](./gatsby-plugin-next-seo.opengraphvideo.directors.md) | <code>string[]</code> |  |
-|  [duration](./gatsby-plugin-next-seo.opengraphvideo.duration.md) | <code>number</code> |  |
-|  [releaseDate](./gatsby-plugin-next-seo.opengraphvideo.releasedate.md) | <code>string</code> |  |
-|  [series](./gatsby-plugin-next-seo.opengraphvideo.series.md) | <code>string</code> |  |
-|  [tags](./gatsby-plugin-next-seo.opengraphvideo.tags.md) | <code>string[]</code> |  |
-|  [writers](./gatsby-plugin-next-seo.opengraphvideo.writers.md) | <code>string[]</code> |  |
+|  [actors](./gatsby-plugin-next-seo.opengraphvideo.actors.md) | [OpenGraphVideoActors](./gatsby-plugin-next-seo.opengraphvideoactors.md)<!-- -->\[\] |  |
+|  [directors](./gatsby-plugin-next-seo.opengraphvideo.directors.md) | string\[\] |  |
+|  [duration](./gatsby-plugin-next-seo.opengraphvideo.duration.md) | number |  |
+|  [releaseDate](./gatsby-plugin-next-seo.opengraphvideo.releasedate.md) | string |  |
+|  [series](./gatsby-plugin-next-seo.opengraphvideo.series.md) | string |  |
+|  [tags](./gatsby-plugin-next-seo.opengraphvideo.tags.md) | string\[\] |  |
+|  [writers](./gatsby-plugin-next-seo.opengraphvideo.writers.md) | string\[\] |  |
 
