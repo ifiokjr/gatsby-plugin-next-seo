@@ -1,3 +1,10 @@
+### [1.6.1](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.6.0...v1.6.1) (2020-08-06)
+
+
+### Bug Fixes
+
+* destructure `language` prop for`lang` attribute ([#24](https://github.com/ifiokjr/gatsby-plugin-next-seo/issues/24)) ([62a460b](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/62a460b0a9bb561a5ad85107dc5193fe8c241079)), closes [#14](https://github.com/ifiokjr/gatsby-plugin-next-seo/issues/14)
+
 ## [1.6.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.5.1...v1.6.0) (2020-06-23)
 
 
