@@ -117,6 +117,11 @@ test.each(testIterator)(
     const tagAssertions: TagAssertionBuilder[] = [
       { selector: 'h1', prop: 'innerText', result: 'Overridden Seo' },
       {
+        selector: 'html',
+        prop: 'lang',
+        result: 'en',
+      },
+      {
         selector: 'head title',
         prop: 'innerText',
         result: 'Title B | Gatsby SEO',

@@ -213,7 +213,7 @@ export interface FAQJsonLdProps extends DeferSeoProps, Overrides<FAQPage> {
 }
 
 // @public
-export const GatsbySeo: ({ metaTags, linkTags, canonical, description, facebook, languageAlternates, mobileAlternate, nofollow, noindex, openGraph, title, titleTemplate, twitter, }: GatsbySeoProps) => JSX.Element;
+export const GatsbySeo: ({ metaTags, linkTags, canonical, description, facebook, language, languageAlternates, mobileAlternate, nofollow, noindex, openGraph, title, titleTemplate, twitter, }: GatsbySeoProps) => JSX.Element;
 
 // @public (undocumented)
 export interface GatsbySeoPluginOptions extends DefaultSeoProps, BaseSeoProps {
