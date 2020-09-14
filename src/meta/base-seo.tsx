@@ -132,6 +132,7 @@ export const BaseSeo = ({
     if (props.openGraph.url || props.canonical) {
       meta.push({
         property: 'og:url',
+        prefix: 'og: http://ogp.me/ns#',
         content: props.openGraph.url ?? props.canonical,
       });
     }
@@ -139,7 +140,7 @@ export const BaseSeo = ({
     if (props.openGraph.type) {
       const type = props.openGraph.type.toLowerCase();
 
-      meta.push({ property: 'og:type', content: type });
+      meta.push({ property: 'og:type', prefix: 'og: http://ogp.me/ns#', content: type });
 
       if (type === 'profile' && props.openGraph.profile) {
         if (props.openGraph.profile.firstName) {
@@ -325,6 +326,7 @@ export const BaseSeo = ({
     if (props.openGraph.title || props.title) {
       meta.push({
         property: 'og:title',
+        prefix: 'og: http://ogp.me/ns#',
         content:
           props.openGraph.title ??
           (props.titleTemplate ?? '').replace('%s', props.title ?? ''),
@@ -334,6 +336,7 @@ export const BaseSeo = ({
     if (props.openGraph.description || props.description) {
       meta.push({
         property: 'og:description',
+        prefix: 'og: http://ogp.me/ns#',
         content: props.openGraph.description ?? props.description,
       });
     }
@@ -351,12 +354,14 @@ export const BaseSeo = ({
       props.openGraph.images.forEach((image) => {
         meta.push({
           property: 'og:image',
+          prefix: 'og: http://ogp.me/ns#',
           content: image.url,
         });
 
         if (image.alt) {
           meta.push({
             property: 'og:image:alt',
+            prefix: 'og: http://ogp.me/ns#',
             content: image.alt,
           });
         }
@@ -364,11 +369,13 @@ export const BaseSeo = ({
         if (image.width) {
           meta.push({
             property: 'og:image:width',
+            prefix: 'og: http://ogp.me/ns#',
             content: image.width.toString(),
           });
         } else if (DEFAULTS.defaultOpenGraphImageWidth) {
           meta.push({
             property: 'og:image:width',
+            prefix: 'og: http://ogp.me/ns#',
             content: DEFAULTS.defaultOpenGraphImageWidth.toString(),
           });
         }
@@ -376,11 +383,13 @@ export const BaseSeo = ({
         if (image.height) {
           meta.push({
             property: 'og:image:height',
+            prefix: 'og: http://ogp.me/ns#',
             content: image.height.toString(),
           });
         } else if (DEFAULTS.defaultOpenGraphImageHeight) {
           meta.push({
             property: 'og:image:height',
+            prefix: 'og: http://ogp.me/ns#',
             content: DEFAULTS.defaultOpenGraphImageHeight.toString(),
           });
         }
@@ -400,12 +409,14 @@ export const BaseSeo = ({
       props.openGraph.videos.forEach((video) => {
         meta.push({
           property: 'og:video',
+          prefix: 'og: http://ogp.me/ns#',
           content: video.url,
         });
 
         if (video.alt) {
           meta.push({
             property: 'og:video:alt',
+            prefix: 'og: http://ogp.me/ns#',
             content: video.alt,
           });
         }
@@ -413,11 +424,13 @@ export const BaseSeo = ({
         if (video.width) {
           meta.push({
             property: 'og:video:width',
+            prefix: 'og: http://ogp.me/ns#',
             content: video.width.toString(),
           });
         } else if (DEFAULTS.defaultOpenGraphVideoWidth) {
           meta.push({
             property: 'og:video:width',
+            prefix: 'og: http://ogp.me/ns#',
             content: DEFAULTS.defaultOpenGraphVideoWidth.toString(),
           });
         }
@@ -425,11 +438,13 @@ export const BaseSeo = ({
         if (video.height) {
           meta.push({
             property: 'og:video:height',
+            prefix: 'og: http://ogp.me/ns#',
             content: video.height.toString(),
           });
         } else if (DEFAULTS.defaultOpenGraphVideoHeight) {
           meta.push({
             property: 'og:video:height',
+            prefix: 'og: http://ogp.me/ns#',
             content: DEFAULTS.defaultOpenGraphVideoHeight.toString(),
           });
         }
@@ -437,12 +452,13 @@ export const BaseSeo = ({
     }
 
     if (props.openGraph.locale) {
-      meta.push({ property: 'og:locale', content: props.openGraph.locale });
+      meta.push({ property: 'og:locale', prefix: 'og: http://ogp.me/ns#', content: props.openGraph.locale });
     }
 
     if (props.openGraph.site_name) {
       meta.push({
         property: 'og:site_name',
+        prefix: 'og: http://ogp.me/ns#',
         content: props.openGraph.site_name,
       });
     }
