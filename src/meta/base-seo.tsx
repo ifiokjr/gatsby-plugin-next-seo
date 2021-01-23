@@ -48,8 +48,6 @@ export const __resetDefaults = () => {
  */
 export const BaseSeo = ({
   defer = false,
-  htmlAttributes,
-  language,
   metaTags = [],
   linkTags = [],
   ...props
@@ -462,14 +460,15 @@ export const BaseSeo = ({
     link.push(tag);
   });
 
+  const htmlAttributes = props.language
+    ? { lang: props.language, ...props.htmlAttributes }
+    : { ...props.htmlAttributes };
+
   const helmetProps: HelmetProps = {
     meta,
     link,
     defer,
-    htmlAttributes: {
-      lang: language,
-      ...htmlAttributes,
-    },
+    htmlAttributes,
   };
 
   if (props.title) {
