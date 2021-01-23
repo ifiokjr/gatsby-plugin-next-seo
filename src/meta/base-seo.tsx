@@ -49,7 +49,7 @@ export const __resetDefaults = () => {
 export const BaseSeo = ({
   defer = false,
   htmlAttributes,
-  language = 'en',
+  language,
   metaTags = [],
   linkTags = [],
   ...props
