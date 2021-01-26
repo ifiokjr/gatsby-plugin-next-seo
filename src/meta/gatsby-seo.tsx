@@ -29,6 +29,7 @@ export const GatsbySeo = ({
   canonical,
   description,
   facebook,
+  htmlAttributes,
   language,
   languageAlternates,
   mobileAlternate,
@@ -46,6 +47,7 @@ export const GatsbySeo = ({
       canonical={canonical}
       description={description}
       facebook={facebook}
+      htmlAttributes={htmlAttributes}
       language={language}
       languageAlternates={languageAlternates}
       mobileAlternate={mobileAlternate}

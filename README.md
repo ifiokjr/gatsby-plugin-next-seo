@@ -29,6 +29,7 @@ This codebase was initially forked from the brilliant [next-seo](https://github.
       - [facebook](#facebook)
       - [Canonical URL](#canonical-url)
       - [Alternate](#alternate)
+      - [HTML Attributes](#html-attributes)
       - [Meta Tags](#meta-tags)
   - [Open Graph](#open-graph)
     - [Open Graph Examples](#open-graph-examples)
@@ -387,6 +388,18 @@ languageAlternates={[
     href: 'https://www.canonical.ie/es',
 }
 ]}
+```
+
+#### HTML Attributes
+
+Add html attributes to the html tag with the `htmlAttributes` prop.
+
+Example:
+
+```tsx
+htmlAttributes={{
+  prefix: "og: https://ogp.me/ns#",
+}}
 ```
 
 #### Meta Tags

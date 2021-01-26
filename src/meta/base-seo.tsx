@@ -460,7 +460,9 @@ export const BaseSeo = ({
     link.push(tag);
   });
 
-  const htmlAttributes = props.language ? { lang: props.language } : {};
+  const htmlAttributes = props.language
+    ? { lang: props.language, ...props.htmlAttributes }
+    : { ...props.htmlAttributes };
 
   const helmetProps: HelmetProps = {
     meta,

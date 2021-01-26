@@ -235,6 +235,11 @@ interface LanguageAlternate {
   href: string;
 }
 
+interface HTMLAttributes {
+  language?: string;
+  prefix?: string;
+}
+
 /**
  * @public
  */
@@ -471,6 +476,11 @@ export interface BaseSeoProps {
    * Allows you to add a link tag that is not documented here.
    */
   linkTags?: LinkProps[];
+
+  /**
+   * Allows you to add additional attributes to html tag besides language.
+   */
+  htmlAttributes?: HTMLAttributes;
 }
 
 /**
