@@ -838,3 +838,17 @@ test('correctly read noindex & nofollow false', () => {
   expect(Array.from(indexfollow).length).toBe(2);
   expect(Array.from(noindexnofollow).length).toBe(0);
 });
+
+test('sets prefix with htmlAttributes', () => {
+  const overrideProps = {
+    ...SEO,
+    htmlAttributes: {
+      prefix: 'og: https://ogp.me/ns#',
+    },
+  };
+  render(<BaseSeo {...overrideProps} />);
+
+  expect(document.querySelector('html')?.getAttribute('prefix')).toBe(
+    'og: https://ogp.me/ns#',
+  );
+});
