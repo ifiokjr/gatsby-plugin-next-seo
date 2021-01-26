@@ -1,3 +1,10 @@
+## [1.7.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.6.1...v1.7.0) (2021-01-26)
+
+
+### Features
+
+* add `htmlAttributes` prop ([#33](https://github.com/ifiokjr/gatsby-plugin-next-seo/issues/33)) ([1d838d2](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/1d838d2a6008391318b23d0f27703a06a0791eb2)), closes [#25](https://github.com/ifiokjr/gatsby-plugin-next-seo/issues/25)
+
 ### [1.6.1](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.6.0...v1.6.1) (2020-08-06)
 
 
