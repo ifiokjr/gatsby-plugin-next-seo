@@ -17,27 +17,31 @@ export interface JsonLdProps<GThing extends Thing> extends DeferSeoProps {
  * @remarks
  *
  * ```tsx
+ * import React from 'react';
+ * import { JsonLd } from 'gatsby-plugin-next-seo';
  * import { Person } from 'schema-dts';
  *
- * <JsonLd<Person>
- *   item={{
- *     "@context": "https://schema.org",
- *     "@type": "Person",
- *     name: "Grace Hopper",
- *     alternateName: "Grace Brewster Murray Hopper",
- *     alumniOf: {
- *       "@type": "CollegeOrUniversity",
- *       name: ["Yale University", "Vassar College"]
- *     },
- *     knowsAbout: ["Compilers", "Computer Science"]
- *   }}
- * />
+ * export default () => (
+ *   <JsonLd<Person>
+ *    json={{
+ *      "@context": "https://schema.org",
+ *      "@type": "Person",
+ *      name: "Grace Hopper",
+ *      alternateName: "Grace Brewster Murray Hopper",
+ *      alumniOf: {
+ *        "@type": "CollegeOrUniversity",
+ *        name: ["Yale University", "Vassar College"]
+ *      },
+ *      knowsAbout: ["Compilers", "Computer Science"]
+ *    }}
+ *  />
+ * );
  * ```
  */
 export const JsonLd = <GThing extends Thing>({
   defer,
   json,
-}: JsonLdProps<GThing>) => (
+}: JsonLdProps<GThing>): JSX.Element => (
   <Helmet defer={defer}>
     <script type='application/ld+json'>{JSON.stringify(json, null, 2)}</script>
   </Helmet>
