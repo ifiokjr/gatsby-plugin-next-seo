@@ -1,3 +1,10 @@
+## [1.8.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.7.0...v1.8.0) (2021-08-30)
+
+
+### Features
+
+* add support for `gatsby@3` ([#58](https://github.com/ifiokjr/gatsby-plugin-next-seo/issues/58)) ([173d5df](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/173d5dfdf37423b37058d5767cdb9bbefd0cd648))
+
 ## [1.7.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.6.1...v1.7.0) (2021-01-26)
 
 
