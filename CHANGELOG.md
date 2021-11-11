@@ -1,3 +1,10 @@
+## [1.9.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.8.0...v1.9.0) (2021-11-11)
+
+
+### Features
+
+* add gatsby v4 to peer deps ([#70](https://github.com/ifiokjr/gatsby-plugin-next-seo/issues/70)) ([22557fa](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/22557fac756581fcc101d5c882581cedadb0fefa))
+
 ## [1.8.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.7.0...v1.8.0) (2021-08-30)
 
 
