@@ -10,6 +10,7 @@ import localBusiness from './local-business-schema';
 import logoVersions from './logo-schema';
 import newsArticleVersions from './newsarticle-schema';
 import productVersions from './product-schema';
+import sitelinksSearchBox from './sitelinks-search-box-schema';
 import socialProfileVersions from './social-profile-schema';
 
 const schemas = combineSchemas(
@@ -24,5 +25,6 @@ const schemas = combineSchemas(
   socialProfileVersions,
   corporateContactVersions,
   newsArticleVersions,
+  sitelinksSearchBox,
 );
 export default schemas;
