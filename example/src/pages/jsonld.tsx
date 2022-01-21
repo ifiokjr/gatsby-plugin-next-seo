@@ -189,7 +189,7 @@ const JsonLd = () => (
 
     <SitelinksSearchBoxJsonLd
       url='https://example.com/'
-      searchHandlerURI='https://example.com/?q='
+      searchHandlerQueryStringUrl='https://example.com/?q='
     />
   </>
 );

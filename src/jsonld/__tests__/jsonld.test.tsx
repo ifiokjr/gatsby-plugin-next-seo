@@ -354,7 +354,7 @@ test('SitelinksSearchBoxJsonLd', () => {
   render(
     <SitelinksSearchBoxJsonLd
       url='https://example.com/'
-      searchHandlerURI='https://example.com/?q='
+      searchHandlerQueryStringUrl='https://example.com/?q='
     />,
   );
   const jsonLD = JSON.parse(

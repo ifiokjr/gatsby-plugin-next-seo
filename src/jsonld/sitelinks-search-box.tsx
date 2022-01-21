@@ -57,7 +57,7 @@ export interface SitelinksSearchBoxJsonLdProps
  *     <h1>Sitelinks Search Box JSON-LD</h1>
  *     <SitelinksSearchBoxJsonLd
  *       url='https://example.com/'
- *       searchHandlerURI='https://example.com/?q='
+ *       searchHandlerQueryStringUrl='https://example.com/?q='
  *     />
  *   </>
  * );
