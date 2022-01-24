@@ -27,6 +27,17 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "gibsonj",
+      "name": "Joel Gibson",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5944305?v=4",
+      "profile": "https://github.com/gibsonj",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
