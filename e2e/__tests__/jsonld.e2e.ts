@@ -14,7 +14,7 @@ describe.each(testIterator)('JSON LD - %s', (_, disableJavascript) => {
       $document.$$('head script[type="application/ld+json"]'),
       'innerHTML',
     ).then((content) => {
-      expect(content.length).toBe(9);
+      expect(content.length).toBe(10);
       content.forEach((json) => JSON.parse(json));
     });
   });

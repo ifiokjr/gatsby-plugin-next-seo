@@ -16,6 +16,7 @@ import {
   LogoJsonLd,
   NewsArticleJsonLd,
   ProductJsonLd,
+  SitelinksSearchBoxJsonLd,
   SpeakableJsonLd,
 } from '../..';
 import schemas from '../../../e2e/schema';
@@ -346,5 +347,19 @@ test('FAQJsonLd', () => {
     />,
   );
   JSON.parse(document.querySelector('script')?.innerHTML ?? '');
+  expect(document.documentElement).toMatchSnapshot();
+});
+
+test('SitelinksSearchBoxJsonLd', () => {
+  render(
+    <SitelinksSearchBoxJsonLd
+      url='https://example.com/'
+      searchHandlerQueryStringUrl='https://example.com/?q='
+    />,
+  );
+  const jsonLD = JSON.parse(
+    document.querySelector('script')?.innerHTML ?? '{}',
+  );
+  assertSchema(schemas)('SitelinksSearchBox', '1.0.0')(jsonLD);
   expect(document.documentElement).toMatchSnapshot();
 });

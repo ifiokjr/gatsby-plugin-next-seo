@@ -16,21 +16,25 @@ JsonLd: <GThing extends Thing>({ defer, json, }: JsonLdProps<GThing>) => JSX.Ele
 
 
 ```tsx
+import React from 'react';
+import { JsonLd } from 'gatsby-plugin-next-seo';
 import { Person } from 'schema-dts';
 
-<JsonLd<Person>
-  item={{
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Grace Hopper",
-    alternateName: "Grace Brewster Murray Hopper",
-    alumniOf: {
-      "@type": "CollegeOrUniversity",
-      name: ["Yale University", "Vassar College"]
-    },
-    knowsAbout: ["Compilers", "Computer Science"]
-  }}
-/>
+export default () => (
+  <JsonLd<Person>
+   json={{
+     "@context": "https://schema.org",
+     "@type": "Person",
+     name: "Grace Hopper",
+     alternateName: "Grace Brewster Murray Hopper",
+     alumniOf: {
+       "@type": "CollegeOrUniversity",
+       name: ["Yale University", "Vassar College"]
+     },
+     knowsAbout: ["Compilers", "Computer Science"]
+   }}
+ />
+);
 
 ```
 

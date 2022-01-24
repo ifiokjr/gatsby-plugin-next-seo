@@ -8,6 +8,7 @@ import {
   LogoJsonLd,
   NewsArticleJsonLd,
   ProductJsonLd,
+  SitelinksSearchBoxJsonLd,
 } from 'gatsby-plugin-next-seo';
 import React from 'react';
 
@@ -185,6 +186,11 @@ const JsonLd = () => (
     />
 
     <Links />
+
+    <SitelinksSearchBoxJsonLd
+      url='https://example.com/'
+      searchHandlerQueryStringUrl='https://example.com/?q='
+    />
   </>
 );
 

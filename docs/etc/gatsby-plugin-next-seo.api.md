@@ -24,6 +24,7 @@ import { SpeakableSpecification } from 'schema-dts';
 import { Text as Text_2 } from 'schema-dts';
 import { Thing } from 'schema-dts';
 import { URL as URL_2 } from 'schema-dts';
+import { WebSite } from 'schema-dts';
 import { WithContext } from 'schema-dts';
 
 // @internal
@@ -451,6 +452,15 @@ export interface Question {
 //
 // @internal (undocumented)
 export type ScriptProps = JSX.IntrinsicElements['script'];
+
+// @public
+export const SitelinksSearchBoxJsonLd: FC<SitelinksSearchBoxJsonLdProps>;
+
+// @public
+export interface SitelinksSearchBoxJsonLdProps extends DeferSeoProps, Overrides<WebSite> {
+    searchHandlerQueryStringUrl: string;
+    url: string;
+}
 
 // Warning: (ae-internal-missing-underscore) The name "SocialProfileJsonLd" should be prefixed with an underscore because the declaration is marked as @internal
 //

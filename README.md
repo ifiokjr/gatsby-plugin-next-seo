@@ -56,6 +56,7 @@ This codebase was initially forked from the brilliant [next-seo](https://github.
     - [Product](#product)
     - [Social Profile (Deprecated)](#social-profile-deprecated)
     - [JsonLd](#jsonld)
+    - [Sitelinks Search Box](#sitelinks-search-box)
   - [API Docs](#api-docs)
   - [FAQ](#faq-1)
     - [Why did you choose `gatsby-plugin-next-seo` as the project name?](#why-did-you-choose-gatsby-plugin-next-seo-as-the-project-name)
@@ -673,6 +674,7 @@ Google has excellent documentation on JSON-LD -> [HERE](https://developers.googl
 - [Product](#product)
 - [Social Profile (Deprecated)](#social-profile-deprecated)
 - [JsonLd](#jsonld)
+- [Sitelinks Search Box](#sitelinks-search-box)
 
 ### Override
 
@@ -1259,6 +1261,35 @@ export default () => (
 This is the base JSON component that allows you to create your own JSON LD components according to the spec.
 
 [Google Docs for Social Profile](https://developers.google.com/search/docs/data-types/social-profile)
+
+### Sitelinks Search Box
+
+The `SitelinksSearchBoxJsonLd` component can be used to add JSON-LD structured data to your website for a Sitelinks search box.
+
+See [here](https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox) for further documentation.
+
+```jsx
+import React from 'react';
+import { SitelinksSearchBoxJsonLd } from 'gatsby-plugin-next-seo';
+
+export default () => (
+  <>
+    <h1>Sitelinks Search Box JSON-LD</h1>
+    <SitelinksSearchBoxJsonLd
+      url='https://example.com/'
+      searchHandlerQueryStringUrl='https://example.com/?q='
+    />
+  </>
+);
+```
+
+**Required properties**
+
+| Property                      | Info                                                                                       |
+| ----------------------------- | ------------------------------------------------------------------------------------------ |
+| `url`                         | The URL of the canonical homepage of the website associated with the Sitelinks search box. |
+| `searchHandlerQueryStringUrl` | Define the website's search engine query string as a URL.                                  |
+|  |
 
 ## API Docs
 

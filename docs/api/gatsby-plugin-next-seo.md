@@ -38,6 +38,7 @@
 |  [OpenGraphVideos](./gatsby-plugin-next-seo.opengraphvideos.md) |  |
 |  [ProductJsonLdProps](./gatsby-plugin-next-seo.productjsonldprops.md) | Component props for the Product JSON LD. |
 |  [Question](./gatsby-plugin-next-seo.question.md) | The questions and answers for an FAQ Page. |
+|  [SitelinksSearchBoxJsonLdProps](./gatsby-plugin-next-seo.sitelinkssearchboxjsonldprops.md) | The Sitelinks search box JSON LD component properties. |
 |  [SpeakableJsonLdProps](./gatsby-plugin-next-seo.speakablejsonldprops.md) | The Speakable JSON LD Component props. |
 |  [Twitter](./gatsby-plugin-next-seo.twitter.md) |  |
 
@@ -60,6 +61,7 @@
 |  [LogoJsonLd](./gatsby-plugin-next-seo.logojsonld.md) | Specify the image Google Search uses for your organization's logo in Search results and in the Knowledge Graph. |
 |  [NewsArticleJsonLd](./gatsby-plugin-next-seo.newsarticlejsonld.md) | A utility component which wraps the <code>&lt;ArticleJsonLd /&gt;</code> component but is classified as a <code>NewsArticle</code>. |
 |  [ProductJsonLd](./gatsby-plugin-next-seo.productjsonld.md) | Add markup to your product pages so Google can provide detailed product information in rich Search results — including Google Images. |
+|  [SitelinksSearchBoxJsonLd](./gatsby-plugin-next-seo.sitelinkssearchboxjsonld.md) | The <code>SitelinksSearchBoxJsonLd</code> component can be used to add JSON-LD structured data to your website for a Sitelinks search box. |
 |  [SpeakableJsonLd](./gatsby-plugin-next-seo.speakablejsonld.md) | <b><i>(BETA)</i></b> The speakable schema.org property identifies sections within an article or webpage that are best suited for audio playback using text-to-speech (TTS). |
 
 ## Type Aliases

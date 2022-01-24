@@ -121,6 +121,7 @@
     "@types/jest": "^26.0.0",
     "@types/jest-dev-server": "^4.2.0",
     "@types/jest-environment-puppeteer": "^4.3.1",
+    "@types/lodash": "^4.14.178",
     "@types/node": "^14.0.13",
     "@types/puppeteer": "^3.0.0",
     "@types/react": "^16.9.38",
