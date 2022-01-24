@@ -1,3 +1,10 @@
+## [1.10.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.9.0...v1.10.0) (2022-01-24)
+
+
+### Features
+
+* add support for `Sitelinks search box` ([#71](https://github.com/ifiokjr/gatsby-plugin-next-seo/issues/71)) ([1b0abb8](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/1b0abb82960bbc43bc7f57d9b60bb22a928b0369))
+
 ## [1.9.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.8.0...v1.9.0) (2021-11-11)
 
 
