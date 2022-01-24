@@ -1309,12 +1309,14 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr><td align="center"><a href="https://ifiokjr.com"><img src="https://avatars2.githubusercontent.com/u/1160934?v=4" width="100px;" alt=""/><br /><sub><b>Ifiok Jr.</b></sub></a><br /><a href="https://github.com/ifiokjr/gatsby-plugin-next-seo/commits?author=ifiokjr" title="Code">💻</a> <a href="https://github.com/ifiokjr/gatsby-plugin-next-seo/commits?author=ifiokjr" title="Documentation">📖</a></td>
-  <td align="center"><a href="https://www.linkedin.com/in/harlleyoliveira"><img src="https://avatars0.githubusercontent.com/u/52423?v=4" width="100px;" alt=""/><br /><sub><b>Harlley Oliveira</b></sub></a><br /><a href="https://github.com/ifiokjr/gatsby-plugin-next-seo/issues?q=author%3Aharlley" title="Bug reports">🐛</a></td>
+  <tr>
+    <td align="center"><a href="https://ifiokjr.com"><img src="https://avatars2.githubusercontent.com/u/1160934?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ifiok Jr.</b></sub></a><br /><a href="https://github.com/ifiokjr/gatsby-plugin-next-seo/commits?author=ifiokjr" title="Code">💻</a> <a href="https://github.com/ifiokjr/gatsby-plugin-next-seo/commits?author=ifiokjr" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/harlleyoliveira"><img src="https://avatars0.githubusercontent.com/u/52423?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Harlley Oliveira</b></sub></a><br /><a href="https://github.com/ifiokjr/gatsby-plugin-next-seo/issues?q=author%3Aharlley" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/gibsonj"><img src="https://avatars.githubusercontent.com/u/5944305?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Joel Gibson</b></sub></a><br /><a href="https://github.com/ifiokjr/gatsby-plugin-next-seo/commits?author=gibsonj" title="Code">💻</a> <a href="https://github.com/ifiokjr/gatsby-plugin-next-seo/commits?author=gibsonj" title="Documentation">📖</a> <a href="https://github.com/ifiokjr/gatsby-plugin-next-seo/commits?author=gibsonj" title="Tests">⚠️</a></td>
   </tr>
 </table>
 
-<!-- markdownlint-enable -->
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
