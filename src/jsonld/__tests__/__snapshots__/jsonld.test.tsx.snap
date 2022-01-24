@@ -494,6 +494,34 @@ exports[`ProductJsonLd 1`] = `
 </html>
 `;
 
+exports[`SitelinksSearchBoxJsonLd 1`] = `
+<html>
+  <head>
+    <script
+      data-rh="true"
+      type="application/ld+json"
+    >
+      {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://example.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://example.com/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+    </script>
+  </head>
+  <body>
+    <div />
+  </body>
+</html>
+`;
+
 exports[`SpeakableJsonLd 1`] = `
 <html>
   <head>
