@@ -60,11 +60,16 @@ export interface ArticleJsonLdProps extends DeferSeoProps, Overrides<Article> {
     url: string;
 }
 
+// @internal (undocumented)
+export type BaseProps = JSX.IntrinsicElements['base'];
+
 // @public
 export const BaseSeo: ({ defer, metaTags, linkTags, ...props }: AllSeoProps) => JSX.Element;
 
 // @public (undocumented)
 export interface BaseSeoProps {
+    // Warning: (ae-incompatible-release-tags) The symbol "base" is marked as @public, but its signature references "BaseProps" which is marked as @internal
+    base?: BaseProps;
     canonical?: string;
     description?: string;
     facebook?: {
@@ -216,7 +221,7 @@ export interface FAQJsonLdProps extends DeferSeoProps, Overrides<FAQPage> {
 }
 
 // @public
-export const GatsbySeo: ({ metaTags, linkTags, canonical, description, facebook, htmlAttributes, language, languageAlternates, mobileAlternate, nofollow, noindex, openGraph, title, titleTemplate, twitter, }: GatsbySeoProps) => JSX.Element;
+export const GatsbySeo: ({ metaTags, linkTags, canonical, description, facebook, htmlAttributes, language, languageAlternates, mobileAlternate, nofollow, noindex, openGraph, title, titleTemplate, twitter, base, }: GatsbySeoProps) => JSX.Element;
 
 // @public (undocumented)
 export interface GatsbySeoPluginOptions extends DefaultSeoProps, BaseSeoProps {

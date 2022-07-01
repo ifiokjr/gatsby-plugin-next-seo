@@ -6,6 +6,10 @@ import { __resetDefaults, BaseSeo } from '../base-seo';
 
 const SEO = {
   title: 'This is a test title.',
+  base: {
+    href: 'www.test.com',
+    target: '_blank',
+  },
   language: 'en-GB',
   description: 'This is a test description.',
   canonical: 'https://www.canonical.ie',
@@ -69,6 +73,13 @@ test('returns full array for default seo object', () => {
 
   expect(document.querySelector('html')?.getAttribute('lang')).toBe(
     SEO.language,
+  );
+
+  expect(document.querySelector('base')?.getAttribute('href')).toBe(
+    SEO?.base?.href,
+  );
+  expect(document.querySelector('base')?.getAttribute('target')).toBe(
+    SEO?.base?.target,
   );
 
   const title = getByText(
