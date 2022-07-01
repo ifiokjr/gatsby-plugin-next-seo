@@ -15,6 +15,7 @@ export interface BaseSeoProps
 
 |  Property | Type | Description |
 |  --- | --- | --- |
+|  [base](./gatsby-plugin-next-seo.baseseoprops.base.md) | BaseProps | Specifies the base URL to use for all relative URLs in a document. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base |
 |  [canonical](./gatsby-plugin-next-seo.baseseoprops.canonical.md) | string | Set the page canonical url. |
 |  [description](./gatsby-plugin-next-seo.baseseoprops.description.md) | string | Set the page meta description. |
 |  [facebook](./gatsby-plugin-next-seo.baseseoprops.facebook.md) | { appId: string; } | Used for Facebook Insights, you must add a facebook app ID to your page to for it. |

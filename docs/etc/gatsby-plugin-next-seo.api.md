@@ -60,6 +60,8 @@ export interface ArticleJsonLdProps extends DeferSeoProps, Overrides<Article> {
     url: string;
 }
 
+// Warning: (ae-internal-missing-underscore) The name "BaseProps" should be prefixed with an underscore because the declaration is marked as @internal
+//
 // @internal (undocumented)
 export type BaseProps = JSX.IntrinsicElements['base'];
 
