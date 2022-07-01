@@ -9,6 +9,10 @@ const Overridden = () => (
       noindex={true}
       nofollow={true}
       title='Title B'
+      base={{
+        href: 'http://www.overridetest.com',
+        target: '_self',
+      }}
       description='Description B'
       canonical='https://www.canonical.ie/b'
       language='en'

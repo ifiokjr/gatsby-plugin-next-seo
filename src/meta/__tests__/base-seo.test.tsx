@@ -326,9 +326,15 @@ test('BaseSeo respects the nesting/overriding behaviour of React Helmet', () => 
   const title = 'Example Title';
   const exampleUrlBase = 'https://example.com';
   const exampleUrlOverride = 'https://examp2le.com';
+  const exampleBaseHrefOverride = 'https://overridetest.com';
+  const exampleBaseTargetOverride = '_self';
   render(
     <>
       <BaseSeo
+        base={{
+          href: exampleBaseHrefOverride,
+          target: exampleBaseTargetOverride,
+        }}
         title={title}
         titleTemplate={`${template} | %s`}
         openGraph={{ url: exampleUrlBase }}
@@ -362,6 +368,13 @@ test('BaseSeo respects the nesting/overriding behaviour of React Helmet', () => 
   );
   expect(ogUrlTag).toBeTruthy();
   expect(ogUrlTag?.getAttribute('content')).toEqual(exampleUrlOverride);
+
+  expect(document.querySelector('base')?.getAttribute('href')).toBe(
+    exampleBaseHrefOverride,
+  );
+  expect(document.querySelector('base')?.getAttribute('target')).toBe(
+    exampleBaseTargetOverride,
+  );
 });
 
 const ArticleSEO = {
