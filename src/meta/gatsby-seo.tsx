@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react';
 
 import { GatsbySeoProps } from '../types';
@@ -39,6 +40,7 @@ export const GatsbySeo = ({
   title,
   titleTemplate,
   twitter,
+  base,
 }: GatsbySeoProps) => {
   return (
     <BaseSeo
@@ -57,6 +59,7 @@ export const GatsbySeo = ({
       title={title}
       titleTemplate={titleTemplate}
       twitter={twitter}
+      base={base}
     />
   );
 };

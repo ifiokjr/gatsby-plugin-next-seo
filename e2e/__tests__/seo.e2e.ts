@@ -9,6 +9,8 @@ test.each(testIterator)('Default SEO / - %s', async (_, disableJavascript) => {
   const $document = await launch({ disableJavascript, path: '/' });
   const tagAssertions = [
     { selector: 'h1', prop: 'innerText', result: 'Default SEO on this Page' },
+    { selector: 'base', prop: 'href', result: 'http://www.test.com/' },
+    { selector: 'base', prop: 'target', result: '_blank' },
     {
       selector: 'head title',
       prop: 'innerText',
@@ -116,6 +118,12 @@ test.each(testIterator)(
 
     const tagAssertions: TagAssertionBuilder[] = [
       { selector: 'h1', prop: 'innerText', result: 'Overridden Seo' },
+      {
+        selector: 'base',
+        prop: 'href',
+        result: 'http://www.overridetest.com/',
+      },
+      { selector: 'base', prop: 'target', result: '_self' },
       {
         selector: 'html',
         prop: 'lang',

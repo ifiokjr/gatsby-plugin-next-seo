@@ -479,6 +479,10 @@ export const BaseSeo = ({
     helmetProps['titleTemplate'] = props.titleTemplate;
   }
 
+  if (props.base) {
+    helmetProps['base'] = props.base;
+  }
+
   return (
     <>
       <Helmet {...helmetProps}></Helmet>

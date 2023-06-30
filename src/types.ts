@@ -245,6 +245,11 @@ interface HTMLAttributes {
  */
 export interface BaseSeoProps {
   /**
+   * Specifies the base URL to use for all relative URLs in a document. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+   */
+  base?: BaseProps;
+
+  /**
    * The language being used for the current page.
    *
    * This adds the `lang` attribute to the  `<html />` e.g. tag https://web.dev/html-has-lang/.
@@ -592,3 +597,7 @@ export type StyleProps = JSX.IntrinsicElements['style'];
  * @internal
  */
 export type TitleProps = JSX.IntrinsicElements['title'];
+/**
+ * @internal
+ */
+export type BaseProps = JSX.IntrinsicElements['base'];

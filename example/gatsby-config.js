@@ -14,6 +14,10 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-next-seo',
       options: {
+        base: {
+          href: 'http://www.test.com',
+          target: '_blank',
+        },
         title: 'Title A',
         titleTemplate: '%s | Gatsby SEO',
         description: 'Description A',

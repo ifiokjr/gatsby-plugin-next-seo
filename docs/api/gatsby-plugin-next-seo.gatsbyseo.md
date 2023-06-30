@@ -9,7 +9,7 @@ This component render the tags in the `<head>` for SEO on a per page basis. As a
 <b>Signature:</b>
 
 ```typescript
-GatsbySeo: ({ metaTags, linkTags, canonical, description, facebook, htmlAttributes, language, languageAlternates, mobileAlternate, nofollow, noindex, openGraph, title, titleTemplate, twitter, }: GatsbySeoProps) => JSX.Element
+GatsbySeo: ({ metaTags, linkTags, canonical, description, facebook, htmlAttributes, language, languageAlternates, mobileAlternate, nofollow, noindex, openGraph, title, titleTemplate, twitter, base, }: GatsbySeoProps) => JSX.Element
 ```
 
 ## Remarks

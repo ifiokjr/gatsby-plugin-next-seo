@@ -6,6 +6,10 @@ import { __resetDefaults, BaseSeo } from '../base-seo';
 
 const SEO = {
   title: 'This is a test title.',
+  base: {
+    href: 'www.test.com',
+    target: '_blank',
+  },
   language: 'en-GB',
   description: 'This is a test description.',
   canonical: 'https://www.canonical.ie',
@@ -69,6 +73,13 @@ test('returns full array for default seo object', () => {
 
   expect(document.querySelector('html')?.getAttribute('lang')).toBe(
     SEO.language,
+  );
+
+  expect(document.querySelector('base')?.getAttribute('href')).toBe(
+    SEO?.base?.href,
+  );
+  expect(document.querySelector('base')?.getAttribute('target')).toBe(
+    SEO?.base?.target,
   );
 
   const title = getByText(
@@ -315,9 +326,15 @@ test('BaseSeo respects the nesting/overriding behaviour of React Helmet', () => 
   const title = 'Example Title';
   const exampleUrlBase = 'https://example.com';
   const exampleUrlOverride = 'https://examp2le.com';
+  const exampleBaseHrefOverride = 'https://overridetest.com';
+  const exampleBaseTargetOverride = '_self';
   render(
     <>
       <BaseSeo
+        base={{
+          href: exampleBaseHrefOverride,
+          target: exampleBaseTargetOverride,
+        }}
         title={title}
         titleTemplate={`${template} | %s`}
         openGraph={{ url: exampleUrlBase }}
@@ -351,6 +368,13 @@ test('BaseSeo respects the nesting/overriding behaviour of React Helmet', () => 
   );
   expect(ogUrlTag).toBeTruthy();
   expect(ogUrlTag?.getAttribute('content')).toEqual(exampleUrlOverride);
+
+  expect(document.querySelector('base')?.getAttribute('href')).toBe(
+    exampleBaseHrefOverride,
+  );
+  expect(document.querySelector('base')?.getAttribute('target')).toBe(
+    exampleBaseTargetOverride,
+  );
 });
 
 const ArticleSEO = {

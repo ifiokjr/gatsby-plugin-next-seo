@@ -591,6 +591,11 @@ exports[`renders correctly 1`] = `
     <title>
       This is a test title.
     </title>
+    <base
+      data-rh="true"
+      href="www.test.com"
+      target="_blank"
+    />
     <link
       data-rh="true"
       href="https://m.canonical.ie"
