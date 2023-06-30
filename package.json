@@ -145,7 +145,7 @@
     "eslint-plugin-react-hooks": "^4.0.4",
     "eslint-plugin-simple-import-sort": "^5.0.3",
     "eslint-plugin-unicorn": "^20.1.0",
-    "gatsby": "^2.23.9",
+    "gatsby": "^4.25.7",
     "husky": "^4.2.5",
     "jest": "^26.0.1",
     "jest-circus": "^26.0.1",
