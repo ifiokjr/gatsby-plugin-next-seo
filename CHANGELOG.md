@@ -1,3 +1,10 @@
+## [1.11.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.10.0...v1.11.0) (2023-06-30)
+
+
+### Features
+
+* add base as option ([#81](https://github.com/ifiokjr/gatsby-plugin-next-seo/issues/81)) ([1cb7303](https://github.com/ifiokjr/gatsby-plugin-next-seo/commit/1cb730396fb61edb90df6c4d94b75c57e111f1e7))
+
 ## [1.10.0](https://github.com/ifiokjr/gatsby-plugin-next-seo/compare/v1.9.0...v1.10.0) (2022-01-24)
 
 
